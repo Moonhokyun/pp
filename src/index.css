@@ -1,0 +1,131 @@
+:root {
+  /* Colors */
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F8F9FA; /* Light Grey for section separation */
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555; /* Cool Grey */
+  --color-text-tertiary: #888888;
+  --color-primary: #0F172A; /* Deep Navy - Reliable & Professional */
+  --color-accent: #3B82F6; /* Slight accent for interactive limits */
+  --color-border: #E5E7EB;
+  
+  /* Fonts */
+  --font-family: 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  
+  /* Layout */
+  --container-width: 1440px; /* Max width for large screens */
+  --header-height: 80px;
+  --grid-columns: 12;
+  --grid-gutter: 24px;
+  
+  /* Typography Scale */
+  --font-size-h1: 4.5rem; /* ~72px */
+  --font-size-h2: 3rem;   /* ~48px */
+  --font-size-h3: 2rem;   /* ~32px */
+  --font-size-body: 1.125rem; /* ~18px for better readability */
+  --font-size-small: 0.875rem;
+
+  --transition-fast: 0.2s ease;
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --container-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.5rem;
+    --container-width: 100%;
+  }
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Links & Buttons */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 60px; /* Min side margins */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+.section {
+  padding: 160px 0; /* Macro space */
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-body);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.text-primary { color: var(--color-primary); }
+.text-accent { color: var(--color-accent); }
+.text-bold { font-weight: 700; }

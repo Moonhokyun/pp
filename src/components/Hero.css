@@ -1,0 +1,119 @@
+/* Inherits .slide from App.css, so just override specific content alignment if needed */
+.hero-section {
+  /* No extra padding needed as .slide handles spacing/height */
+}
+
+/* Use Grid for layout */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+  align-items: center;
+}
+
+.hero-content {
+  grid-column: 1 / span 8; /* Occupy 8 columns for better readability on large strings */
+}
+
+.hero-visual {
+  grid-column: 9 / span 4;
+  /* Visual placeholder or minimal graphic can go here */
+}
+
+.hero-label {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent); /* Use accent color for label */
+  margin-bottom: 32px;
+}
+
+.hero-title {
+  margin-bottom: 40px;
+  letter-spacing: -0.03em;
+  word-break: keep-all; /* Prevent awkward breaks in Korean */
+}
+
+.hero-title .block {
+  display: block;
+}
+
+.hero-description {
+  font-size: 1.5rem; /* Increased size */
+  line-height: 1.6;
+  max-width: 800px;
+  margin-bottom: 64px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 36px; /* Larger buttons */
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 8px; /* Slightly more rounded */
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background-color: #000; /* Darker on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-alt);
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-column: 1 / span 12;
+    text-align: center;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 120px 0;
+    min-height: auto;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+  
+  .hero-description {
+    font-size: 1.125rem;
+  }
+}
