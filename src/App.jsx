@@ -3,6 +3,7 @@ import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 import Hero from "./components/Hero";
 import KeyAchievements from "./components/KeyAchievements";
+import IndexPage from "./components/IndexPage";
 import Projects from "./components/Projects";
 import About from "./components/About";
 import Footer from "./components/Footer";
@@ -68,15 +69,15 @@ function App() {
     }
 
     // 6. Save and Cleanup
-    doc.save('MoonHoGyun_Portfolio_2026.pdf');
+    doc.save('MoonHoKyun_Portfolio_2026.pdf');
     document.body.removeChild(pdfContainer);
   };
 
   return (
     <div className="app">
       <header className="fixed-header">
-        <div className="container header-content">
-          <div className="logo">Moon Ho-gyun</div>
+        <div className="header-content">
+          <div className="logo">Moon Ho-kyun</div>
           <nav>
             <a href="#projects">Projects</a>
             <a href="#about">About</a>
@@ -93,6 +94,7 @@ function App() {
       <main>
         <Hero />
         <KeyAchievements />
+        <IndexPage />
         <Projects />
         <About />
         <Footer />

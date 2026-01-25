@@ -1,0 +1,94 @@
+/* History Page Container (Standard White Theme) */
+.history-container {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  background-color: white;
+  overflow: hidden;
+  font-family: 'Pretendard', sans-serif;
+  color: #222;
+  display: flex;
+  padding: 80px 80px 0; /* Standardized Padding */
+  box-sizing: border-box;
+}
+
+/* New Layout Utility for vertically centered history pages */
+.history-layout {
+  justify-content: center;
+  background-color: white; /* Ensure white background */
+  padding-bottom: 0 !important; /* Override strict container padding if needed */
+}
+
+/* Flex Wrapper for Header and Cards */
+.history-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Take up remaining space */
+  justify-content: center; /* Center content vertically */
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.history-header {
+  width: 100%;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.history-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0;
+  color: var(--color-primary);
+}
+
+.history-card-container {
+  width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: stretch; /* Match height */
+  justify-content: center;
+}
+
+.history-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.history-label-large {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary); /* Deep Navy */
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  display: inline-block;
+}
+
+.history-image-large {
+  width: 100%;
+  height: 200px; /* Adjusted height */
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #999;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.history-desc {
+  font-size: 1.25rem; /* ~20px matching previous design */
+  line-height: 1.6;
+  color: #444;
+  font-weight: 500;
+}

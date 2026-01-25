@@ -4,7 +4,7 @@ import './About.css';
 const About = () => {
   return (
     <section id="about" className="slide about-section">
-      <div className="container">
+      <div className="container" style={{justifyContent: 'center'}}>
         <div className="about-grid">
           <div className="about-col">
             <h2 className="section-title">About & Skills</h2>

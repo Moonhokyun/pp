@@ -7,7 +7,7 @@
 .project-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 100px;
   align-items: start;
 }
 
@@ -95,4 +95,400 @@
   .project-title {
     font-size: 1.75rem;
   }
+}
+
+/* =========================================
+   Context Slide Styles (New)
+   ========================================= */
+.context-slide {
+  background-color: #fff; /* Ensure white background as per image */
+}
+
+.context-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  height: 100%;
+  align-items: center;
+  padding-bottom: 200px;
+}
+
+/* Left Column */
+.context-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 60px;
+  color: var(--color-text-primary);
+  word-break: keep-all;
+}
+
+.context-subtitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--color-text-primary);
+}
+
+.context-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 40px;
+  word-break: keep-all;
+}
+
+.user-voices {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.voice-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.voice-icon {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.voice-item p {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* Right Column */
+.context-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.data-diagram-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  min-height: 300px;
+}
+
+/* =========================================
+   Side Project Visuals (Light Theme)
+   ========================================= */
+/* Stretch the grid to ensure equal height columns for Side Project */
+.side-project-grid {
+  align-items: stretch;
+  align-content: end;
+  padding-bottom: 0;
+}
+
+.side-visual-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    gap: 24px;
+    width: 100%;
+    max-width: 610px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.side-card {
+  display: flex;
+  flex: 1; /* Stretch to fill available height */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: var(--color-bg-alt);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  gap: 12px;
+}
+
+.side-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.side-card-img {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Replaced by actual images */
+.data-diagram-img {
+  max-width: 100%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Chart Styles */
+.search-volume-chart {
+  width: 100%;
+}
+
+.chart-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.chart-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between; /* Spread bars */
+  height: 200px; /* Chart Height */
+  padding-bottom: 30px; /* Space for X-axis labels */
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  max-width: 610px;
+    margin: auto;
+}
+
+.chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 60px; /* Fixed bar width */
+  position: relative;
+}
+
+.bar-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.chart-bar {
+  width: 100%;
+  background-color: #E5E7EB; /* Grey for past years */
+  border-radius: 4px 4px 0 0;
+  transition: height 1s ease-out;
+}
+
+.chart-bar.highlight {
+  background-color: #F43F5E; /* Pink/Red for highlight */
+}
+
+.bar-label {
+  position: absolute;
+  bottom: -30px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Annotation bubble */
+.growth-annotation {
+  position: absolute;
+  top: 40%;
+  left: 180px;
+  background-color: #F43F5E;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
+  z-index: 10;
+  animation: float 3s ease-in-out infinite;
+}
+
+.growth-annotation::after {
+  content: '';
+  position: absolute;
+  right: -8px; 
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 0 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #F43F5E;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+    .context-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .context-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* =========================================
+   Project Cover Slide Styles (New)
+   ========================================= */
+.project-cover-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.cover-left-col {
+  grid-column: 1 / span 6;
+}
+
+.cover-right-col {
+  grid-column: 8 / span 5;
+  height: 100%;
+}
+
+.cover-tags {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.cover-tag-pill {
+  padding: 6px 12px;
+  background-color: var(--color-bg-alt);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.cover-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.cover-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.key-metric-box {
+  margin-bottom: 40px;
+  padding-left: 24px;
+  border-left: 4px solid var(--color-primary);
+}
+
+.key-metric-value {
+  display: block;
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.key-metric-desc {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.cover-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.meta-label {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--color-text-tertiary);
+  margin-bottom: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.meta-value {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.cover-visual-placeholder {
+  border-radius: 16px;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.placeholder-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.placeholder-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-tertiary);
+  line-height: 1.5;
+}
+
+.placeholder-code {
+  background: #00000010;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  margin-top: 20px;
+}
+
+@media (max-width: 960px) {
+    .project-cover-grid {
+        grid-template-columns: 1fr;
+    }
+    .cover-left-col, .cover-right-col {
+        grid-column: auto;
+    }
+    .cover-title {
+        font-size: 2.5rem;
+    }
+    .key-metric-value {
+        font-size: 3rem;
+    }
 }

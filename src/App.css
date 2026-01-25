@@ -23,6 +23,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 0 80px;
 }
 
 .logo {
@@ -93,8 +95,7 @@ main {
   right: 32px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-text-tertiary);
-  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-tertiary);  
   backdrop-filter: blur(4px);
   padding: 4px 10px;
   border-radius: 8px;

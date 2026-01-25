@@ -8,6 +8,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding-top: 200px;
+  padding-bottom: 120px;
 }
 
 .footer-left h3 {
@@ -34,6 +36,7 @@
   font-weight: 500;
   margin-bottom: 16px;
   color: #fff;
+  text-align: left;
 }
 
 .contact-info a:hover {
@@ -42,7 +45,7 @@
 
 .social-links {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 24px;
 }
 
