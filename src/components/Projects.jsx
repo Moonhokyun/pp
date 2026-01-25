@@ -12,6 +12,7 @@ import project2Cover from "../assets/img/project2_cover.png";
 import project3Cover from "../assets/img/project3_cover.png";
 import project4Cover from "../assets/img/project4_cover.png";
 import project5Cover from "../assets/img/project5_cover.png";
+import myKeyword1 from "../assets/img/myKeyword_1.png";
 import ProjectCover from "./ProjectCover";
 import Project1Solution from "./Project1Solution";
 import Project1History from "./Project1History";
@@ -30,12 +31,18 @@ const Projects = () => {
       team: "PM 1, FE 1, BE 1, PD 1",
       imageFiles: {
         cover: project1Cover,
-        problem: "project1_problem.png",
+        problem: myKeyword1,
         solution: "project1_solution.png",
       },
       tags: ["Retention", "Data Archiving", "UX Writing"],
-      problem:
-        "월 단위 데이터 갱신으로 매월 말일마다 데이터가 소실되어, 고객이 엑셀로 백업하는 불필요한 노동을 반복하고 있었습니다.",
+      problem: (
+        <>
+          <strong style={{ color: "var(--color-text-primary)" }}>매월 말일마다 데이터가 소실</strong>
+          <span style={{ fontWeight: 600, color: "#5b5b5b" }}>되어,<br /> 고객이 엑셀로 백업하는 </span>
+          <strong style={{ color: "var(--color-text-primary)" }}>불필요한 노동을 반복</strong>
+          <span style={{ fontWeight: 600, color: "#5b5b5b" }}>하고 있었습니다.</span>
+        </>
+      ),
       cause:
         "시스템 구조상 과거 데이터를 덮어쓰는 방식이었고, 시계열 분석을 위한 DB 설계가 고려되지 않았습니다.",
       solution:
@@ -72,8 +79,12 @@ const Projects = () => {
         solution: "project2_solution.png",
       },
       tags: ["Growth Hacking", "UI Optimization", "Viewport"],
-      problem:
-        "핵심 기능인 '상위 키워드 필터'의 사용률이 4.5%에 불과해 인사이트 제공에 어려움이 있었습니다.",
+      problem: (
+        <>
+          <strong style={{ color: "var(--color-text-primary)" }}>핵심 기능인 '상위 키워드 필터'의 사용률이 4.5%에 불과</strong>
+          <span style={{ fontWeight: 600, color: "#5b5b5b" }}>해<br /> 인사이트 제공에 어려움이 있었습니다.</span>
+        </>
+      ),
       cause:
         "뷰포트 분석 결과, 필터 버튼이 노트북 Fold Line 아래에 위치하여 유저가 존재 자체를 몰랐습니다.",
       solution:
@@ -111,8 +122,13 @@ const Projects = () => {
         solution: "project3_solution.png",
       },
       tags: ["Dual View", "Patent Registered", "Business Impact"],
-      problem:
-        "고객은 '우리 브랜드'와 '경쟁사' 데이터를 비교하고 싶은데, 탭을 전환하는 순간 앞의 숫자를 잊어버리는 페인 포인트가 있었습니다.",
+      problem: (
+        <>
+          <span style={{ fontWeight: 600, color: "#5b5b5b" }}>고객은 '우리 브랜드'와 '경쟁사' 데이터를 비교하고 싶은데, </span>
+          <strong style={{ color: "var(--color-text-primary)" }}>탭을 전환하는 순간 앞의 숫자를 잊어버리는 페인 포인트</strong>
+          <span style={{ fontWeight: 600, color: "#5b5b5b" }}>가 있었습니다.</span>
+        </>
+      ),
       cause:
         "단일 뷰 구조가 '비교 분석'이라는 사용자의 핵심 과업을 방해하고 있었습니다.",
       solution:
@@ -149,8 +165,13 @@ const Projects = () => {
         solution: "project4_solution.png",
       },
       tags: ["Design System", "Design Ops", "Dev Collaboration"],
-      problem:
-        "서버 구동 30초, 빌드 5분 등 디자인 수정 시마다 개발팀 전체가 멈추는 비효율이 있었습니다.",
+      problem: (
+        <>
+          <span style={{ fontWeight: 600, color: "#5b5b5b" }}>서버 구동 30초, 빌드 5분 등 </span>
+          <strong style={{ color: "var(--color-text-primary)" }}>디자인 수정 시마다 개발팀 전체가 멈추는 비효율</strong>
+          <span style={{ fontWeight: 600, color: "#5b5b5b" }}>이 있었습니다.</span>
+        </>
+      ),
       cause:
         "디자이너의 하드코딩과 중복 코드가 1.3만 라인에 달하는 '디자인 부채'가 원인이었습니다.",
       solution:
@@ -186,8 +207,12 @@ const Projects = () => {
         solution: "sideproject_solution.png",
       },
       tags: ["Community Building", "Gamification", "Branding"],
-      problem:
-        "신규 회원이 '재미없다'며 1회만 나오고 이탈하는 문제가 심각했습니다.",
+      problem: (
+        <>
+          <strong style={{ color: "var(--color-text-primary)" }}>신규 회원이 '재미없다'며 1회만 나오고 이탈하는 문제</strong>
+          <span style={{ fontWeight: 600, color: "#5b5b5b" }}>가 심각했습니다.</span>
+        </>
+      ),
       cause:
         "기존 멤버들끼리만 친한 분위기와 신규 유저를 위한 성취감/목표 부재가 원인이었습니다.",
       solution:
@@ -462,54 +487,46 @@ const Projects = () => {
                 1. 문제 발견
               </h3>
               <div className="grid-12">
-                <div style={{ gridColumn: "1 / span 6" }}>
-                  <div style={{ marginBottom: "40px" }}>
-                    <span
-                      style={{
-                        display: "block",
-                        fontSize: "0.875rem",
-                        fontWeight: "bold",
-                        color: "var(--color-text-tertiary)",
-                        marginBottom: "8px",
-                      }}
-                    >
-                      PROBLEM
-                    </span>
-                    <h2 style={{ fontSize: "2rem", lineHeight: "1.3" }}>
+                <div style={{ gridColumn: "1 / span 4", height: "100%" }}>
+                  <div className="problem-text-column">                    
+                    <h2 className="problem-title">
                       {project.problem}
                     </h2>
+                    {project.id === "project-1" && (
+                      <div className="problem-cards">
+                          <div className="problem-card">
+                              <span className="problem-card-title">매월 검색 데이터 다운로드를 진행하는 고객사</span>
+                              <p className="problem-card-text">핵심 고객사가 매월 검색 데이터 추출 업무를 수행하고, 이후 엑셀에서 수기로 시계열 데이터를 비교 분석하는 작업을 진행하고 있었습니다.</p>
+                          </div>
+                          <div className="problem-card">
+                              <span className="problem-card-title">해당 월 데이터를 다운받지 못하면 리포트에 공백이 발생</span>
+                              <p className="problem-card-text">서비스에서는 월 변경이 이루어질 시 이전 월의 데이터 확인이 불가능합니다.</p>
+                          </div>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div
                   style={{
-                    gridColumn: "8 / span 5",
-                    border: "2px dashed var(--color-border)",
+                    gridColumn: "5/ span 8",
+                    /* border: "2px dashed var(--color-border)", */
                     borderRadius: "16px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
+                    height: "100%", 
                   }}
                 >
-                  <span
+                  <img
+                    src={project.imageFiles.problem}
+                    alt="Problem Context"
                     style={{
-                      color: "var(--color-text-tertiary)",
-                      marginBottom: "16px",
+                      width: "100%",
+                      height: "auto",
+                      objectFit: "fill",
                     }}
-                  >
-                    Problem Context Image
-                  </span>
-                  <code
-                    style={{
-                      background: "#00000010",
-                      padding: "8px 16px",
-                      borderRadius: "8px",
-                      fontSize: "0.9rem",
-                      color: "var(--color-primary)",
-                    }}
-                  >
-                    src/assets/img/{project.imageFiles.problem}
-                  </code>
+                  />
                 </div>
               </div>
             </div>
