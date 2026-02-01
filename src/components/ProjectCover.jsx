@@ -65,35 +65,32 @@ function BackgroundGradient() {
   );
 }
 
-function TitleField({ title, subtitle }) {
+function TitleField({ headline, summary, keyMetrics }) {
   return (
-    <div className="title-section">
-      <div className="title-field">
-        <div className="title-text">
-          <p className="mb-0">{title}</p>
-          {subtitle && <p style={{ fontSize: '32px', marginTop: '16px', fontWeight: '500' }}>{subtitle}</p>}
-        </div>
+    <div className="title-section-new">
+      <div className="title-field-new">
+        <h1 className="project-headline">{headline}</h1>
+        <p className="project-summary">{summary}</p>
+        
+        {/* Key Metrics */}
+        {keyMetrics && keyMetrics.length > 0 && (
+          <div className="key-metrics-container">
+             {keyMetrics.map((metric, idx) => (
+                <div key={idx} className="key-metric-item">
+                    {metric}
+                </div>
+             ))}
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-function WorkClassification({ tags }) {
-  return (
-    <div className="info-column">
-      <div className="info-label">작업 분류</div>
-      <div className="info-value">
-        {tags && tags.length > 0 ? tags.join(" / ") : "신규 기능 기획 및 디자인"}
-      </div>
-    </div>
-  );
-}
-
-function MyRole({ role }) {
+function MyRole({ role, contribution }) {
   // Parsing "기획(60%), 디자인(100%), 퍼블리싱(100%)" into structured display
-  // If parsing fails, display raw string.
   
-  const roleParts = role.split(',').map(part => part.trim());
+  const roleParts = role ? role.split(',').map(part => part.trim()) : [];
   const parsedRoles = roleParts.map(part => {
     const match = part.match(/^(.*?)\((.*?)\)$/);
     if (match) {
@@ -104,14 +101,25 @@ function MyRole({ role }) {
 
   return (
     <div className="info-column">
-      <div className="info-label">나의 역할</div>
-      <div className="role-list">
-        {parsedRoles.map((item, idx) => (
-          <div key={idx} className="role-row">
-            <div className="font-['Pretendard'] text-[16px]">{item.activity}</div>
-            <div className="font-['Pretendard'] text-[16px]">({item.percent})</div>
-          </div>
-        ))}
+      <div className="info-label">Role & Contribution</div>
+      
+      <div className="role-contribution-group">
+        {/* Roles */}
+        <div className="role-list">
+            {parsedRoles.map((item, idx) => (
+            <div key={idx} className="role-row">
+                <span style={{ fontWeight: 600 }}>{item.activity}</span>
+                <span style={{ opacity: 0.6 }}>({item.percent})</span>
+            </div>
+            ))}
+        </div>
+
+        {/* Contribution Detail */}
+        {contribution && (
+            <div className="info-contribution">
+                {contribution}
+            </div>
+        )}
       </div>
     </div>
   );
@@ -120,51 +128,62 @@ function MyRole({ role }) {
 function ProjectPeriod({ period }) {
   return (
     <div className="info-column">
-      <div className="info-label">프로젝트 기간</div>
+      <div className="info-label">Period</div>
       <div className="period-row">
-        <div className="info-value">총</div>
         <div className="info-value">{period}</div>
       </div>
     </div>
   );
 }
 
-function TeamComposition({ team }) {
+function WorkClassification({ tags }) {
   return (
     <div className="info-column">
-      <div className="info-label">팀 구성</div>
-      <div className="info-value">{team}</div>
+      <div className="info-label">Category</div>
+      <div className="info-value">
+        {tags && tags.length > 0 ? tags.join(" / ") : "UX/UI Design"}
+      </div>
     </div>
   );
 }
 
-function ProjectInfo({ project }) {
+function ProjectInfo({ overview }) {
   return (
-    <div className="project-info">
-      <WorkClassification tags={project.tags} />
-      <MyRole role={project.role} />
-      <ProjectPeriod period={project.period} />
-      <TeamComposition team={project.team} />
+    <div className="project-info-sidebar">
+      <WorkClassification tags={overview.tags} />
+      <MyRole role={overview.role} contribution={overview.contribution} />
+      <ProjectPeriod period={overview.period} />
+      <div className="info-column">
+          <div className="info-label">Team</div>
+          <div className="info-value">{overview.team}</div>
+      </div>
     </div>
   );
 }
-
-function HeaderArea({ project }) {
-  return (
-    <div className="content-area">
-      <ProjectInfo project={project} />
-      <TitleField title={project.title} />
-    </div>
-  );
-}
-
 
 export default function ProjectCover({ project }) {
+  const overview = project.overview || project; // Fallback for backward compatibility
+
   return (
     <div className="project-cover-container">
       <div className="project-cover-wrapper">
         <BackgroundGradient />
-        <HeaderArea project={project} />
+        
+        <div className="container cover-layout">
+            {/* Left: Title & Main Info */}
+            <div className="main-content-new">
+                 <TitleField 
+                    headline={overview.headline || project.title} 
+                    summary={overview.summary || project.subtitle} 
+                    keyMetrics={overview.keyMetrics}
+                 />
+            </div>
+
+            {/* Right: Sidebar Info */}
+            <div className="sidebar-content-new">
+                 <ProjectInfo overview={overview} />
+            </div>
+        </div>
 
       </div>
     </div>

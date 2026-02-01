@@ -1,136 +1,135 @@
 .project-cover-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f3f4f6; /* bg-gray-100 */
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
 }
 
 .project-cover-wrapper {
-  position: relative;
-  width: 1920px;
-  height: 1080px;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Changed from center to flex-start for left align */
-  padding: 80px 80px 0;
-  gap: 100px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
-/* Background Gradient SVG */
 .background-gradient {
-  position: absolute;
-  top: 0;
-  left: 5px;
-  width: 1910px;
-  height: 1080px;
-  z-index: 1;
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .background-gradient svg {
-  display: block;
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Content Layout */
-.content-area {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Left align content */
-  gap: 80px; /* Increased gap between info and title */
+.cover-layout {
+    gap: 80px;
 }
 
-.title-section, .info-section {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start; /* Left align */
-  align-items: center;
+.main-content-new {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* Title Field */
-.title-field {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start; /* Left align */
-  text-align: left; /* Left align text */
+.sidebar-content-new {
+    flex: 1;
+    height: auto;
 }
 
-.title-text p {
-  font-family: 'Pretendard', sans-serif;
-  font-weight: 700;
-  font-size: 60px; /* Explicitly set on p to override global p styles */
-  line-height: 1.2; /* Tighter line height for large text */
-  letter-spacing: -0.6px;
-  color: #222;
-  white-space: pre-wrap;
-  margin: 0; /* Remove default margins */
+.title-section-new {
+    margin-bottom: 0;
 }
 
-/* Project Info Grid */
-.project-info {
-  display: flex;
-  justify-content: flex-start; /* Left align */
-  align-items: flex-start;
-  gap: 100px; /* Spacing between columns */
-  width: 100%;
-  font-family: 'Pretendard', sans-serif;
-  color: #222;
+.project-headline {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin-bottom: 24px;
+    white-space: pre-line;
+}
+
+.project-summary {
+    font-size: 1.25rem;
+    color: #5b5b5b;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+.key-metrics-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.key-metric-item {
+    background: var(--color-primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.3);
+}
+
+.project-info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .info-column {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
+    position: relative;
+    
 }
 
 .info-label {
-  font-size: 14px; /* Smaller label size */
-  line-height: 1.5;
-  margin-bottom: 8px;
-  font-weight: 700;
-  opacity: 0.6; /* Slightly lighter for label */
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
 }
 
 .info-value {
-  font-size: 16px;
-  line-height: 1.6;
-  white-space: pre-wrap;
-  font-weight: 500;
-  opacity: 0.9;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
 }
 
-/* Info Column Specific Widths - Fit to content */
-.info-column {
-  flex: 0 0 auto;
-  width: auto;
-}
-
-
-.role-row {
-  display: flex;
-  gap: 4px;
+.info-contribution {    
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+    font-weight: 500;
 }
 
 .role-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.period-row {
-  display: flex;
-  gap: 6px;
+.role-contribution-group {
+    display: flex;
+    flex-direction: column;
+    
 }
 
-
-
-
+.role-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+}

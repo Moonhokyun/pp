@@ -1,12 +1,12 @@
 import React from 'react';
 import './ProjectSolution.css'; // Shared CSS
 
-const ProjectSolution = ({ title, subtitle, asis, tobe }) => {
+const ProjectSolution = ({ title, subtitle, asis, tobe, sectionTitle }) => {
   return (
     <div className="container solution-container">
       {/* Header Area */}
       <div className="solution-header">
-        <h3 className="section-label">3. 솔루션 (Solution)</h3>
+        <h3 className="section-label">{sectionTitle || "3. 솔루션 (Solution)"}</h3>
         <div className="heading-group">
            <h2 style={{ fontSize: '48px', fontWeight: '800', margin: '0 0 24px 0', lineHeight: '1.2', color: '#222' }}>
              {title || "Solution Title"}
