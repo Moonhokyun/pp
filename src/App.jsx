@@ -5,11 +5,14 @@ import Hero from "./components/Hero";
 import KeyAchievements from "./components/KeyAchievements";
 import IndexPage from "./components/IndexPage";
 import Projects from "./components/Projects";
-import About from "./components/About";
+import AboutResume from "./components/AboutResume";
 import Footer from "./components/Footer";
+import { useText } from "./hooks/useText";
 import "./App.css";
 
 function App() {
+  const t = useText;
+
   const handleDownloadPDF = async () => {
     const originalMain = document.querySelector('main');
     if (!originalMain) return;
@@ -79,13 +82,13 @@ function App() {
         <div className="header-content">
           <div className="logo">Moon Ho-kyun</div>
           <nav>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
+            <a href="#projects">{t('NAV_PROJECTS')}</a>
+            <a href="#about">{t('NAV_ABOUT')}</a>
             <button onClick={handleDownloadPDF} className="cta-button" style={{ backgroundColor: 'var(--color-text-primary)', marginLeft: '12px', cursor: 'pointer', border: 'none' }}>
-              PDF Download
+              {t('NAV_PDF_DOWNLOAD')}
             </button>
             <a href="mailto:soulty321@gmail.com" className="cta-button" style={{ marginLeft: '12px' }}>
-              Contact
+              {t('NAV_CONTACT')}
             </a>
           </nav>
         </div>
@@ -96,7 +99,7 @@ function App() {
         <KeyAchievements />
         <IndexPage />
         <Projects />
-        <About />
+        <AboutResume />
         <Footer />
       </main>
     </div>

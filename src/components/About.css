@@ -1,62 +1,225 @@
 .about-section {
-  background-color: var(--color-bg);
+    background-color: var(--color-bg);
+    padding: 120px 0;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 80px;
+.about-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
-.about-intro {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: var(--color-text-primary);
+/* Header / Profile */
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 80px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-border);
 }
 
-.skill-group {
-  margin-bottom: 48px;
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.skill-group h3 {
-  font-size: 1.125rem;
-  margin-bottom: 24px;
-  color: var(--color-text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.profile-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin: 0;
 }
 
-.skill-list, .attitude-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.profile-role {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0;
 }
 
-.skill-list li {
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--color-border);
+.profile-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-top: 16px;
 }
 
-.skill-list li strong {
-  display: block;
-  font-size: 1.125rem;
-  margin-bottom: 4px;
+.profile-summary {
+    max-width: 600px;
+    text-align: right;
 }
 
-.skill-list li span {
-  color: var(--color-text-secondary);
+.summary-catchphrase {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 16px;
+    line-height: 1.5;
 }
 
-.attitude-list li strong {
-  font-size: 1.25rem;
-  color: var(--color-primary);
-  margin-bottom: 8px;
-  display: block;
+.summary-desc {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    white-space: pre-line;
 }
 
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+/* Content Grid */
+.about-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+}
+
+.resume-section-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-primary);
+    display: inline-block;
+}
+
+/* Experience List */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.experience-item {
+    padding-left: 20px;
+    border-left: 1px solid var(--color-border);
+}
+
+.exp-company {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+}
+
+.exp-role {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+}
+
+.exp-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.project-desc-list {
+    list-style: disc;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-desc-list li {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* Right Column Groups */
+.resume-group {
+    margin-bottom: 60px;
+}
+
+.activity-item, .edu-item, .strength-item {
+    margin-bottom: 32px;
+}
+
+.act-title, .edu-school, .str-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+}
+
+.act-role, .edu-major {
+    font-size: 0.95rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: 12px;
+}
+
+.act-desc-list, .edu-desc-list, .str-desc-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.act-desc-list li, .edu-desc-list li, .str-desc-list li {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+/* Skills Table */
+.skills-table {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skill-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skill-cat {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+}
+
+.skill-list-text {
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-content-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .about-header {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .profile-summary {
+        text-align: left;
+        max-width: 100%;
+    }
 }

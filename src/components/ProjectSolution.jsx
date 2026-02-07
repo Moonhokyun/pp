@@ -1,60 +1,42 @@
 import React from 'react';
 import './ProjectSolution.css'; // Shared CSS
+import { useText } from "../hooks/useText";
+import { parseForBold } from "../utils/textParser";
 
-const ProjectSolution = ({ title, subtitle, asis, tobe, sectionTitle }) => {
+const ProjectSolution = ({ title, subtitle, asis, tobe, sectionTitle, image }) => {
+  const t = useText;
   return (
     <div className="container solution-container">
       {/* Header Area */}
-      <div className="solution-header">
-        <h3 className="section-label">{sectionTitle || "3. 솔루션 (Solution)"}</h3>
-        <div className="heading-group">
-           <h2 style={{ fontSize: '48px', fontWeight: '800', margin: '0 0 24px 0', lineHeight: '1.2', color: '#222' }}>
-             {title || "Solution Title"}
-           </h2>
-           <p className="solution-c-text" style={{ fontSize: '20px', color: '#666', lineHeight: '1.6', margin: '0' }}>
-             {subtitle || "Solution Subtitle"}
-           </p>
-        </div>
+      <div className="solution-header section-header">
+        <h3 className="section-label">{sectionTitle || parseForBold(t("SECTION_LABEL_SOLUTION_B"))}</h3>
+        
+        <h2 className="section-title center">
+            {parseForBold(t(title)) || "Solution Title"}
+        </h2>
+        
+        {!Array.isArray(subtitle) && (
+            <p className="solution-c-text">
+                {parseForBold(t(subtitle)) || "Solution Subtitle"}
+            </p>
+        )}
       </div>
 
-      {/* Monitor Frame (Dual View) */}
-      <div className="monitor-frame">
-          {/* AS-IS (Left) */}
-          <div className="vis-half vis-asis">
-              <div className="vis-label">AS-IS</div>
-              <div className="vis-content">
-                  <div className="mock-img-placeholder grayscale">
-                     <span>{asis?.image ? "AS-IS Image" : "AS-IS Image"}</span>
-                     {asis?.image && <code style={{position:'absolute', bottom: '10px', fontSize: '0.8rem'}}>{asis.image}</code>}
-                  </div>
-                  {/* Annotation */}
-                  <div className="annotation anno-asis">
-                     <span className="anno-tag">Problem</span>
-                     <p>{asis?.annotationDesc || "Problem Description"}</p>
-                  </div>
-              </div>
+      {/* Solution B Image Area */}
+      <div className="solution-b-grid">
+         <div className="solution-b-image-column">
+             {image && (
+                 <img src={image} alt="Solution B" className="solution-b-image" />
+              )}
           </div>
-
-          {/* Divider */}
-          <div className="vis-divider">
-             <span>VS</span>
-          </div>
-
-          {/* TO-BE (Right) */}
-          <div className="vis-half vis-tobe">
-              <div className="vis-label">TO-BE</div>
-              <div className="vis-content">
-                  <div className="mock-img-placeholder highlight">
-                     <span>{tobe?.image ? "TO-BE Image" : "TO-BE Image"}</span>
-                     {tobe?.image && <code style={{position:'absolute', bottom: '10px', fontSize: '0.8rem'}}>{tobe.image}</code>}
-                  </div>
-                  {/* Annotation */}
-                  <div className="annotation anno-tobe">
-                     <span className="anno-tag">Solved</span>
-                     <p>{tobe?.annotationDesc || "Solution Description"}</p>
-                  </div>
-              </div>
-          </div>
+         
+         {/* Floating Descriptions (Solution B) */}
+         {Array.isArray(subtitle) && subtitle.map((item, index) => (
+             <div key={index} className={`sol-b-float-container sol-b-float-item-${index + 1}`}>
+                 {item.title && <h4 className="sol-b-block-title">{parseForBold(t(item.title))}</h4>}
+                 {item.desc && <p className="sol-b-block-desc">{parseForBold(t(item.desc))}</p>}
+             </div>
+         ))}
       </div>
     </div>
   );
