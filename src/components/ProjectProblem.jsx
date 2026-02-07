@@ -1,26 +1,34 @@
 import React from 'react';
 import './ProjectProblem.css';
+import { useText } from "../hooks/useText";
+import { parseForBold } from "../utils/textParser";
 
 const ProjectProblem = ({ problem }) => {
+  const t = useText;
   return (
     <div className="container">
-      <h3 className="section-label problem-label">
-        1. 문제 정의 (Discovery)
-      </h3>
-      <div className="problem-grid">
+      <div className="section-header">
+        <h3 className="section-label">
+          {parseForBold(t("SECTION_LABEL_PROBLEM"))}
+        </h3>
+        {problem?.title && (
+          <h2 className="section-title left">{parseForBold(t(problem.title))}</h2>
+        )}
+      </div>
+      <div className="content-grid">
         <div className="problem-text-column">
            <div className="problem-content-wrapper">
                <div className="problem-block">
-                   <h4 className="problem-block-title">배경 (Background)</h4>
-                   <p className="problem-block-desc">{problem?.background}</p>
+                   <h4 className="problem-block-title">{parseForBold(t("PROBLEM_BLOCK_BACKGROUND"))}</h4>
+                   <p className="problem-block-desc">{parseForBold(t(problem?.background))}</p>
                </div>
                <div className="problem-block">
-                   <h4 className="problem-block-title">정량적 근거 (Data)</h4>
-                   <p className="problem-block-desc">{problem?.quantitative}</p>
+                   <h4 className="problem-block-title">{parseForBold(t("PROBLEM_BLOCK_DATA"))}</h4>
+                   <p className="problem-block-desc">{parseForBold(t(problem?.quantitative))}</p>
                </div>
                <div className="problem-block">
-                   <h4 className="problem-block-title">정성적 근거 (VoC)</h4>
-                   <p className="problem-block-desc">{problem?.qualitative}</p>
+                   <h4 className="problem-block-title">{parseForBold(t("PROBLEM_BLOCK_VOC"))}</h4>
+                   <p className="problem-block-desc">{parseForBold(t(problem?.qualitative))}</p>
                </div>
            </div>
         </div>
@@ -35,3 +43,4 @@ const ProjectProblem = ({ problem }) => {
 };
 
 export default ProjectProblem;
+

@@ -14,7 +14,11 @@ import ProjectSolutionA from "./ProjectSolutionA";
 import ProjectSolution from "./ProjectSolution"; // Reused for Solution B
 import ProjectImpact from "./ProjectImpact";
 
+import { useText } from "../hooks/useText";
+
 const Projects = () => {
+  const t = useText;
+  
   return (
     <>
       {/* Listening Mind Context Slide */}
@@ -40,20 +44,18 @@ const Projects = () => {
                 <span>리스닝마인드 | 주요 프로젝트 소개</span>
               </div>
               <h2 className="context-title">
-                리스닝마인드는
-                <br />
-                고객의 검색 의도를 탐색
-                <br />
-                하는 서비스입니다
+                  {t('PROJECTS_CONTEXT_TITLE').split('\n').map((line, i) => (
+                      <span key={i} style={{ display: 'block' }}>{line}</span>
+                  ))}
               </h2>
 
-              <h3 className="context-subtitle">주요 해결 과제</h3>
+              <h3 className="context-subtitle">{t('PROJECTS_CONTEXT_SUBTITLE')}</h3>
               <p className="context-desc">
-                기존 데이터에서 발견되는 편향적인 특성을 보완하는 검색 데이터를
-                다년 간 수집하여,
-                <br />
-                해당 데이터를 기반으로 타겟 키워드, 검색 경로, 유저 그룹 분석
-                등을 제공합니다.
+                  {t('PROJECTS_CONTEXT_DESC').split('\n').map((line, i) => (
+                      <React.Fragment key={i}>
+                          {line}<br/>
+                      </React.Fragment>
+                  ))}
               </p>
             </div>
              {/* Right Column (Simplified) */}
@@ -102,6 +104,7 @@ const Projects = () => {
                     image: project.solutionB?.toBe?.image,
                     annotationDesc: project.solutionB?.toBe?.desc
                 }}
+                image={project.solutionB?.image}
              />
           </section>
 

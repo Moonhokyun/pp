@@ -1,98 +1,95 @@
-.strategy-content {
-    padding-bottom: 140px;
-}
 
-.impact-content {
-    flex: 1;
+
+.strategy-text-column {
+    grid-column: 1 / span 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
-.impact-outcome {
-    font-size: 4rem;
-    font-weight: 800;
-    color: var(--color-primary);
-    margin-bottom: 40px;
-    line-height: 1.2;
-    text-align: center;
-}
 
-.strategy-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.strategy-title {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 24px;    
-    line-height: 1.2;
-    color: var(--color-text-primary);
-}
 
 .strategy-desc {
     font-size: 1.25rem;
     color: var(--color-text-secondary);
     line-height: 1.6;
+    margin-bottom: 60px;
+    white-space: pre-line;
+    max-width: 800px;
 }
 
 .strategy-cards {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    flex-direction: column;
+    gap: 24px;
     width: 100%;
-    max-width: 1000px;
-    margin: auto;
 }
 
 .strategy-card {
-    flex: 1;
     background-color: var(--color-bg-alt);
-    padding: 40px;
-    border-radius: 24px;
+    padding: 32px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    height: 300px; /* Fixed height for alignment */
-    justify-content: center;
+    gap: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-.framework-card {
-    border-left: 8px solid var(--color-primary);
+.cause-card {
+    border-left: 6px solid var(--color-primary);
 }
 
 .hypothesis-card {
-    border-left: 8px solid var(--color-accent);
-}
-
-.card-label {
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #999;
-    letter-spacing: 1px;
+    border-left: 6px solid var(--color-accent);
 }
 
 .card-heading {
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--color-text-primary);
-    margin: 0;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
 }
 
 .card-text {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--color-text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
+    white-space: pre-line;
 }
 
 .strategy-arrow {
-    font-size: 3rem;
+    display: flex;
+    justify-content: center;
     color: #ddd;
-    font-weight: 300;
+    font-size: 2rem;
+    transform: rotate(90deg); /* Always vertical in this layout */
+    margin: -10px 0;
+}
+
+.strategy-image-column {
+    grid-column: 6 / span 7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.strategy-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 960px) {
+    .strategy-text-column, .strategy-image-column {
+        grid-column: auto;
+    }
+
+    .strategy-title {
+        font-size: 2rem;
+    }
 }

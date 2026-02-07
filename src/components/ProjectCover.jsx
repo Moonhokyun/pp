@@ -65,19 +65,26 @@ function BackgroundGradient() {
   );
 }
 
+import { useText } from "../hooks/useText";
+
+// ... existing imports ...
+
+// ... (svgPaths, BackgroundGradient omitted for brevity, assuming standard imports or unchanged) ...
+
 function TitleField({ headline, summary, keyMetrics }) {
+  const t = useText;
   return (
     <div className="title-section-new">
       <div className="title-field-new">
-        <h1 className="project-headline">{headline}</h1>
-        <p className="project-summary">{summary}</p>
+        <h1 className="project-headline">{t(headline)}</h1>
+        <p className="project-summary">{t(summary)}</p>
         
         {/* Key Metrics */}
         {keyMetrics && keyMetrics.length > 0 && (
           <div className="key-metrics-container">
              {keyMetrics.map((metric, idx) => (
                 <div key={idx} className="key-metric-item">
-                    {metric}
+                    {t(metric)}
                 </div>
              ))}
           </div>
@@ -88,9 +95,10 @@ function TitleField({ headline, summary, keyMetrics }) {
 }
 
 function MyRole({ role, contribution }) {
+  const t = useText;
   // Parsing "기획(60%), 디자인(100%), 퍼블리싱(100%)" into structured display
   
-  const roleParts = role ? role.split(',').map(part => part.trim()) : [];
+  const roleParts = role ? t(role).split(',').map(part => part.trim()) : [];
   const parsedRoles = roleParts.map(part => {
     const match = part.match(/^(.*?)\((.*?)\)$/);
     if (match) {
@@ -117,7 +125,7 @@ function MyRole({ role, contribution }) {
         {/* Contribution Detail */}
         {contribution && (
             <div className="info-contribution">
-                {contribution}
+                {t(contribution)}
             </div>
         )}
       </div>
@@ -126,28 +134,31 @@ function MyRole({ role, contribution }) {
 }
 
 function ProjectPeriod({ period }) {
+  const t = useText;
   return (
     <div className="info-column">
       <div className="info-label">Period</div>
       <div className="period-row">
-        <div className="info-value">{period}</div>
+        <div className="info-value">{t(period)}</div>
       </div>
     </div>
   );
 }
 
 function WorkClassification({ tags }) {
+  const t = useText;
   return (
     <div className="info-column">
       <div className="info-label">Category</div>
       <div className="info-value">
-        {tags && tags.length > 0 ? tags.join(" / ") : "UX/UI Design"}
+        {tags && tags.length > 0 ? tags.map(tag => t(tag)).join(" / ") : "UX/UI Design"}
       </div>
     </div>
   );
 }
 
 function ProjectInfo({ overview }) {
+  const t = useText;
   return (
     <div className="project-info-sidebar">
       <WorkClassification tags={overview.tags} />
@@ -155,7 +166,7 @@ function ProjectInfo({ overview }) {
       <ProjectPeriod period={overview.period} />
       <div className="info-column">
           <div className="info-label">Team</div>
-          <div className="info-value">{overview.team}</div>
+          <div className="info-value">{t(overview.team)}</div>
       </div>
     </div>
   );
