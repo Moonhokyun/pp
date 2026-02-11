@@ -1,12 +1,9 @@
+/* Existing Styles */
 .problem-label {
     font-size: 1.25rem;
     color: var(--color-accent);
     margin-bottom: 24px;
 }
-
-
-
-
 
 .problem-text-column {
     grid-column: 1 / span 5;
@@ -32,21 +29,219 @@
     white-space: pre-line;
 }
 
-.problem-image-column {
+.problem-chart-column {
     grid-column: 6 / span 7;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 990px;
+    height: 432px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .problem-image {
     width: 100%;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 960px) {
-    .problem-text-column, .problem-image-column {
+
+    .problem-text-column,
+    .problem-chart-column {
         grid-column: auto;
     }
+}
+
+/* New Chart Styles extracted from Tailwind */
+.problem-chart-container {
+    position: relative;
+    height: 100%;
+    width: inherit;
+    margin: 0;
+    border-left: 1px solid #0f172a;
+    /* border-slate-900 */
+    border-bottom: 1px solid #0f172a;
+    /* border-slate-900 */
+}
+
+@media (prefers-color-scheme: dark) {
+    .problem-chart-container {
+        border-color: #f1f5f9;
+        /* dark:border-slate-100 */
+    }
+}
+
+.axis-labels {
+    position: absolute;
+    left: -3.5rem;
+    /* -left-14 */
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 900;
+    /* font-black */
+    color: #94a3b8;
+    /* text-slate-400 */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.axis-labels span:last-child {
+    color: #0f172a;
+    /* text-slate-900 */
+}
+
+@media (prefers-color-scheme: dark) {
+    .axis-labels span:last-child {
+        color: #ffffff;
+    }
+}
+
+.chart-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.chart-line {
+    color: #f1f5f9;
+    /* text-slate-100 */
+}
+
+@media (prefers-color-scheme: dark) {
+    .chart-line {
+        color: #1e293b;
+        /* dark:text-slate-800 */
+    }
+}
+
+.overlay-markers {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    pointer-events: none;
+}
+
+.marker-square {
+    position: absolute;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    width: 0.75rem;
+    /* w-3 */
+    height: 0.75rem;
+    /* h-3 */
+    background-color: white;
+    border: 3px solid #137fec;
+    /* border-primary */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    /* shadow-sm */
+}
+
+/* Specific positioning for markers using helper classes */
+.marker-pos-1 {
+    left: 0;
+}
+
+.marker-pos-2 {
+    left: 25%;
+}
+
+.marker-pos-3 {
+    left: 100%;
+    top: 65%;
+}
+
+.marker-alert-container {
+    position: absolute;
+    left: 37%;
+    top: 40%;
+    transform: translateX(-50%);
+}
+
+.marker-alert-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marker-alert-text {
+    background-color: #e63946;
+    /* bg-alert-red */
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    /* font-black */
+    padding: 0.25rem 0.75rem;
+    /* px-3 py-1 */
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    /* mb-2 */
+}
+
+.marker-alert-line {
+    height: 4rem;
+    /* h-16 */
+    width: 2px;
+    /* w-0.5 */
+    background-color: rgba(230, 57, 70, 0.3);
+    /* bg-alert-red/30 */
+    border-right: 1px dashed #e63946;
+    /* border-alert-red */
+}
+
+.marker-circle {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    /* w-4 */
+    height: 1rem;
+    /* h-4 */
+    background-color: #e63946;
+    /* bg-alert-red */
+    border: 4px solid white;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* shadow-xl */
+    /* ring-4 ring-alert-red/10 is complex to replicate exactly with standard CSS, using box-shadow approximation or outline */
+    outline: 4px solid rgba(230, 57, 70, 0.1);
+}
+
+.marker-label {
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translateX(-50%);
+    margin-top: 1rem;
+    /* mt-4 */
+    text-align: center;
+}
+
+.marker-label-value {
+    display: block;
+    color: #e63946;
+    /* text-alert-red */
+    font-weight: 900;
+    /* font-black */
+    font-size: 1.25rem;
+    /* text-xl */
+    letter-spacing: -0.05em;
+    /* tracking-tighter */
+}
+
+.marker-label-desc {
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+    /* font-bold */
+    text-transform: uppercase;
+    color: #94a3b8;
+    /* text-slate-400 */
 }
