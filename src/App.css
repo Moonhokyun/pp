@@ -2,8 +2,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  /* Prevent body scroll */
+  overflow: hidden; /* Prevent body scroll */
 }
 
 .fixed-header {
@@ -70,8 +69,7 @@ main {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  margin-top: 0;
-  /* Override */
+  margin-top: 0; /* Override */
   counter-reset: slide-counter;
 }
 
@@ -86,8 +84,7 @@ main {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding-top: var(--header-height);
-  /* Offset for header */
+  padding-top: var(--header-height); /* Offset for header */
   counter-increment: slide-counter;
 }
 
@@ -98,7 +95,7 @@ main {
   right: 32px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-tertiary);  
   backdrop-filter: blur(4px);
   padding: 4px 10px;
   border-radius: 8px;
@@ -140,3 +137,5 @@ main {
 .pdf-mode .fixed-header {
   display: none !important;
 }
+
+
