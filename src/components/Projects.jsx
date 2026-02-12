@@ -41,7 +41,7 @@ const Projects = () => {
                   alt="ListeningMind Logo"
                   style={{ width: "32px" }}
                 />
-                <span>리스닝마인드 | 주요 프로젝트 소개</span>
+                <span>{t('PROJECTS_INTRO_TITLE')}</span>
               </div>
               <h2 className="context-title">
                   {t('PROJECTS_CONTEXT_TITLE').split('\n').map((line, i) => (
@@ -93,7 +93,7 @@ const Projects = () => {
           {/* Page 5: Solution B (Detail & Deep Dive) */}
           <section className="slide project-solution-b-slide" style={{ padding: 0 }}>
              <ProjectSolution 
-                sectionTitle="4. 디테일 솔루션 (Detail Solution)"
+                sectionTitle={t('SECTION_LABEL_SOLUTION_B')}
                 title={project.solutionB?.title} 
                 subtitle={project.solutionB?.description}
                 asis={{
