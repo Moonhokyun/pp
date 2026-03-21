@@ -91,22 +91,24 @@ const Projects = () => {
           </section>
 
           {/* Page 5: Solution B (Detail & Deep Dive) */}
-          <section className="slide project-solution-b-slide" style={{ padding: 0 }}>
-             <ProjectSolution 
-                sectionTitle={t('SECTION_LABEL_SOLUTION_B')}
-                title={project.solutionB?.title} 
-                subtitle={project.solutionB?.description}
-                asis={{
-                    image: project.solutionB?.asIs?.image,
-                    annotationDesc: project.solutionB?.asIs?.desc
-                }}
-                tobe={{
-                    image: project.solutionB?.toBe?.image,
-                    annotationDesc: project.solutionB?.toBe?.desc
-                }}
-                image={project.solutionB?.image}
-             />
-          </section>
+          {project.solutionB && (
+            <section className="slide project-solution-b-slide" style={{ padding: 0 }}>
+              <ProjectSolution 
+                  sectionTitle={t('SECTION_LABEL_SOLUTION_B')}
+                  title={project.solutionB.title} 
+                  subtitle={project.solutionB.description}
+                  asis={{
+                      image: project.solutionB.asIs?.image,
+                      annotationDesc: project.solutionB.asIs?.desc
+                  }}
+                  tobe={{
+                      image: project.solutionB.toBe?.image,
+                      annotationDesc: project.solutionB.toBe?.desc
+                  }}
+                  image={project.solutionB.image}
+              />
+            </section>
+          )}
 
           {/* Page 6: Impact & Lesson */}
           <section className="slide project-impact-slide">

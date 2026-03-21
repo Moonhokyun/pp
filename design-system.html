@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1760">
+    <title>Design System — Ascent Korea Hubble Intent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-light: #FF5B60;
+            --primary-main: #FF0209;
+            --primary-dark: #C81414;
+            --primary-darker: #961E1E;
+            --secondary-lighter: #E2E0F8;
+            --secondary-light: #B6B1EE;
+            --secondary-main: #786EBE;
+            --secondary-dark: #5E2CC9;
+            --grey-100: #FBFAFB;
+            --grey-200: #EAE8EE;
+            --grey-300: #DAD7E0;
+            --grey-400: #C6C2CE;
+            --grey-500: #9691A2;
+            --grey-600: #7F7A8D;
+            --grey-700: #5D596A;
+            --grey-800: #3D3A46;
+            --grey-900: #232128;
+            --info-light: #B6B1EE;
+            --info-main: #877FBB;
+            --success-light: #77ED8B;
+            --success-main: #22C55E;
+            --warning-light: #FFD666;
+            --warning-main: #FFAB00;
+            --error-light: #EF677F;
+            --error-main: #E05265;
+            --blue-light: #568FFF;
+            --blue-main: #4F64E1;
+            --purple-light: #9D82F7;
+            --purple-main: #7C5EEC;
+            --intent-i: #FF8575;
+            --intent-n: #FFE526;
+            --intent-c: #46B2F2;
+            --intent-t: #8BC435;
+            --font-sans: 'Noto Sans KR', 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            width: 1760px;
+            height: 755px;
+            overflow: hidden;
+            font-family: var(--font-sans);
+            background: #0B0A10;
+            color: #E8E6EF;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ======= MAIN LAYOUT: Left Hero + Right Content ======= */
+        .page {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            width: 1760px;
+            height: 755px;
+            overflow: hidden;
+        }
+
+        /* ======= LEFT PANEL — HERO ======= */
+        .left-panel {
+            background: linear-gradient(160deg, #13112A 0%, #0E0D18 100%);
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .left-panel::before {
+            content: '';
+            position: absolute;
+            top: -120px; right: -120px;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(255,2,9,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .left-panel::after {
+            content: '';
+            position: absolute;
+            bottom: -100px; left: -100px;
+            width: 280px; height: 280px;
+            background: radial-gradient(circle, rgba(124,94,236,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,2,9,0.08);
+            border: 1px solid rgba(255,2,9,0.2);
+            color: var(--primary-light);
+            padding: 4px 14px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+
+        .hero-badge .dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--primary-main);
+            animation: pulse 2s infinite;
+        }
+
+        .hero-top { position: relative; z-index: 1; }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.25;
+            letter-spacing: -0.03em;
+            margin-top: 20px;
+        }
+
+        .hero-title .hl {
+            background: linear-gradient(135deg, var(--primary-main) 0%, var(--purple-main) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 13px;
+            color: var(--grey-500);
+            margin-top: 12px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* Stats */
+        .hero-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 12px 16px;
+        }
+
+        .stat-num {
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            min-width: 80px;
+            background: linear-gradient(135deg, #fff 0%, var(--grey-400) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-num .u { font-size: 14px; }
+        .stat-label { font-size: 12px; color: var(--grey-500); }
+
+        /* Solution Steps */
+        .solution-section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sol-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--primary-main);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .step-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .step-card {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .step-num {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 7px;
+            border-radius: 6px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .step-card:nth-child(1) .step-num { background: rgba(124,94,236,0.15); color: var(--purple-light); }
+        .step-card:nth-child(2) .step-num { background: rgba(255,2,9,0.1); color: var(--primary-light); }
+        .step-card:nth-child(3) .step-num { background: rgba(34,197,94,0.1); color: var(--success-light); }
+
+        .step-title { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+        .step-desc { font-size: 11px; color: var(--grey-500); line-height: 1.5; }
+
+        .step-metric {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+            margin-top: 4px;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .step-card:nth-child(2) .step-metric { background: rgba(255,2,9,0.08); color: var(--primary-light); }
+        .step-card:nth-child(3) .step-metric { background: rgba(34,197,94,0.08); color: var(--success-light); }
+
+        /* ======= RIGHT PANEL — CONTENT ======= */
+        .right-panel {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            height: 755px;
+            overflow: hidden;
+        }
+
+        /* Top Row: Components + Code */
+        .top-area {
+            display: grid;
+            grid-template-columns: 1fr 440px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        /* Components Grid */
+        .comp-section {
+            padding: 24px 28px;
+            border-right: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .sec-head {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .sec-tag {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--primary-main);
+            text-transform: uppercase;
+        }
+
+        .sec-title {
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .comp-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+        }
+
+        .comp-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 8px;
+            padding: 7px 8px;
+            font-size: 10px;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: default;
+        }
+
+        .comp-item:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .comp-icon {
+            width: 18px; height: 18px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            flex-shrink: 0;
+        }
+
+        /* Code Compare */
+        .code-section {
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .code-block {
+            flex: 1;
+            background: rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .code-block:last-child { margin-bottom: 0; }
+
+        .code-hdr {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 12px;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .code-old .code-hdr { color: var(--error-light); background: rgba(224,82,101,0.04); }
+        .code-new .code-hdr { color: var(--success-light); background: rgba(34,197,94,0.04); }
+
+        .code-block pre {
+            padding: 8px 12px;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            line-height: 1.6;
+            color: var(--grey-500);
+            overflow: hidden;
+        }
+
+        .line-del { color: var(--error-light); opacity: 0.55; text-decoration: line-through; }
+        .line-add { color: var(--success-light); }
+
+        /* Bottom Row */
+        .bottom-area {
+            display: grid;
+            grid-template-columns: 460px 1fr 380px;
+            min-height: 0;
+        }
+
+        /* Color Panel */
+        .color-panel {
+            padding: 20px 28px;
+            border-right: 1px solid rgba(255,255,255,0.04);
+            overflow: hidden;
+        }
+
+        .pal-group { margin-bottom: 12px; }
+
+        .pal-label {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--grey-600);
+            margin-bottom: 5px;
+            font-family: var(--font-mono);
+        }
+
+        .pal-row {
+            display: flex;
+            gap: 2px;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 28px;
+        }
+
+        .pal-swatch {
+            flex: 1;
+            transition: flex 0.3s;
+            cursor: default;
+            position: relative;
+        }
+
+        .pal-swatch:hover { flex: 2.5; }
+
+        .pal-swatch span {
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-mono);
+            font-size: 8px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+
+        .pal-swatch:hover span { opacity: 1; }
+
+        /* Mini swatches */
+        .pal-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .pal-dot {
+            width: 22px; height: 22px;
+            border-radius: 6px;
+            cursor: default;
+            transition: transform 0.2s;
+        }
+
+        .pal-dot:hover { transform: scale(1.15); }
+
+        /* Chart rows */
+        .chart-row {
+            display: flex;
+            gap: 2px;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 14px;
+            margin-bottom: 4px;
+        }
+
+        .chart-row div { flex: 1; }
+
+        .chart-label-inline {
+            font-family: var(--font-mono);
+            font-size: 8px;
+            color: var(--grey-600);
+            margin-bottom: 2px;
+        }
+
+        /* Typography Panel */
+        .typo-panel {
+            padding: 20px 28px;
+            border-right: 1px solid rgba(255,255,255,0.04);
+            overflow: hidden;
+        }
+
+        .typo-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .typo-var {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            color: var(--grey-600);
+            font-weight: 600;
+            width: 48px;
+            flex-shrink: 0;
+        }
+
+        .typo-spec-inline {
+            font-family: var(--font-mono);
+            font-size: 8px;
+            color: var(--grey-700);
+            width: 55px;
+            flex-shrink: 0;
+        }
+
+        .ts-h1 { font-size: 26px; font-weight: 700; }
+        .ts-h2 { font-size: 22px; font-weight: 700; }
+        .ts-h3 { font-size: 18px; font-weight: 700; }
+        .ts-h4 { font-size: 16px; font-weight: 700; }
+        .ts-h5 { font-size: 14px; font-weight: 700; }
+        .ts-b1 { font-size: 13px; font-weight: 400; }
+        .ts-b2 { font-size: 11px; font-weight: 400; }
+        .ts-b3 { font-size: 10px; font-weight: 400; letter-spacing: -0.01em; }
+        .ts-cap { font-size: 8px; font-weight: 500; letter-spacing: -0.01em; }
+
+        /* Showcase Panel */
+        .showcase-panel {
+            padding: 20px 24px;
+            overflow: hidden;
+        }
+
+        .show-group { margin-bottom: 14px; }
+
+        .show-label {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--grey-600);
+            margin-bottom: 6px;
+            font-family: var(--font-mono);
+        }
+
+        .show-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 11px;
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-sans);
+            transition: all 0.2s;
+        }
+        .btn:hover { opacity: 0.85; transform: translateY(-1px); }
+        .btn-primary { background: var(--primary-main); color: white; }
+        .btn-secondary { background: var(--secondary-main); color: white; }
+        .btn-info { background: var(--info-main); color: white; }
+        .btn-success { background: var(--success-main); color: white; }
+        .btn-warning { background: var(--warning-main); color: var(--grey-800); }
+        .btn-error { background: var(--error-main); color: white; }
+        .btn-outline { background: transparent; border: 1px solid var(--grey-600); color: var(--grey-400); }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        .chip-success { background: rgba(34,197,94,0.12); color: var(--success-light); }
+        .chip-warning { background: rgba(255,171,0,0.12); color: var(--warning-light); }
+        .chip-error { background: rgba(224,82,101,0.12); color: var(--error-light); }
+        .chip-info { background: rgba(135,127,187,0.12); color: var(--info-light); }
+        .chip-i { background: rgba(255,133,117,0.12); color: var(--intent-i); }
+        .chip-n { background: rgba(255,229,38,0.12); color: var(--intent-n); }
+        .chip-c { background: rgba(70,178,242,0.12); color: var(--intent-c); }
+        .chip-t { background: rgba(139,196,53,0.12); color: var(--intent-t); }
+
+        .input-demo {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 7px 12px;
+            font-size: 11px;
+            font-family: var(--font-sans);
+            color: var(--grey-400);
+            width: 150px;
+            outline: none;
+        }
+        .input-demo:focus { border-color: var(--primary-main); }
+        .input-demo::placeholder { color: var(--grey-600); }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ====== LEFT PANEL ====== -->
+    <div class="left-panel">
+        <div class="hero-top">
+            <div class="hero-badge"><span class="dot"></span> Design System v1.0</div>
+            <h1 class="hero-title">
+                파편화된 코드를 통합하고<br>
+                <span class="hl">개발 효율성을 극대화</span>
+            </h1>
+            <p class="hero-sub">23개의 핵심 컴포넌트로 표준화된<br>디자인 시스템을 구축했습니다.</p>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-row">
+                <div class="stat-num">23<span class="u">개</span></div>
+                <div class="stat-label">표준 컴포넌트</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-num">13K<span class="u">줄</span></div>
+                <div class="stat-label">SCSS 100% 제거</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-num">30→1<span class="u">줄</span></div>
+                <div class="stat-label">코드 간소화</div>
+            </div>
+        </div>
+
+        <div class="solution-section">
+            <div class="sol-label">Solution A</div>
+            <div class="step-cards">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <div>
+                        <div class="step-title">AI 분석</div>
+                        <div class="step-desc"><strong>Cursor AI</strong>로 코드를 분석해 중복 패턴을 탐지</div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <div>
+                        <div class="step-title">컴포넌트화</div>
+                        <div class="step-desc">Button, TextField 등 재사용 가능한 부품으로 전환</div>
+                        <div class="step-metric">30줄 → 1줄</div>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <div>
+                        <div class="step-title">SCSS 제거</div>
+                        <div class="step-desc">레거시 SCSS 13,000줄을 100% 제거, MUI 전환</div>
+                        <div class="step-metric"><s>SCSS 13K</s> → 0 Lines ✓</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== RIGHT PANEL ====== -->
+    <div class="right-panel">
+
+        <!-- TOP: Components + Code Compare -->
+        <div class="top-area">
+
+            <!-- 23 Components -->
+            <div class="comp-section">
+                <div class="sec-head">
+                    <span class="sec-tag">COMPONENTS</span>
+                    <span class="sec-title">23개의 표준화된 컴포넌트</span>
+                </div>
+                <div class="comp-grid">
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(255,2,9,0.1);color:var(--primary-light);">▣</span>Accordion</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(79,100,225,0.1);color:var(--blue-light);">▬</span>AppBar</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(124,94,236,0.1);color:var(--purple-light);">◎</span>Autocomplete</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(255,2,9,0.1);color:var(--primary-light);">▢</span>Button</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(135,127,187,0.1);color:var(--info-light);">▭</span>Card</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(34,197,94,0.1);color:var(--success-light);">☑</span>Checkbox</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(255,171,0,0.1);color:var(--warning-light);">◉</span>Chip</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(150,145,162,0.1);color:var(--grey-400);">▣</span>Container</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(150,145,162,0.1);color:var(--grey-400);">▤</span>CssBaseline</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(124,94,236,0.1);color:var(--purple-light);">▣</span>DatePicker</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(135,127,187,0.1);color:var(--info-light);">▥</span>Dialog</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(150,145,162,0.1);color:var(--grey-400);">☰</span>Drawer</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(79,100,225,0.1);color:var(--blue-light);">🔗</span>Link</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(255,2,9,0.1);color:var(--primary-light);">⏳</span>LoadingBtn</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(150,145,162,0.1);color:var(--grey-400);">☰</span>Menu</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(135,127,187,0.1);color:var(--info-light);">⊡</span>Pagination</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(34,197,94,0.1);color:var(--success-light);">◉</span>RadioButton</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(124,94,236,0.1);color:var(--purple-light);">▾</span>Select</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(79,100,225,0.1);color:var(--blue-light);">━</span>Slider</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(34,197,94,0.1);color:var(--success-light);">◐</span>Switch</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(255,171,0,0.1);color:var(--warning-light);">▦</span>Table</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(135,127,187,0.1);color:var(--info-light);">⊟</span>Tabs</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(150,145,162,0.1);color:var(--grey-400);">▭</span>TextField</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(124,94,236,0.1);color:var(--purple-light);">☷</span>ToggleBtn</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(150,145,162,0.1);color:var(--grey-400);">💬</span>Tooltip</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(150,145,162,0.1);color:var(--grey-400);">Aa</span>Typography</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(150,145,162,0.1);color:var(--grey-400);">☰</span>Stack</div>
+                    <div class="comp-item"><span class="comp-icon" style="background:rgba(79,100,225,0.1);color:var(--blue-light);">◇</span>SvgIcon</div>
+                </div>
+            </div>
+
+            <!-- Code Compare -->
+            <div class="code-section">
+                <div class="sec-head">
+                    <span class="sec-tag">BEFORE / AFTER</span>
+                    <span class="sec-title">코드 비교</span>
+                </div>
+                <div class="code-block code-old">
+                    <div class="code-hdr"><span>❌ Before — 매번 직접 스타일 작성</span><span>~30 lines</span></div>
+                    <pre><span class="line-del">.custom-button {</span>
+<span class="line-del">  display: inline-flex;</span>
+<span class="line-del">  align-items: center;</span>
+<span class="line-del">  padding: 10px 24px;</span>
+<span class="line-del">  border-radius: 8px;</span>
+<span class="line-del">  font-weight: 600;</span>
+<span class="line-del">  background-color: #FF0209;</span>
+<span class="line-del">  /* ...and 20+ more lines... */</span>
+<span class="line-del">}</span></pre>
+                </div>
+                <div class="code-block code-new">
+                    <div class="code-hdr"><span>✅ After — 컴포넌트 1줄 호출</span><span>1 line</span></div>
+                    <pre>
+<span class="line-add">&lt;Button variant="contained"&gt;</span>
+<span class="line-add">  시작하기</span>
+<span class="line-add">&lt;/Button&gt;</span></pre>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM: Colors + Typography + Showcase -->
+        <div class="bottom-area">
+
+            <!-- Colors -->
+            <div class="color-panel">
+                <div class="sec-head">
+                    <span class="sec-tag">TOKEN</span>
+                    <span class="sec-title">Color Palette</span>
+                </div>
+
+                <div class="pal-group">
+                    <div class="pal-label">Primary</div>
+                    <div class="pal-row">
+                        <div class="pal-swatch" style="background:#FF5B60;"><span style="color:#fff;">#FF5B60</span></div>
+                        <div class="pal-swatch" style="background:#FF0209;"><span style="color:#fff;">#FF0209</span></div>
+                        <div class="pal-swatch" style="background:#C81414;"><span style="color:#fff;">#C81414</span></div>
+                        <div class="pal-swatch" style="background:#961E1E;"><span style="color:#fff;">#961E1E</span></div>
+                    </div>
+                </div>
+
+                <div class="pal-group">
+                    <div class="pal-label">Secondary</div>
+                    <div class="pal-row">
+                        <div class="pal-swatch" style="background:#E2E0F8;"><span style="color:#333;">#E2E0F8</span></div>
+                        <div class="pal-swatch" style="background:#B6B1EE;"><span style="color:#333;">#B6B1EE</span></div>
+                        <div class="pal-swatch" style="background:#786EBE;"><span style="color:#fff;">#786EBE</span></div>
+                        <div class="pal-swatch" style="background:#5E2CC9;"><span style="color:#fff;">#5E2CC9</span></div>
+                    </div>
+                </div>
+
+                <div class="pal-group">
+                    <div class="pal-label">Grey Scale</div>
+                    <div class="pal-row">
+                        <div class="pal-swatch" style="background:#FBFAFB;"><span style="color:#333;">100</span></div>
+                        <div class="pal-swatch" style="background:#EAE8EE;"><span style="color:#333;">200</span></div>
+                        <div class="pal-swatch" style="background:#DAD7E0;"><span style="color:#333;">300</span></div>
+                        <div class="pal-swatch" style="background:#C6C2CE;"><span style="color:#333;">400</span></div>
+                        <div class="pal-swatch" style="background:#9691A2;"><span style="color:#fff;">500</span></div>
+                        <div class="pal-swatch" style="background:#7F7A8D;"><span style="color:#fff;">600</span></div>
+                        <div class="pal-swatch" style="background:#5D596A;"><span style="color:#fff;">700</span></div>
+                        <div class="pal-swatch" style="background:#3D3A46;"><span style="color:#fff;">800</span></div>
+                        <div class="pal-swatch" style="background:#232128;"><span style="color:#fff;">900</span></div>
+                    </div>
+                </div>
+
+                <div class="pal-group">
+                    <div class="pal-label">Status & Intent</div>
+                    <div class="pal-dots">
+                        <div class="pal-dot" style="background:linear-gradient(135deg,#77ED8B,#22C55E);" title="Success"></div>
+                        <div class="pal-dot" style="background:linear-gradient(135deg,#FFD666,#FFAB00);" title="Warning"></div>
+                        <div class="pal-dot" style="background:linear-gradient(135deg,#EF677F,#E05265);" title="Error"></div>
+                        <div class="pal-dot" style="background:linear-gradient(135deg,#B6B1EE,#877FBB);" title="Info"></div>
+                        <div style="width:8px;"></div>
+                        <div class="pal-dot" style="background:#568FFF;" title="Blue Light"></div>
+                        <div class="pal-dot" style="background:#4F64E1;" title="Blue Main"></div>
+                        <div class="pal-dot" style="background:#9D82F7;" title="Purple Light"></div>
+                        <div class="pal-dot" style="background:#7C5EEC;" title="Purple Main"></div>
+                        <div style="width:8px;"></div>
+                        <div class="pal-dot" style="background:#FF8575;" title="Intent I"></div>
+                        <div class="pal-dot" style="background:#FFE526;" title="Intent N"></div>
+                        <div class="pal-dot" style="background:#46B2F2;" title="Intent C"></div>
+                        <div class="pal-dot" style="background:#8BC435;" title="Intent T"></div>
+                    </div>
+                </div>
+
+                <div class="pal-group" style="margin-bottom:0;">
+                    <div class="pal-label">Data Visualization</div>
+                    <div class="chart-label-inline">Line Chart</div>
+                    <div class="chart-row">
+                        <div style="background:#B775E8;"></div><div style="background:#F96E6E;"></div><div style="background:#46B2F2;"></div><div style="background:#FF99F5;"></div>
+                        <div style="background:#4685FF;"></div><div style="background:#00AD98;"></div><div style="background:#EBAA03;"></div><div style="background:#35CA00;"></div>
+                    </div>
+                    <div class="chart-label-inline">Bar Chart</div>
+                    <div class="chart-row">
+                        <div style="background:#DBBAF3;"></div><div style="background:#FCB6B6;"></div><div style="background:#B6DCFF;"></div><div style="background:#FFCCFA;"></div>
+                        <div style="background:#A2C2FF;"></div><div style="background:#80D6CC;"></div><div style="background:#F5D581;"></div><div style="background:#9AE480;"></div>
+                    </div>
+                    <div class="chart-label-inline">Community</div>
+                    <div class="chart-row">
+                        <div style="background:#F8CF68;"></div><div style="background:#BE9081;"></div><div style="background:#F895E8;"></div><div style="background:#C1A5FC;"></div>
+                        <div style="background:#5E9995;"></div><div style="background:#FB989A;"></div><div style="background:#6F91EF;"></div><div style="background:#00AD98;"></div>
+                        <div style="background:#89E1DC;"></div><div style="background:#8BD5FF;"></div><div style="background:#B5C21D;"></div><div style="background:#BBD5A6;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography -->
+            <div class="typo-panel">
+                <div class="sec-head">
+                    <span class="sec-tag">TYPOGRAPHY</span>
+                    <span class="sec-title">Type Scale</span>
+                </div>
+
+                <div class="typo-row"><span class="typo-var">h1</span><span class="typo-spec-inline">700 · 32px</span><span class="ts-h1">디자인 시스템</span></div>
+                <div class="typo-row"><span class="typo-var">h2</span><span class="typo-spec-inline">700 · 28px</span><span class="ts-h2">디자인 시스템</span></div>
+                <div class="typo-row"><span class="typo-var">h3</span><span class="typo-spec-inline">700 · 24px</span><span class="ts-h3">디자인 시스템</span></div>
+                <div class="typo-row"><span class="typo-var">h4</span><span class="typo-spec-inline">700 · 20px</span><span class="ts-h4">디자인 시스템 Design</span></div>
+                <div class="typo-row"><span class="typo-var">h5</span><span class="typo-spec-inline">700 · 18px</span><span class="ts-h5">디자인 시스템 Design System</span></div>
+                <div class="typo-row"><span class="typo-var">body1</span><span class="typo-spec-inline">400 · 16px</span><span class="ts-b1">다람쥐 헌 쳇바퀴에 타고파</span></div>
+                <div class="typo-row"><span class="typo-var">body2</span><span class="typo-spec-inline">400 · 14px</span><span class="ts-b2">The quick brown fox jumps over the lazy dog.</span></div>
+                <div class="typo-row"><span class="typo-var">body3</span><span class="typo-spec-inline">400 · 12px</span><span class="ts-b3">The quick brown fox jumps over the lazy dog.</span></div>
+                <div class="typo-row"><span class="typo-var">caption</span><span class="typo-spec-inline">500 · 10px</span><span class="ts-cap">COPYRIGHT 2026 ASCENT KOREA</span></div>
+            </div>
+
+            <!-- Component Showcase -->
+            <div class="showcase-panel">
+                <div class="sec-head">
+                    <span class="sec-tag">SHOWCASE</span>
+                    <span class="sec-title">Preview</span>
+                </div>
+
+                <div class="show-group">
+                    <div class="show-label">Buttons</div>
+                    <div class="show-row">
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-secondary">Secondary</button>
+                        <button class="btn btn-info">Info</button>
+                        <button class="btn btn-success">Success</button>
+                        <button class="btn btn-warning">Warning</button>
+                        <button class="btn btn-error">Error</button>
+                        <button class="btn btn-outline">Outline</button>
+                    </div>
+                </div>
+
+                <div class="show-group">
+                    <div class="show-label">Chips / Labels</div>
+                    <div class="show-row">
+                        <span class="chip chip-success">● Completed</span>
+                        <span class="chip chip-warning">● Pending</span>
+                        <span class="chip chip-error">● Failed</span>
+                        <span class="chip chip-info">● In Review</span>
+                    </div>
+                </div>
+
+                <div class="show-group">
+                    <div class="show-label">Intent Tags</div>
+                    <div class="show-row">
+                        <span class="chip chip-i">I — Informational</span>
+                        <span class="chip chip-n">N — Navigational</span>
+                        <span class="chip chip-c">C — Commercial</span>
+                        <span class="chip chip-t">T — Transactional</span>
+                    </div>
+                </div>
+
+                <div class="show-group">
+                    <div class="show-label">Text Fields</div>
+                    <div class="show-row">
+                        <input class="input-demo" type="text" placeholder="키워드를 입력하세요...">
+                        <input class="input-demo" type="text" value="검색어 분석" style="border-color:var(--primary-main);">
+                    </div>
+                </div>
+
+                <div class="show-group" style="margin-bottom:0;">
+                    <div class="show-label">Plan Tiers</div>
+                    <div class="show-row">
+                        <div class="pal-dot" style="background:#95B3C7;" title="Trial"></div>
+                        <div class="pal-dot" style="background:#DA8968;" title="Basic"></div>
+                        <div class="pal-dot" style="background:#8CBD57;" title="Standard"></div>
+                        <div class="pal-dot" style="background:#BFA055;" title="Advance"></div>
+                        <div class="pal-dot" style="background:#9397FD;" title="Professional"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
