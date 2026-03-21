@@ -5,6 +5,33 @@ import { parseForBold } from "../utils/textParser";
 
 const ProjectStrategy = ({ strategy }) => {
   const t = useText;
+  const [svgContent, setSvgContent] = React.useState(null);
+
+  React.useEffect(() => {
+    if (!strategy?.title) return;
+
+    const projectIdMatch = strategy.title.match(/^(P\d+|SIDE)_/);
+    if (projectIdMatch) {
+      let projectId = projectIdMatch[1].toLowerCase();
+      if (projectId === 'side') projectId = 'p5';
+      
+      const svgFileName = `${projectId}Strategy.svg`;
+      fetch(`/stitch_source/${svgFileName}`)
+        .then(response => {
+          if (!response.ok) throw new Error();
+          return response.text();
+        })
+        .then(content => {
+          setSvgContent(content);
+        })
+        .catch(() => {
+          setSvgContent(null);
+        });
+    } else {
+      setSvgContent(null);
+    }
+  }, [strategy]);
+
   return (
     <div className="container">
       <div className="section-header">
@@ -18,9 +45,6 @@ const ProjectStrategy = ({ strategy }) => {
 
       <div className="content-grid">
         <div className="strategy-text-column">
-            {/* {strategy?.description && (
-                <p className="strategy-desc">{t(strategy.description)}</p>
-            )} */}
             <div className="strategy-cards">
                 {/* Cause Card */}
                 <div className="strategy-card cause-card">
@@ -42,9 +66,12 @@ const ProjectStrategy = ({ strategy }) => {
                 </div>
             </div>
         </div>
-        <div className="strategy-image-column">
-           {strategy?.image && (
-               <img src={strategy.image} alt="Strategy" className="strategy-image" />
+        <div className="project-viz-column">
+           {svgContent && (
+               <div 
+                 className="project-viz-container"
+                 dangerouslySetInnerHTML={{ __html: svgContent }} 
+               />
            )}
         </div>
       </div>

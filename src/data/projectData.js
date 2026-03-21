@@ -26,7 +26,7 @@ export const projectData = [
         background: "P1_PROBLEM_BACKGROUND",
         quantitative: "P1_PROBLEM_QUANT",
         qualitative: "P1_PROBLEM_QUAL",
-        image: myKeyword1
+        image: "/stitch_source/p1Problem.svg"
       },
       // Page 3: Strategy & Hypothesis
       strategy: {
@@ -35,7 +35,7 @@ export const projectData = [
         cause: "P1_STRATEGY_CAUSE",
         causeDesc: "P1_STRATEGY_CAUSE_DESC",
         hypothesis: "P1_STRATEGY_HYPO",
-        image: myKeyword1
+        image: "/stitch_source/p1Strategy.svg"
       },
       // Page 4: Solution A (Core Feature)
       solutionA: {
@@ -45,7 +45,7 @@ export const projectData = [
           { title: "P1_SOL_A_DESC_1_TITLE", desc: "P1_SOL_A_DESC_1_DESC" },
           { title: "P1_SOL_A_DESC_2_TITLE", desc: "P1_SOL_A_DESC_2_DESC" }
         ],
-        image: myKeyword1
+        image: "/stitch_source/p1SolutionA.svg"
       },
       // Page 5: Solution B (Detail & Deep Dive)
       solutionB: {
@@ -55,7 +55,7 @@ export const projectData = [
             { title: "P1_SOL_B_DESC_2_TITLE", desc: "P1_SOL_B_DESC_2_DESC" },
             { title: "P1_SOL_B_DESC_3_TITLE", desc: "P1_SOL_B_DESC_3_DESC" }
         ],
-        image: "project1_sol_b.png",
+        image: "/stitch_source/p1SolutionB.svg",
         asIs: {
             image: "project1_asis.png",
             desc: "P1_SOL_B_ASIS_DESC"
@@ -68,9 +68,9 @@ export const projectData = [
       // Page 6: Impact & Lesson
       impact: {
         outcome: [
-            { title: "P1_IMPACT_OUTCOME_1_TITLE", desc: "P1_IMPACT_OUTCOME_1_DESC", image: "p1_outcome_1.png" },
-            { title: "P1_IMPACT_OUTCOME_2_TITLE", desc: "P1_IMPACT_OUTCOME_2_DESC", image: "p1_outcome_2.png" },
-            { title: "P1_IMPACT_OUTCOME_3_TITLE", desc: "P1_IMPACT_OUTCOME_3_DESC", image: "p1_outcome_3.png" }
+            { title: "P1_IMPACT_OUTCOME_1_TITLE", desc: "P1_IMPACT_OUTCOME_1_DESC", image: "/stitch_source/p1Impact1.svg" },
+            { title: "P1_IMPACT_OUTCOME_2_TITLE", desc: "P1_IMPACT_OUTCOME_2_DESC", image: "/stitch_source/p1Impact2.svg" },
+            { title: "P1_IMPACT_OUTCOME_3_TITLE", desc: "P1_IMPACT_OUTCOME_3_DESC", image: "/stitch_source/p1Impact3.svg" }
         ],
         lesson: "P1_IMPACT_LESSON"
       },
@@ -96,7 +96,7 @@ export const projectData = [
         background: "P2_PROBLEM_BACKGROUND",
         quantitative: "P2_PROBLEM_QUANT",
         qualitative: "P2_PROBLEM_QUAL",
-        image: "project2_problem.png"
+        image: "/stitch_source/p2Problem.svg"
       },
       // Page 3: Strategy & Hypothesis
       strategy: {
@@ -105,7 +105,7 @@ export const projectData = [
         cause: "P2_STRATEGY_CAUSE",
         causeDesc: "P2_STRATEGY_CAUSE_DESC",
         hypothesis: "P2_STRATEGY_HYPO",
-        image: project2Cover
+        image: "/stitch_source/p2Strategy.svg"
       },
       // Page 4: Solution A (Core Feature)
       solutionA: {
@@ -116,7 +116,7 @@ export const projectData = [
           { title: "P2_SOL_A_DESC_2_TITLE", desc: "P2_SOL_A_DESC_2_DESC" },
           { title: "P2_SOL_A_DESC_3_TITLE", desc: "P2_SOL_A_DESC_3_DESC" }
         ],
-        image: myKeyword1
+        image: "/stitch_source/p2SolutionA.svg"
       },
       // Page 5: Solution B (Detail & Deep Dive)
       solutionB: {
@@ -126,7 +126,7 @@ export const projectData = [
             { title: "P2_SOL_B_DESC_2_TITLE", desc: "P2_SOL_B_DESC_2_DESC" },
             { title: "P2_SOL_B_DESC_3_TITLE", desc: "P2_SOL_B_DESC_3_DESC" }
         ],
-        image: "project2_sol_b.png",
+        image: "/stitch_source/p2SolutionB.svg",
         asIs: {
             image: "project2_asis.png",
             desc: "P2_SOL_B_ASIS_DESC"
@@ -139,8 +139,8 @@ export const projectData = [
       // Page 6: Impact & Lesson
       impact: {
         outcome: [
-            { title: "P2_IMPACT_OUTCOME_1_TITLE", desc: "P2_IMPACT_OUTCOME_1_DESC", image: "p2_outcome_1.png" },
-            { title: "P2_IMPACT_OUTCOME_2_TITLE", desc: "P2_IMPACT_OUTCOME_2_DESC", image: "p2_outcome_2.png" }
+            { title: "P2_IMPACT_OUTCOME_1_TITLE", desc: "P2_IMPACT_OUTCOME_1_DESC", image: "/stitch_source/p2Impact1.svg" },
+            { title: "P2_IMPACT_OUTCOME_2_TITLE", desc: "P2_IMPACT_OUTCOME_2_DESC", image: "/stitch_source/p2Impact2.svg" }
         ],
         lesson: "P2_IMPACT_LESSON"
       },
@@ -164,7 +164,7 @@ export const projectData = [
         background: "P3_PROBLEM_BACKGROUND",
         quantitative: "P3_PROBLEM_QUANT",
         qualitative: "P3_PROBLEM_QUAL",
-        image: "project3_problem.png"
+        image: "/stitch_source/p3Problem.svg"
       },
       strategy: {
         title: "P3_STRATEGY_TITLE",
@@ -172,7 +172,7 @@ export const projectData = [
         cause: "P3_STRATEGY_CAUSE",
         causeDesc: "P3_STRATEGY_CAUSE_DESC",
         hypothesis: "P3_STRATEGY_HYPO",
-        image: project3Cover
+        image: "/stitch_source/p3Strategy.svg"
       },
       solutionA: {
         title: "P3_SOL_A_TITLE",
@@ -182,7 +182,7 @@ export const projectData = [
           { title: "P3_SOL_A_DESC_2_TITLE", desc: "P3_SOL_A_DESC_2_DESC" },
           { title: "P3_SOL_A_DESC_3_TITLE", desc: "P3_SOL_A_DESC_3_DESC" }
         ],
-        image: myKeyword1
+        image: "/stitch_source/p3SolutionA.svg"
       },
       solutionB: {
         title: "P3_SOL_B_TITLE",
@@ -191,7 +191,7 @@ export const projectData = [
             { title: "P3_SOL_B_DESC_2_TITLE", desc: "P3_SOL_B_DESC_2_DESC" },
             { title: "P3_SOL_B_DESC_3_TITLE", desc: "P3_SOL_B_DESC_3_DESC" }
         ],
-        image: "project3_sol_b.png",
+        image: "/stitch_source/p3SolutionB.svg",
         asIs: {
             image: "project3_asis.png",
             desc: "P3_SOL_B_ASIS_DESC"
@@ -203,9 +203,8 @@ export const projectData = [
       },
       impact: {
         outcome: [
-            { title: "P3_IMPACT_OUTCOME_1_TITLE", desc: "P3_IMPACT_OUTCOME_1_DESC", image: "p3_outcome_1.png" },
-            { title: "P3_IMPACT_OUTCOME_2_TITLE", desc: "P3_IMPACT_OUTCOME_2_DESC", image: "p3_outcome_2.png" },
-            { title: "P3_IMPACT_OUTCOME_3_TITLE", desc: "P3_IMPACT_OUTCOME_3_DESC", image: "p3_outcome_3.png" }
+            { title: "P3_IMPACT_OUTCOME_1_TITLE", desc: "P3_IMPACT_OUTCOME_1_DESC", image: "/stitch_source/p3Impact1.svg" },
+            { title: "P3_IMPACT_OUTCOME_2_TITLE", desc: "P3_IMPACT_OUTCOME_2_DESC", image: "/stitch_source/p3Impact2.svg" }
         ],
         lesson: "P3_IMPACT_LESSON"
       },
@@ -229,7 +228,7 @@ export const projectData = [
         background: "P4_PROBLEM_BACKGROUND",
         quantitative: "P4_PROBLEM_QUANT",
         qualitative: "P4_PROBLEM_QUAL",
-        image: "project4_problem.png"
+        image: "/stitch_source/p4Problem.svg"
       },
       strategy: {
         title: "P4_STRATEGY_TITLE",
@@ -237,7 +236,7 @@ export const projectData = [
         cause: "P4_STRATEGY_CAUSE",
         causeDesc: "P4_STRATEGY_CAUSE_DESC",
         hypothesis: "P4_STRATEGY_HYPO",
-        image: project4Cover
+        image: "/stitch_source/p4Strategy.svg"
       },
       solutionA: {
         title: "P4_SOL_A_TITLE",
@@ -247,7 +246,7 @@ export const projectData = [
           { title: "P4_SOL_A_DESC_2_TITLE", desc: "P4_SOL_A_DESC_2_DESC" },
           { title: "P4_SOL_A_DESC_3_TITLE", desc: "P4_SOL_A_DESC_3_DESC" }
         ],
-        image: myKeyword1
+        image: "/stitch_source/p4Solution-A.svg"
       },
       solutionB: {
         title: "P4_SOL_B_TITLE",
@@ -256,7 +255,7 @@ export const projectData = [
             { title: "P4_SOL_B_DESC_2_TITLE", desc: "P4_SOL_B_DESC_2_DESC" },
             { title: "P4_SOL_B_DESC_3_TITLE", desc: "P4_SOL_B_DESC_3_DESC" }
         ],
-        image: "project4_sol_b.png",
+        image: "/stitch_source/p4Solution-B.svg",
         asIs: {
             image: "project4_asis.png",
             desc: "P4_SOL_B_ASIS_DESC"
@@ -268,9 +267,9 @@ export const projectData = [
       },
       impact: {
         outcome: [
-            { title: "P4_IMPACT_OUTCOME_1_TITLE", desc: "P4_IMPACT_OUTCOME_1_DESC", image: "p4_outcome_1.png" },
-            { title: "P4_IMPACT_OUTCOME_2_TITLE", desc: "P4_IMPACT_OUTCOME_2_DESC", image: "p4_outcome_2.png" },
-            { title: "P4_IMPACT_OUTCOME_3_TITLE", desc: "P4_IMPACT_OUTCOME_3_DESC", image: "p4_outcome_3.png" }
+            { title: "P4_IMPACT_OUTCOME_1_TITLE", desc: "P4_IMPACT_OUTCOME_1_DESC", image: "/stitch_source/p4Impact-1.svg" },
+            { title: "P4_IMPACT_OUTCOME_2_TITLE", desc: "P4_IMPACT_OUTCOME_2_DESC", image: "/stitch_source/p4Impact-2.svg" },
+            { title: "P4_IMPACT_OUTCOME_3_TITLE", desc: "P4_IMPACT_OUTCOME_3_DESC", image: "/stitch_source/p4Impact-3.svg" }
         ],
         lesson: "P4_IMPACT_LESSON"
       },
@@ -294,7 +293,7 @@ export const projectData = [
         background: "SIDE_PROBLEM_BACKGROUND",
         quantitative: "SIDE_PROBLEM_QUANT",
         qualitative: "SIDE_PROBLEM_QUAL",
-        image: "sideproject_problem.png"
+        image: "/stitch_source/p5Problem.svg"
       },
       strategy: {
         title: "SIDE_STRATEGY_TITLE",
@@ -302,7 +301,7 @@ export const projectData = [
         cause: "SIDE_STRATEGY_CAUSE",
         causeDesc: "SIDE_STRATEGY_CAUSE_DESC",
         hypothesis: "SIDE_STRATEGY_HYPO",
-        image: project5Cover
+        image: "/stitch_source/p5Strategy.svg"
       },
       solutionA: {
         title: "SIDE_SOL_A_TITLE",
@@ -312,30 +311,14 @@ export const projectData = [
           { title: "SIDE_SOL_A_DESC_2_TITLE", desc: "SIDE_SOL_A_DESC_2_DESC" },
           { title: "SIDE_SOL_A_DESC_3_TITLE", desc: "SIDE_SOL_A_DESC_3_DESC" }
         ],
-        image: myKeyword1
+        image: "/stitch_source/p5Solution.svg"
       },
-      solutionB: {
-        title: "SIDE_SOL_B_TITLE",
-        description: [
-            { title: "SIDE_SOL_B_DESC_1_TITLE", desc: "SIDE_SOL_B_DESC_1_DESC" },
-            { title: "SIDE_SOL_B_DESC_2_TITLE", desc: "SIDE_SOL_B_DESC_2_DESC" },
-            { title: "SIDE_SOL_B_DESC_3_TITLE", desc: "SIDE_SOL_B_DESC_3_DESC" }
-        ],
-        image: "sideproject_sol_b.png",
-        asIs: {
-            image: "sideproject_asis.png",
-            desc: "SIDE_SOL_B_ASIS_DESC"
-        },
-        toBe: {
-            image: "sideproject_tobe.png",
-            desc: "SIDE_SOL_B_TOBE_DESC"
-        }
-      },
+
       impact: {
         outcome: [
-            { title: "SIDE_IMPACT_OUTCOME_1_TITLE", desc: "SIDE_IMPACT_OUTCOME_1_DESC", image: "side_outcome_1.png" },
-            { title: "SIDE_IMPACT_OUTCOME_2_TITLE", desc: "SIDE_IMPACT_OUTCOME_2_DESC", image: "side_outcome_2.png" },
-            { title: "SIDE_IMPACT_OUTCOME_3_TITLE", desc: "SIDE_IMPACT_OUTCOME_3_DESC", image: "side_outcome_3.png" }
+            { title: "SIDE_IMPACT_OUTCOME_1_TITLE", desc: "SIDE_IMPACT_OUTCOME_1_DESC", image: "/stitch_source/p5Impact-1.svg" },
+            { title: "SIDE_IMPACT_OUTCOME_2_TITLE", desc: "SIDE_IMPACT_OUTCOME_2_DESC", image: "/stitch_source/p5Impact-2.svg" },
+            { title: "SIDE_IMPACT_OUTCOME_3_TITLE", desc: "SIDE_IMPACT_OUTCOME_3_DESC", image: "/stitch_source/p5Impact-3.svg" }
         ],
         lesson: "SIDE_IMPACT_LESSON"
       },

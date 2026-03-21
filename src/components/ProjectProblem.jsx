@@ -5,40 +5,30 @@ import { parseForBold } from "../utils/textParser";
 
 const ProjectProblem = ({ problem }) => {
   const t = useText;
-  const [htmlContent, setHtmlContent] = useState('');
+  const [asset, setAsset] = useState({ type: null, content: null });
 
   useEffect(() => {
     if (!problem?.title) return;
 
-    // Extract Project ID (e.g., "P1" from "P1_PROBLEM_TITLE")
-    // Assuming problem.title is like "P1_PROBLEM_TITLE" key
-    const projectIdMatch = problem.title.match(/^(P\d+)_/);
+    const projectIdMatch = problem.title.match(/^(P\d+|SIDE)_/);
     if (projectIdMatch) {
-      const projectId = projectIdMatch[1].toLowerCase(); // p1
-      const htmlFileName = `${projectId}Problem.html`;
-
-      fetch(`/stitch_source/${htmlFileName}`)
+      let projectId = projectIdMatch[1].toLowerCase();
+      if (projectId === 'side') projectId = 'p5';
+      
+      const svgFileName = `${projectId}Problem.svg`;
+      fetch(`/stitch_source/${svgFileName}`)
         .then(response => {
-          if (!response.ok) {
-            throw new Error(`Failed to load ${htmlFileName}`);
-          }
+          if (!response.ok) throw new Error();
           return response.text();
         })
-        .then(html => {
-          // Extract body content to avoid full HTML document injection
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-          // Remove scripts for safety if needed, though local source is trusted
-          const scripts = doc.querySelectorAll('script');
-          scripts.forEach(script => script.remove());
-          setHtmlContent(doc.body.innerHTML);
+        .then(svgContent => {
+          setAsset({ type: 'svg', content: svgContent });
         })
-        .catch(error => {
-          console.warn(`Could not load HTML for ${projectId}:`, error);
-          setHtmlContent(''); // Clear content on error
+        .catch(() => {
+          setAsset({ type: null, content: null });
         });
     } else {
-      setHtmlContent('');
+      setAsset({ type: null, content: null });
     }
   }, [problem]);
 
@@ -69,11 +59,11 @@ const ProjectProblem = ({ problem }) => {
             </div>
           </div>
         </div>
-        <div className="problem-chart-column">
-          {htmlContent && (
-            <div
-              className="problem-chart-container"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
+        <div className="project-viz-column">
+          {asset.content && (
+            <div 
+              className="project-viz-container"
+              dangerouslySetInnerHTML={{ __html: asset.content }}
             />
           )}
         </div>

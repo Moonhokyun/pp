@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1760">
+    <title>Solution B — Responsive Design Rules</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-light: #FF5B60;
+            --primary-main: #FF0209;
+            --primary-dark: #C81414;
+            --secondary-lighter: #E2E0F8;
+            --secondary-light: #B6B1EE;
+            --secondary-main: #786EBE;
+            --secondary-dark: #5E2CC9;
+            --grey-100: #FBFAFB;
+            --grey-200: #EAE8EE;
+            --grey-300: #DAD7E0;
+            --grey-400: #C6C2CE;
+            --grey-500: #9691A2;
+            --grey-600: #7F7A8D;
+            --grey-700: #5D596A;
+            --grey-800: #3D3A46;
+            --grey-900: #232128;
+            --info-light: #B6B1EE;
+            --info-main: #877FBB;
+            --success-light: #77ED8B;
+            --success-main: #22C55E;
+            --warning-light: #FFD666;
+            --warning-main: #FFAB00;
+            --error-light: #EF677F;
+            --error-main: #E05265;
+            --blue-light: #568FFF;
+            --blue-main: #4F64E1;
+            --purple-light: #9D82F7;
+            --purple-main: #7C5EEC;
+            --font-sans: 'Noto Sans KR', 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            width: 1760px;
+            height: 755px;
+            overflow: hidden;
+            font-family: var(--font-sans);
+            background: #0B0A10;
+            color: #E8E6EF;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ======= MAIN LAYOUT ======= */
+        .page {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            width: 1760px;
+            height: 755px;
+            overflow: hidden;
+        }
+
+        /* ======= LEFT PANEL ======= */
+        .left-panel {
+            background: linear-gradient(160deg, #13112A 0%, #0E0D18 100%);
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .left-panel::before {
+            content: '';
+            position: absolute;
+            top: -100px; right: -100px;
+            width: 280px; height: 280px;
+            background: radial-gradient(circle, rgba(79,100,225,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .left-panel::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; left: -80px;
+            width: 240px; height: 240px;
+            background: radial-gradient(circle, rgba(124,94,236,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(79,100,225,0.1);
+            border: 1px solid rgba(79,100,225,0.25);
+            color: var(--blue-light);
+            padding: 4px 14px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+
+        .hero-badge .dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--blue-main);
+            animation: pulse 2s infinite;
+        }
+
+        .hero-top { position: relative; z-index: 1; }
+
+        .hero-title {
+            font-size: 26px;
+            font-weight: 900;
+            line-height: 1.3;
+            letter-spacing: -0.03em;
+            margin-top: 20px;
+        }
+
+        .hero-title .hl {
+            background: linear-gradient(135deg, var(--blue-main) 0%, var(--purple-main) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 13px;
+            color: var(--grey-500);
+            margin-top: 12px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Key Points */
+        .key-points {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .key-point {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 14px 16px;
+        }
+
+        .key-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .key-text-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .key-text-desc {
+            font-size: 11px;
+            color: var(--grey-500);
+            line-height: 1.4;
+        }
+
+        /* Solution Label */
+        .sol-label {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--blue-main);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ======= RIGHT PANEL ======= */
+        .right-panel {
+            display: grid;
+            grid-template-rows: 1fr;
+            height: 755px;
+            overflow: hidden;
+        }
+
+        .content-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0;
+            height: 755px;
+        }
+
+        .content-col {
+            padding: 28px 28px;
+            border-right: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .content-col:last-child { border-right: none; }
+
+        .sec-head {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .sec-tag {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--blue-main);
+            text-transform: uppercase;
+        }
+
+        .sec-title {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .sec-desc {
+            font-size: 12px;
+            color: var(--grey-500);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* ================================================
+           COLUMN 1: GRID SYSTEM
+           ================================================ */
+
+        /* Breakpoint Cards */
+        .bp-card {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bp-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+        }
+
+        .bp-card.bp-pc::before { background: linear-gradient(90deg, var(--blue-main), var(--purple-main)); }
+        .bp-card.bp-tablet::before { background: linear-gradient(90deg, var(--purple-main), var(--secondary-light)); }
+        .bp-card.bp-mobile::before { background: linear-gradient(90deg, var(--primary-main), var(--primary-light)); }
+
+        .bp-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .bp-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .bp-emoji { font-size: 16px; }
+
+        .bp-cols {
+            font-family: var(--font-mono);
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .bp-pc .bp-cols { color: var(--blue-light); }
+        .bp-tablet .bp-cols { color: var(--purple-light); }
+        .bp-mobile .bp-cols { color: var(--primary-light); }
+
+        .bp-cols .unit { font-size: 11px; font-weight: 600; opacity: 0.7; }
+
+        /* Grid visual */
+        .grid-visual {
+            display: flex;
+            gap: 2px;
+            height: 32px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .grid-col {
+            flex: 1;
+            border-radius: 3px;
+            transition: all 0.3s;
+            cursor: default;
+            position: relative;
+        }
+
+        .grid-col:hover {
+            filter: brightness(1.3);
+            transform: scaleY(1.15);
+        }
+
+        .bp-pc .grid-col { background: rgba(79,100,225,0.25); border: 1px solid rgba(79,100,225,0.35); }
+        .bp-tablet .grid-col { background: rgba(124,94,236,0.2); border: 1px solid rgba(124,94,236,0.3); }
+        .bp-mobile .grid-col { background: rgba(255,2,9,0.15); border: 1px solid rgba(255,2,9,0.25); }
+
+        /* Active columns highlight */
+        .grid-col.active {
+            filter: brightness(1.5);
+        }
+
+        .bp-pc .grid-col.active { background: rgba(79,100,225,0.5); }
+        .bp-tablet .grid-col.active { background: rgba(124,94,236,0.45); }
+        .bp-mobile .grid-col.active { background: rgba(255,2,9,0.35); }
+
+        /* Grid breakdown label */
+        .bp-breakdown {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            color: var(--grey-600);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* ================================================
+           COLUMN 2: BUTTON STATES
+           ================================================ */
+
+        .state-group {
+            margin-bottom: 16px;
+        }
+
+        .state-label {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--grey-600);
+            margin-bottom: 8px;
+        }
+
+        .state-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Button demos */
+        .btn-demo {
+            padding: 10px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-sans);
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        /* Normal states */
+        .btn-default { background: var(--primary-main); color: white; }
+        .btn-hover { background: var(--primary-dark); color: white; box-shadow: 0 4px 12px rgba(255,2,9,0.3); transform: translateY(-1px); }
+        .btn-active { background: var(--primary-darker); color: white; transform: scale(0.97); box-shadow: none; }
+        .btn-disabled { background: var(--grey-300); color: var(--grey-500); cursor: not-allowed; opacity: 0.6; }
+
+        .btn-sec-default { background: var(--secondary-main); color: white; }
+        .btn-sec-hover { background: var(--secondary-dark); color: white; box-shadow: 0 4px 12px rgba(120,110,190,0.3); transform: translateY(-1px); }
+        .btn-sec-active { background: #4A22A0; color: white; transform: scale(0.97); }
+        .btn-sec-disabled { background: var(--grey-300); color: var(--grey-500); cursor: not-allowed; opacity: 0.6; }
+
+        .btn-out-default { background: transparent; border: 1.5px solid var(--grey-400); color: var(--grey-400); }
+        .btn-out-hover { background: rgba(255,255,255,0.05); border: 1.5px solid var(--grey-300); color: white; }
+        .btn-out-active { background: rgba(255,255,255,0.08); border: 1.5px solid var(--grey-200); color: white; transform: scale(0.97); }
+        .btn-out-disabled { background: transparent; border: 1.5px solid var(--grey-700); color: var(--grey-700); cursor: not-allowed; opacity: 0.5; }
+
+        /* State indicator tags */
+        .state-tag {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .tag-default { background: rgba(255,255,255,0.05); color: var(--grey-500); }
+        .tag-hover { background: rgba(79,100,225,0.1); color: var(--blue-light); }
+        .tag-active { background: rgba(124,94,236,0.1); color: var(--purple-light); }
+        .tag-disabled { background: rgba(150,145,162,0.08); color: var(--grey-600); }
+
+        /* State matrix table */
+        .state-matrix {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 4px;
+        }
+
+        .state-matrix th {
+            font-family: var(--font-mono);
+            font-size: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--grey-600);
+            padding: 6px 4px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .state-matrix td {
+            padding: 8px 4px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            vertical-align: middle;
+        }
+
+        .state-matrix .variant-label {
+            font-size: 10px;
+            font-weight: 600;
+            text-align: left;
+            color: var(--grey-400);
+        }
+
+        .mini-btn {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            font-family: var(--font-sans);
+            border: none;
+            cursor: default;
+        }
+
+        /* ================================================
+           COLUMN 3: SPACING
+           ================================================ */
+
+        .spacing-visual {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 14px;
+        }
+
+        .spacing-demo-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--grey-400);
+            margin-bottom: 12px;
+        }
+
+        /* Gutter Demo */
+        .gutter-demo {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            height: 80px;
+            margin-bottom: 8px;
+        }
+
+        .gutter-block {
+            flex: 1;
+            background: rgba(79,100,225,0.15);
+            border: 1px solid rgba(79,100,225,0.3);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 9px;
+            color: var(--blue-light);
+            opacity: 0.8;
+        }
+
+        .gutter-space {
+            width: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .gutter-line {
+            width: 1px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(255,171,0,0.5) 0px,
+                rgba(255,171,0,0.5) 3px,
+                transparent 3px,
+                transparent 6px
+            );
+        }
+
+        .gutter-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            font-family: var(--font-mono);
+            font-size: 8px;
+            font-weight: 700;
+            color: var(--warning-main);
+            white-space: nowrap;
+            background: #0B0A10;
+            padding: 0 4px;
+        }
+
+        /* Spacing Scale */
+        .spacing-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .spacing-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .spacing-val {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--grey-400);
+            width: 40px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .spacing-bar-wrap {
+            flex: 1;
+            height: 14px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .spacing-bar {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        .spacing-name {
+            font-family: var(--font-mono);
+            font-size: 9px;
+            color: var(--grey-600);
+            width: 50px;
+            flex-shrink: 0;
+        }
+
+        .spacing-highlight {
+            background: rgba(255,171,0,0.08);
+            border: 1px solid rgba(255,171,0,0.15);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .spacing-highlight-icon {
+            font-size: 16px;
+        }
+
+        .spacing-highlight-text {
+            font-size: 11px;
+            color: var(--warning-light);
+            font-weight: 600;
+        }
+
+        .spacing-highlight-text span {
+            font-family: var(--font-mono);
+            font-weight: 800;
+        }
+
+        /* Margin/Padding Visual */
+        .box-model {
+            margin-top: 12px;
+            position: relative;
+            height: 170px;
+        }
+
+        .box-margin {
+            position: absolute;
+            inset: 0;
+            border: 1.5px dashed rgba(34,197,94,0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box-margin-label {
+            position: absolute;
+            top: 4px; left: 10px;
+            font-family: var(--font-mono);
+            font-size: 8px;
+            color: var(--success-light);
+            opacity: 0.7;
+        }
+
+        .box-padding {
+            position: absolute;
+            top: 20px; left: 20px; right: 20px; bottom: 20px;
+            border: 1.5px dashed rgba(79,100,225,0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box-padding-label {
+            position: absolute;
+            top: 4px; left: 10px;
+            font-family: var(--font-mono);
+            font-size: 8px;
+            color: var(--blue-light);
+            opacity: 0.7;
+        }
+
+        .box-content {
+            position: absolute;
+            top: 44px; left: 44px; right: 44px; bottom: 44px;
+            background: rgba(124,94,236,0.1);
+            border: 1px solid rgba(124,94,236,0.25);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--purple-light);
+        }
+
+        /* Spacing annotation arrows */
+        .spacing-arrow {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .spacing-arrow.top {
+            top: 2px; left: 50%; transform: translateX(-50%);
+            width: 40px; height: 18px;
+        }
+
+        .spacing-arrow.left {
+            left: 2px; top: 50%; transform: translateY(-50%);
+            width: 18px; height: 40px;
+        }
+
+        .arrow-val {
+            font-family: var(--font-mono);
+            font-size: 8px;
+            font-weight: 700;
+            background: #0B0A10;
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+
+        .arrow-val.green { color: var(--success-light); }
+        .arrow-val.blue { color: var(--blue-light); }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ====== LEFT PANEL ====== -->
+    <div class="left-panel">
+        <div class="hero-top">
+            <div class="hero-badge"><span class="dot"></span> Solution B</div>
+            <h1 class="hero-title">
+                어떤 화면에서도<br>
+                <span class="hl">완벽하게 보이는 규칙들</span>
+            </h1>
+            <p class="hero-sub">
+                PC, 태블릿, 스마트폰 어디서든 일관된 경험을 제공하기 위한<br>
+                반응형 디자인 시스템 규칙입니다.
+            </p>
+        </div>
+
+        <div class="key-points">
+            <div class="sol-label">Core Principles</div>
+            <div class="key-point">
+                <div class="key-icon" style="background:rgba(79,100,225,0.12);">🧩</div>
+                <div>
+                    <div class="key-text-title">화면 쪼개기 (Grid System)</div>
+                    <div class="key-text-desc">화면을 세로로 쪼개서 블록을 배치합니다.</div>
+                </div>
+            </div>
+            <div class="key-point">
+                <div class="key-icon" style="background:rgba(124,94,236,0.12);">🎯</div>
+                <div>
+                    <div class="key-text-title">버튼의 변신 (State)</div>
+                    <div class="key-text-desc">모든 상태를 미리 정해 고민 없이 사용</div>
+                </div>
+            </div>
+            <div class="key-point">
+                <div class="key-icon" style="background:rgba(255,171,0,0.12);">📐</div>
+                <div>
+                    <div class="key-text-title">간격 규칙 (Spacing)</div>
+                    <div class="key-text-desc">24px 기본 Gutter로 답답하지 않은 레이아웃</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="position:relative;z-index:1;">
+            <div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-700);text-align:center;">
+                © 2026 Ascent Korea — Hubble Intent
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== RIGHT PANEL ====== -->
+    <div class="right-panel">
+        <div class="content-area">
+
+            <!-- ========== COL 1: GRID SYSTEM ========== -->
+            <div class="content-col">
+                <div class="sec-head">
+                    <span class="sec-tag">GRID</span>
+                    <span class="sec-title">화면 쪼개기</span>
+                </div>
+                <p class="sec-desc">화면을 세로로 쪼개서 블록을 배치합니다.<br>디바이스 크기에 따라 컬럼 수가 달라집니다.</p>
+
+                <!-- PC -->
+                <div class="bp-card bp-pc">
+                    <div class="bp-header">
+                        <div class="bp-label"><span class="bp-emoji">🖥️</span> PC (Desktop)</div>
+                        <div class="bp-cols">12<span class="unit"> 조각</span></div>
+                    </div>
+                    <div class="grid-visual">
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col"></div>
+                        <div class="grid-col"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                    </div>
+                    <div class="bp-breakdown">col-4 &nbsp;|&nbsp; col-2 (gap) &nbsp;|&nbsp; col-6</div>
+                </div>
+
+                <!-- Tablet -->
+                <div class="bp-card bp-tablet">
+                    <div class="bp-header">
+                        <div class="bp-label"><span class="bp-emoji">📱</span> 태블릿 (Tablet)</div>
+                        <div class="bp-cols">8<span class="unit"> 조각</span></div>
+                    </div>
+                    <div class="grid-visual">
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                    </div>
+                    <div class="bp-breakdown">col-4 &nbsp;|&nbsp; col-4</div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="bp-card bp-mobile">
+                    <div class="bp-header">
+                        <div class="bp-label"><span class="bp-emoji">📱</span> 스마트폰 (Mobile)</div>
+                        <div class="bp-cols">4<span class="unit"> 조각</span></div>
+                    </div>
+                    <div class="grid-visual">
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                        <div class="grid-col active"></div>
+                    </div>
+                    <div class="bp-breakdown">col-4 (full width)</div>
+                </div>
+            </div>
+
+            <!-- ========== COL 2: BUTTON STATES ========== -->
+            <div class="content-col">
+                <div class="sec-head">
+                    <span class="sec-tag">STATE</span>
+                    <span class="sec-title">버튼의 변신</span>
+                </div>
+                <p class="sec-desc">마우스를 올렸을 때, 눌렀을 때, 비활성화됐을 때의 모습을<br>미리 다 정해두어 개발자가 고민 없이 가져다 씁니다.</p>
+
+                <table class="state-matrix">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Variant</th>
+                            <th>Default</th>
+                            <th>Hover</th>
+                            <th>Active</th>
+                            <th>Disabled</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="variant-label">Primary</td>
+                            <td><span class="mini-btn" style="background:var(--primary-main);color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:var(--primary-dark);color:#fff;box-shadow:0 2px 8px rgba(255,2,9,0.3);">버튼</span></td>
+                            <td><span class="mini-btn" style="background:#961E1E;color:#fff;transform:scale(0.95);">버튼</span></td>
+                            <td><span class="mini-btn" style="background:var(--grey-300);color:var(--grey-500);opacity:0.6;">버튼</span></td>
+                        </tr>
+                        <tr>
+                            <td class="variant-label">Secondary</td>
+                            <td><span class="mini-btn" style="background:var(--secondary-main);color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:var(--secondary-dark);color:#fff;box-shadow:0 2px 8px rgba(120,110,190,0.3);">버튼</span></td>
+                            <td><span class="mini-btn" style="background:#4A22A0;color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:var(--grey-300);color:var(--grey-500);opacity:0.6;">버튼</span></td>
+                        </tr>
+                        <tr>
+                            <td class="variant-label">Outline</td>
+                            <td><span class="mini-btn" style="background:transparent;border:1.5px solid var(--grey-400);color:var(--grey-400);">버튼</span></td>
+                            <td><span class="mini-btn" style="background:rgba(255,255,255,0.05);border:1.5px solid var(--grey-300);color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:rgba(255,255,255,0.08);border:1.5px solid var(--grey-200);color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:transparent;border:1.5px solid var(--grey-700);color:var(--grey-700);opacity:0.5;">버튼</span></td>
+                        </tr>
+                        <tr>
+                            <td class="variant-label">Success</td>
+                            <td><span class="mini-btn" style="background:var(--success-main);color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:#118D57;color:#fff;box-shadow:0 2px 8px rgba(34,197,94,0.3);">버튼</span></td>
+                            <td><span class="mini-btn" style="background:#065E49;color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:var(--grey-300);color:var(--grey-500);opacity:0.6;">버튼</span></td>
+                        </tr>
+                        <tr>
+                            <td class="variant-label">Warning</td>
+                            <td><span class="mini-btn" style="background:var(--warning-main);color:var(--grey-800);">버튼</span></td>
+                            <td><span class="mini-btn" style="background:#B76E00;color:#fff;box-shadow:0 2px 8px rgba(255,171,0,0.3);">버튼</span></td>
+                            <td><span class="mini-btn" style="background:#7A4100;color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:var(--grey-300);color:var(--grey-500);opacity:0.6;">버튼</span></td>
+                        </tr>
+                        <tr>
+                            <td class="variant-label">Error</td>
+                            <td><span class="mini-btn" style="background:var(--error-main);color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:#B33D4D;color:#fff;box-shadow:0 2px 8px rgba(224,82,101,0.3);">버튼</span></td>
+                            <td><span class="mini-btn" style="background:#8A2E3A;color:#fff;">버튼</span></td>
+                            <td><span class="mini-btn" style="background:var(--grey-300);color:var(--grey-500);opacity:0.6;">버튼</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top:16px;display:flex;gap:6px;flex-wrap:wrap;">
+                    <span class="state-tag tag-default">Default — 기본 상태</span>
+                    <span class="state-tag tag-hover">Hover — 마우스 올림</span>
+                    <span class="state-tag tag-active">Active — 클릭(누름)</span>
+                    <span class="state-tag tag-disabled">Disabled — 비활성화</span>
+                </div>
+            </div>
+
+            <!-- ========== COL 3: SPACING ========== -->
+            <div class="content-col">
+                <div class="sec-head">
+                    <span class="sec-tag">SPACING</span>
+                    <span class="sec-title">간격 규칙</span>
+                </div>
+                <p class="sec-desc">요소 사이의 간격(Gutter)은 주로 24px을 사용하여<br>답답하지 않게 만들었습니다.</p>
+
+                <!-- Gutter Demo -->
+                <div class="spacing-visual">
+                    <div class="spacing-demo-title">Gutter (요소 간 간격) = 24px</div>
+                    <div class="gutter-demo">
+                        <div class="gutter-block">Column</div>
+                        <div class="gutter-space">
+                            <div class="gutter-line"></div>
+                            <div class="gutter-label">24px</div>
+                        </div>
+                        <div class="gutter-block">Column</div>
+                        <div class="gutter-space">
+                            <div class="gutter-line"></div>
+                            <div class="gutter-label">24px</div>
+                        </div>
+                        <div class="gutter-block">Column</div>
+                    </div>
+                </div>
+
+                <!-- Spacing Scale -->
+                <div class="spacing-visual">
+                    <div class="spacing-demo-title">Spacing Scale</div>
+                    <div class="spacing-scale">
+                        <div class="spacing-item">
+                            <span class="spacing-val">4px</span>
+                            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:6%;background:var(--grey-600);"></div></div>
+                            <span class="spacing-name">xs</span>
+                        </div>
+                        <div class="spacing-item">
+                            <span class="spacing-val">8px</span>
+                            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:12%;background:var(--purple-light);opacity:0.5;"></div></div>
+                            <span class="spacing-name">sm</span>
+                        </div>
+                        <div class="spacing-item">
+                            <span class="spacing-val">16px</span>
+                            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:25%;background:var(--blue-light);opacity:0.5;"></div></div>
+                            <span class="spacing-name">md</span>
+                        </div>
+                        <div class="spacing-item" style="background:rgba(255,171,0,0.05);border-radius:6px;padding:4px 0;">
+                            <span class="spacing-val" style="color:var(--warning-main);font-weight:900;">24px</span>
+                            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:38%;background:var(--warning-main);"></div></div>
+                            <span class="spacing-name" style="color:var(--warning-light);">lg ★</span>
+                        </div>
+                        <div class="spacing-item">
+                            <span class="spacing-val">32px</span>
+                            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:50%;background:var(--blue-light);opacity:0.4;"></div></div>
+                            <span class="spacing-name">xl</span>
+                        </div>
+                        <div class="spacing-item">
+                            <span class="spacing-val">48px</span>
+                            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:75%;background:var(--purple-light);opacity:0.35;"></div></div>
+                            <span class="spacing-name">2xl</span>
+                        </div>
+                        <div class="spacing-item">
+                            <span class="spacing-val">64px</span>
+                            <div class="spacing-bar-wrap"><div class="spacing-bar" style="width:100%;background:var(--grey-600);opacity:0.35;"></div></div>
+                            <span class="spacing-name">3xl</span>
+                        </div>
+                    </div>
+
+                    <div class="spacing-highlight">
+                        <div class="spacing-highlight-icon">💡</div>
+                        <div class="spacing-highlight-text">
+                            기본 Gutter는 <span>24px</span>을 사용하여<br>
+                            시각적으로 답답하지 않은 레이아웃을 유지합니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

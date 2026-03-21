@@ -1,7 +1,7 @@
 :root {
   /* Colors */
   --color-bg: #FFFFFF;
-  --color-bg-alt: #F8F9FA; /* Light Grey for section separation */
+  --color-bg-alt: #F9F9F9; /* Light Grey for section separation */
   --color-text-primary: #111111;
   --color-text-secondary: #555555; /* Cool Grey */
   --color-text-tertiary: #888888;
@@ -95,7 +95,7 @@ ul, ol {
   flex-direction: column;
   overflow: hidden;
   justify-content: space-between;
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
 }
 
 @media (max-width: 768px) {
@@ -203,3 +203,49 @@ p {
 .text-primary { color: var(--color-primary); }
 .text-accent { color: var(--color-accent); }
 .text-bold { font-weight: 700; }
+
+/* Unified Project Visualization Styles */
+.project-viz-column {
+    grid-column: 6 / span 7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.project-viz-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.project-viz-container svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Print Optimization for PDF Export */
+@media print {
+    .project-viz-column {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .project-viz-container svg {
+        shape-rendering: geometricPrecision;
+    }
+}
+
+@media (max-width: 960px) {
+    .project-viz-column {
+        grid-column: auto;
+        width: 100%;
+        height: auto;
+    }
+}
