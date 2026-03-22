@@ -192,7 +192,7 @@
   "P4_PROBLEM_BACKGROUND": "디자이너가 코딩까지 직접 하다 보니, 같은 모양의 버튼이나 박스를\n 매번 복사해서 붙여넣는 방식으로 작업했습니다. 그 결과 중복 코드가 쌓였습니다.",
   "P4_PROBLEM_QUANT": "중복 코드 14만 줄, 로딩 3.8초, 서버 구동 22초 소요",
   "P4_PROBLEM_QUAL": "코드가 지저분하고 무거워서 일하기 힘들다는 불만이 많았습니다.",
-  "P4_STRATEGY_TITLE": "우리만의 Convention Rule, '**디자인 시스템**'을 만들자!",
+  "P4_STRATEGY_TITLE": "- 우리만의 Convention Rule\n '**디자인 시스템**'을 만들자!",
   "P4_STRATEGY_DESC": "우리는 '**디자인 시스템(Design System)**'을 도입하기로 했습니다. 이는 **모두가 따르기로 한 약속된 규칙**을 만드는 것입니다.",
   "P4_STRATEGY_CAUSE": "디자인 시스템",
   "P4_STRATEGY_CAUSE_DESC": "• **디자인 토큰**: 색상, 글꼴, 간격 등에 쉬운 이름을 붙여 관리(예: #FFFFFF → Color-White)\n• **중앙 관리**: 한곳에서 규칙을 바꾸면 모든 화면이 자동으로 변경되는 본부 역할",
