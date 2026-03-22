@@ -86,16 +86,17 @@ const Projects = () => {
           </section>
 
           {/* Page 4: Solution A (Core Feature) */}
-          <section className="slide project-solution-a-slide" style={{ padding: 0 }}>
+          <section id={`${project.id}-solution-a`} className="slide project-solution-a-slide" style={{ padding: 0 }}>
              <ProjectSolutionA solutionA={project.solutionA} />
           </section>
 
           {/* Page 5: Solution B (Detail & Deep Dive) */}
           {project.solutionB && (
-            <section className="slide project-solution-b-slide" style={{ padding: 0 }}>
+            <section id={`${project.id}-solution-b`} className="slide project-solution-b-slide" style={{ padding: 0 }}>
               <ProjectSolution 
                   sectionTitle={t('SECTION_LABEL_SOLUTION_B')}
                   title={project.solutionB.title} 
+                  summary={project.solutionB.summary}
                   subtitle={project.solutionB.description}
                   asis={{
                       image: project.solutionB.asIs?.image,

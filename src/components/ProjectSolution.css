@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     align-items: center;
     text-align: center;
     z-index: 10;
@@ -22,6 +22,16 @@
 .solution-header .section-title {
     margin-bottom: 0;
     color: var(--color-text-primary);
+}
+
+.solution-b-summary {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+    white-space: pre-line;
+    word-break: keep-all;
+    margin-bottom: 0;
 }
 
 .solution-c-text {
@@ -207,15 +217,12 @@
 /* Solution B Floating Items */
 .sol-b-float-container {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.98);
     padding: 24px;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-    max-width: 360px;
     z-index: 50;
     backdrop-filter: blur(8px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .sol-b-float-container:hover {
@@ -227,14 +234,12 @@
 .sol-b-block-title {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--color-text-primary);
     margin-bottom: 8px;
     word-break: keep-all;
 }
 
 .sol-b-block-desc {
     font-size: 1.1rem;
-    color: var(--color-text-secondary);
     line-height: 1.6;
     white-space: pre-line;
     word-break: keep-all;
@@ -242,20 +247,54 @@
     margin-bottom: unset;
 }
 
-/* Positioning - Adjusted for Monitor Frame Layout */
-.sol-b-float-item-1 {
-    top: 250px;
-    left: 5%;
-}
-
+/* Base style for Wide floating items (1 & 2) */
+.sol-b-float-item-1,
 .sol-b-float-item-2 {
-    top: 250px;
-    right: 5%;
+    width: 790px;
+    max-width: 790px;
+    padding: 20px;
+    height: auto;
+    text-align: center;
+    top: 80%;
 }
 
-.sol-b-float-item-3 {
-    bottom: 50px;
-    left: 50%;    
+#project-3-solution-b .sol-b-float-item-1 {
+    width: 690px;
+    max-width: 690px;
+}
+
+#project-3-solution-b .sol-b-float-item-2 {
+    right: 3% !important;
+    left: auto !important;
+    width: 870px;
+    max-width: 870px;
+}
+
+/* Item 1 Theme (Pink) */
+.sol-b-float-item-1 {
+    background-color: rgba(252, 225, 229, 0.9);
+    border: 2px solid #EF677F;
+    color: #EF677F;
+    left: 3.6%;
+}
+
+/* Item 2 Theme (Blue) */
+.sol-b-float-item-2 {
+    background-color: rgba(225, 245, 254, 0.9);
+    border: 2px solid #37A3E2;
+    color: #37A3E2;
+    right: 3.3%;
+}
+
+/* Color overrides for titles and descriptions in items 1 & 2 */
+.sol-b-float-item-1 .sol-b-block-title,
+.sol-b-float-item-1 .sol-b-block-desc {
+    color: #EF677F;
+}
+
+.sol-b-float-item-2 .sol-b-block-title,
+.sol-b-float-item-2 .sol-b-block-desc {
+    color: #37A3E2;
 }
 
 @media (max-width: 1440px) {
@@ -285,7 +324,7 @@
 }
 
 /* Solution B Image Layout */
-.solution-b-grid {
+.solution-b-wrapper {
     position: relative;
     display: block;
     width: 100%;
@@ -298,11 +337,13 @@
 }
 
 .solution-b-image {
-    width: 1760px;
-    height: 755px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 65vh;
     display: block;
+    margin: 0 auto;
     border-radius: 20px 20px 0 0;
-    object-fit: cover;
+    object-fit: contain;
     border: 1px solid rgba(0,0,0,0.05);
-    border-bottom: none;    
 }

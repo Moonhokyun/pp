@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     align-items: center;
     text-align: center;
 }
@@ -40,24 +40,63 @@
 
 /* Default positioning for up to 3 items */
 .solution-a-float-item-1 {
-    top: 15%;
-    left: 5%;
+    background-color: rgba(252, 225, 229, 0.9);
+    border: 2px solid #EF677F;
+    color: #EF677F;
+    width: 790px;
+    max-width: 790px;
+    padding: 20px;
+    height: auto;
+    text-align: center;
+    top: 80%;
+    left: 3.6%;
 }
 
 .solution-a-float-item-2 {
-    top: 45%;
-    right: 5%;
+    background-color: rgba(225, 245, 254, 0.9);
+    border: 2px solid #37A3E2;
+    color: #37A3E2;
+    width: 790px;
+    max-width: 790px;
+    padding: 20px;
+    height: auto;
+    text-align: center;
+    top: 80%;
+    right: 3.3%;
 }
 
 .solution-a-float-item-3 {
-    bottom: 15%;
+    top: 15%;
     left: 10%;
 }
 
 /* For projects with 4 items */
 .solution-a-float-item-4 {
-    bottom: 15%;
+    top: 15%;
     right: 10%;
+}
+
+/* Color overrides for titles and descriptions in items 1 & 2 */
+.solution-a-float-item-1 .solution-a-block-title,
+.solution-a-float-item-1 .solution-a-block-desc {
+    color: #EF677F;
+}
+
+.solution-a-float-item-2 .solution-a-block-title,
+.solution-a-float-item-2 .solution-a-block-desc {
+    color: #37A3E2;
+}
+
+
+
+#project-2-solution-a .solution-a-float-item-1 {
+    background-color: rgba(225, 245, 254, 0.9);
+    border: 2px solid #37A3E2;
+}
+
+#project-2-solution-a .solution-a-float-item-1 .solution-a-block-title,
+#project-2-solution-a .solution-a-float-item-1 .solution-a-block-desc {
+    color: #37A3E2;
 }
 
 .solution-a-content-wrapper {
@@ -121,13 +160,15 @@
 }
 
 .solution-a-image {
-    width: 1760px;
-    height: 755px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 65vh;
     display: block;
+    margin: 0 auto;
     border-radius: 20px 20px 0 0;
-    object-fit: cover;
+    object-fit: contain;
     border: 1px solid rgba(0,0,0,0.05);
-    border-bottom: none;    
 }
 
 /* Responsive adjustments */
@@ -164,5 +205,11 @@
 
     .solution-a-image-column {
         width: 100%;
+    }
+
+    .solution-a-float-item-1,
+    .solution-a-float-item-2 {
+        width: 100%;
+        max-width: 100%;
     }
 }

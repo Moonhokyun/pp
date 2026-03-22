@@ -13,7 +13,6 @@ const ProjectImpact = ({ impact }) => {
       <div className="impact-content">
          <div className="section-header">
            <h3 className="section-label">{parseForBold(t("SECTION_LABEL_IMPACT"))}</h3>
-           <h2 className="section-title">Impact & Outcome</h2>
          </div>
          
          <div className="impact-div">
@@ -29,7 +28,6 @@ const ProjectImpact = ({ impact }) => {
                                     </div>
                                 )}
                                 <div className="outcome-text-group">
-                                    <span className="outcome-bullet">Metrics</span>
                                     <strong className="outcome-item-title">{parseForBold(t(item.title))}</strong>
                                     <p className="outcome-item-desc">{parseForBold(t(item.desc))}</p>
                                 </div>

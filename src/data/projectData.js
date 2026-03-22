@@ -50,6 +50,7 @@ export const projectData = [
       // Page 5: Solution B (Detail & Deep Dive)
       solutionB: {
         title: "P1_SOL_B_TITLE",
+        summary: "P1_SOL_B_SUMMARY",
         description: [
             { title: "P1_SOL_B_DESC_1_TITLE", desc: "P1_SOL_B_DESC_1_DESC" },
             { title: "P1_SOL_B_DESC_2_TITLE", desc: "P1_SOL_B_DESC_2_DESC" },
@@ -69,8 +70,7 @@ export const projectData = [
       impact: {
         outcome: [
             { title: "P1_IMPACT_OUTCOME_1_TITLE", desc: "P1_IMPACT_OUTCOME_1_DESC", image: "/stitch_source/p1Impact1.svg" },
-            { title: "P1_IMPACT_OUTCOME_2_TITLE", desc: "P1_IMPACT_OUTCOME_2_DESC", image: "/stitch_source/p1Impact2.svg" },
-            { title: "P1_IMPACT_OUTCOME_3_TITLE", desc: "P1_IMPACT_OUTCOME_3_DESC", image: "/stitch_source/p1Impact3.svg" }
+            { title: "P1_IMPACT_OUTCOME_2_TITLE", desc: "P1_IMPACT_OUTCOME_2_DESC", image: "/stitch_source/p1Impact2.svg" }
         ],
         lesson: "P1_IMPACT_LESSON"
       },
@@ -113,19 +113,15 @@ export const projectData = [
         summary: "P2_SOL_A_SUMMARY",
         description: [
           { title: "P2_SOL_A_DESC_1_TITLE", desc: "P2_SOL_A_DESC_1_DESC" },
-          { title: "P2_SOL_A_DESC_2_TITLE", desc: "P2_SOL_A_DESC_2_DESC" },
-          { title: "P2_SOL_A_DESC_3_TITLE", desc: "P2_SOL_A_DESC_3_DESC" }
+          { title: "P2_SOL_A_DESC_2_TITLE", desc: "P2_SOL_A_DESC_2_DESC" }
         ],
         image: "/stitch_source/p2SolutionA.svg"
       },
       // Page 5: Solution B (Detail & Deep Dive)
       solutionB: {
         title: "P2_SOL_B_TITLE",
-        description: [
-            { title: "P2_SOL_B_DESC_1_TITLE", desc: "P2_SOL_B_DESC_1_DESC" },
-            { title: "P2_SOL_B_DESC_2_TITLE", desc: "P2_SOL_B_DESC_2_DESC" },
-            { title: "P2_SOL_B_DESC_3_TITLE", desc: "P2_SOL_B_DESC_3_DESC" }
-        ],
+        summary: "P2_SOL_B_SUMMARY",
+        description: [],
         image: "/stitch_source/p2SolutionB.svg",
         asIs: {
             image: "project2_asis.png",
@@ -177,15 +173,12 @@ export const projectData = [
       solutionA: {
         title: "P3_SOL_A_TITLE",
         summary: "P3_SOL_A_SUMMARY",
-        description: [
-          { title: "P3_SOL_A_DESC_1_TITLE", desc: "P3_SOL_A_DESC_1_DESC" },
-          { title: "P3_SOL_A_DESC_2_TITLE", desc: "P3_SOL_A_DESC_2_DESC" },
-          { title: "P3_SOL_A_DESC_3_TITLE", desc: "P3_SOL_A_DESC_3_DESC" }
-        ],
+        description: [],
         image: "/stitch_source/p3SolutionA.svg"
       },
       solutionB: {
         title: "P3_SOL_B_TITLE",
+        summary: "P3_SOL_B_SUMMARY",
         description: [
             { title: "P3_SOL_B_DESC_1_TITLE", desc: "P3_SOL_B_DESC_1_DESC" },
             { title: "P3_SOL_B_DESC_2_TITLE", desc: "P3_SOL_B_DESC_2_DESC" },
@@ -241,20 +234,13 @@ export const projectData = [
       solutionA: {
         title: "P4_SOL_A_TITLE",
         summary: "P4_SOL_A_SUMMARY",
-        description: [
-          { title: "P4_SOL_A_DESC_1_TITLE", desc: "P4_SOL_A_DESC_1_DESC" },
-          { title: "P4_SOL_A_DESC_2_TITLE", desc: "P4_SOL_A_DESC_2_DESC" },
-          { title: "P4_SOL_A_DESC_3_TITLE", desc: "P4_SOL_A_DESC_3_DESC" }
-        ],
+        description: [],
         image: "/stitch_source/p4Solution-A.svg"
       },
       solutionB: {
         title: "P4_SOL_B_TITLE",
-        description: [
-            { title: "P4_SOL_B_DESC_1_TITLE", desc: "P4_SOL_B_DESC_1_DESC" },
-            { title: "P4_SOL_B_DESC_2_TITLE", desc: "P4_SOL_B_DESC_2_DESC" },
-            { title: "P4_SOL_B_DESC_3_TITLE", desc: "P4_SOL_B_DESC_3_DESC" }
-        ],
+        summary: "P4_SOL_B_SUMMARY",
+        description: [],
         image: "/stitch_source/p4Solution-B.svg",
         asIs: {
             image: "project4_asis.png",
@@ -306,11 +292,7 @@ export const projectData = [
       solutionA: {
         title: "SIDE_SOL_A_TITLE",
         summary: "SIDE_SOL_A_SUMMARY",
-        description: [
-          { title: "SIDE_SOL_A_DESC_1_TITLE", desc: "SIDE_SOL_A_DESC_1_DESC" },
-          { title: "SIDE_SOL_A_DESC_2_TITLE", desc: "SIDE_SOL_A_DESC_2_DESC" },
-          { title: "SIDE_SOL_A_DESC_3_TITLE", desc: "SIDE_SOL_A_DESC_3_DESC" }
-        ],
+        description: [],
         image: "/stitch_source/p5Solution.svg"
       },
 

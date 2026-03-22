@@ -11,22 +11,33 @@ export const parseForBold = (text) => {
   if (text === null || text === undefined) return "";
   if (typeof text !== 'string') return text;
 
-  // If no bold syntax is found, return the text as is 
-  // (optimization to avoid unnecessary array creation)
-  if (!text.includes('**')) return text;
-
-  // Split by **
-  // Capturing group (...) keeps the delimiter in the result array
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+  // Split by bold (**text**) or link ([text](url))
+  const parts = text.split(/(\*\*.*?\*\*|\[.*?\]\(.*?\))/g);
   
   return (
     <>
       {parts.map((part, index) => {
         if (part.startsWith('**') && part.endsWith('**') && part.length >= 4) {
-          // Remove the ** delimiters and wrap in <strong>
           return <strong key={index}>{part.slice(2, -2)}</strong>;
         }
-        // Return normal text part
+        
+        if (part.startsWith('[') && part.includes('](') && part.endsWith(')')) {
+          const match = part.match(/\[(.*?)\]\((.*?)\)/);
+          if (match) {
+            return (
+              <a 
+                key={index} 
+                href={match[2]} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}
+              >
+                {match[1]}
+              </a>
+            );
+          }
+        }
+        
         return part;
       })}
     </>
