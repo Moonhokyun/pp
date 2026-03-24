@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000014"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="480" y="36" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="3">PROBLEM ANALYSIS — FRAGMENTED EXPERIENCE &amp; COGNITIVE OVERLOAD</text>
+
+  <!-- Left: Fragmented LLM buttons (AS-IS) -->
+  <g transform="translate(40, 60)">
+    <text x="175" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="1">AS-IS: 파편화된 GPT 리뷰</text>
+
+    <!-- Screen 1: Intent Finder -->
+    <rect x="20" y="18" width="155" height="100" rx="8" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1"/>
+    <text x="97" y="38" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="#555555" text-anchor="middle">인텐트 파인더</text>
+    <rect x="35" y="46" width="90" height="10" rx="3" fill="#E0E0E0"/>
+    <rect x="35" y="62" width="70" height="10" rx="3" fill="#E0E0E0"/>
+    <rect x="35" y="78" width="80" height="10" rx="3" fill="#E0E0E0"/>
+    <!-- GPT button -->
+    <rect x="55" y="97" width="70" height="16" rx="4" fill="#FF6B6B" opacity="0.8"/>
+    <text x="90" y="109" font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">GPT 리뷰 ▼</text>
+    <!-- Warning icon -->
+    <text x="155" y="40" font-family="'Inter', sans-serif" font-size="16" text-anchor="middle">⚠️</text>
+
+    <!-- Screen 2: Path Finder -->
+    <rect x="185" y="18" width="155" height="100" rx="8" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1"/>
+    <text x="262" y="38" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="#555555" text-anchor="middle">패스 파인더</text>
+    <rect x="200" y="46" width="85" height="10" rx="3" fill="#E0E0E0"/>
+    <rect x="200" y="62" width="100" height="10" rx="3" fill="#E0E0E0"/>
+    <rect x="200" y="78" width="65" height="10" rx="3" fill="#E0E0E0"/>
+    <!-- GPT button (different style) -->
+    <rect x="218" y="97" width="70" height="16" rx="4" fill="#FF8C00" opacity="0.7"/>
+    <text x="253" y="109" font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">AI 분석 ▼</text>
+    <!-- Warning icon -->
+    <text x="320" y="40" font-family="'Inter', sans-serif" font-size="16" text-anchor="middle">⚠️</text>
+
+    <!-- Broken journey line -->
+    <line x1="175" y1="130" x2="175" y2="155" stroke="#FF6B6B" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="175" y="172" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#FF6B6B" text-anchor="middle">단절된 User Journey</text>
+
+    <!-- Arrow down to pain point -->
+    <line x1="175" y1="178" x2="175" y2="196" stroke="#FF6B6B" stroke-width="1.5"/>
+    <polygon points="175,200 170,193 180,193" fill="#FF6B6B"/>
+
+    <!-- Pain point boxes -->
+    <rect x="30" y="205" width="135" height="52" rx="6" fill="#FFF0F0" stroke="#FFCCCC" stroke-width="1"/>
+    <text x="97" y="223" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#CC3333" text-anchor="middle">맥락 단절</text>
+    <text x="97" y="237" font-family="'Inter', sans-serif" font-size="8" fill="#555555" text-anchor="middle">화면마다 다른 UI,</text>
+    <text x="97" y="249" font-family="'Inter', sans-serif" font-size="8" fill="#555555" text-anchor="middle">일관된 분석 불가</text>
+
+    <rect x="180" y="205" width="135" height="52" rx="6" fill="#FFF0F0" stroke="#FFCCCC" stroke-width="1"/>
+    <text x="247" y="223" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#CC3333" text-anchor="middle">What to do 부재</text>
+    <text x="247" y="237" font-family="'Inter', sans-serif" font-size="8" fill="#555555" text-anchor="middle">데이터 확인은 가능,</text>
+    <text x="247" y="249" font-family="'Inter', sans-serif" font-size="8" fill="#555555" text-anchor="middle">액션 도출 불가</text>
+  </g>
+
+  <!-- Center divider -->
+  <line x1="420" y1="55" x2="420" y2="400" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Right: Cognitive overload visualization -->
+  <g transform="translate(445, 60)">
+    <text x="235" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="1">COGNITIVE OVERLOAD</text>
+
+    <!-- Brain/overload visualization: keyword count circles -->
+    <text x="235" y="28" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">사용자가 직접 분석해야 할 데이터 규모</text>
+
+    <!-- Big number: 1,000 keywords -->
+    <rect x="60" y="40" width="220" height="80" rx="12" fill="#F5F7FF" stroke="#CCDDFF" stroke-width="1.5"/>
+    <text x="170" y="82" font-family="'Inter', sans-serif" font-size="44" font-weight="800" fill="#3366CC" text-anchor="middle">1,000</text>
+    <text x="170" y="110" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">Keywords</text>
+
+    <!-- Arrow right -->
+    <text x="300" y="90" font-family="'Inter', sans-serif" font-size="24" fill="#CCCCCC" text-anchor="middle">→</text>
+
+    <!-- Token count -->
+    <rect x="320" y="40" width="145" height="80" rx="12" fill="#FFF8F0" stroke="#FFDDAA" stroke-width="1.5"/>
+    <text x="392" y="82" font-family="'Inter', sans-serif" font-size="32" font-weight="800" fill="#FF8C00" text-anchor="middle">90K+</text>
+    <text x="392" y="110" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">Tokens</text>
+
+    <!-- Overload meter -->
+    <text x="235" y="150" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="middle">인지적 부하 수준</text>
+    <rect x="60" y="158" width="350" height="16" rx="8" fill="#F0F0F0"/>
+    <rect x="60" y="158" width="315" height="16" rx="8" fill="#FF6B6B" opacity="0.7"/>
+    <text x="382" y="171" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#CC3333">90%</text>
+
+    <!-- Excel workaround -->
+    <rect x="60" y="186" width="350" height="56" rx="8" fill="#FFFBF0" stroke="#FFE0A0" stroke-width="1"/>
+    <text x="80" y="206" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#CC8800">현재 사용자 대응 방식</text>
+    <text x="80" y="222" font-family="'Inter', sans-serif" font-size="9" fill="#555555">📥 엑셀 다운로드 → ✏️ 직접 정리 → 🤔 분석 시도</text>
+    <text x="80" y="236" font-family="'Inter', sans-serif" font-size="9" fill="#888888">반복적인 수작업 → 시간 소요 &amp; 인사이트 도출 실패</text>
+  </g>
+
+  <!-- Bottom: VOC signal -->
+  <g transform="translate(40, 395)">
+    <rect x="0" y="0" width="880" height="62" rx="10" fill="#F0F5FF"/>
+    <rect x="0" y="0" width="6" height="62" rx="3" fill="#3366CC"/>
+    <text x="26" y="22" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#3366CC">User Feedback Detected</text>
+    <text x="26" y="40" font-family="'Inter', sans-serif" font-size="11" fill="#555555">"화면에서 데이터를 보고는 있는데, 결국 엑셀로 다운받아서 직접 정리해야 '뭘 해야 할지'가 보여요."</text>
+    <text x="26" y="55" font-family="'Inter', sans-serif" font-size="10" fill="#888888">데이터 조회는 가능 — 그러나 'Actionable Insight' 도출은 불가 → AI 에이전트 필요성 확인</text>
+  </g>
+</svg>
