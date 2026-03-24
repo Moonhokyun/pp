@@ -1,4 +1,5 @@
 import project1Cover from "../assets/img/project1_cover.png";
+import project6Cover from "../assets/img/project6_cover.svg";
 import project2Cover from "../assets/img/project2_cover.png";
 import project3Cover from "../assets/img/project3_cover.png";
 import project4Cover from "../assets/img/project4_cover.png";
@@ -305,5 +306,69 @@ export const projectData = [
         lesson: "SIDE_IMPACT_LESSON"
       },
       isSideProject: true
+    },
+    {
+      id: "project-6",
+      // Page 1: Overview
+      overview: {
+        headline: "P6_HEADLINE",
+        summary: "P6_SUMMARY",
+        keyMetrics: ["P6_KEY_METRIC_1", "P6_KEY_METRIC_2", "P6_KEY_METRIC_3"],
+        role: "P6_ROLE",
+        contribution: "P6_CONTRIBUTION",
+        period: "P6_PERIOD",
+        team: "P6_TEAM",
+        coverImage: project6Cover,
+        tags: ["P6_TAG_1", "P6_TAG_2", "P6_TAG_3"]
+      },
+      // Page 2: Problem Definition
+      problem: {
+        title: "P6_PROBLEM_TITLE",
+        background: "P6_PROBLEM_BACKGROUND",
+        quantitative: "P6_PROBLEM_QUANT",
+        qualitative: "P6_PROBLEM_QUAL",
+        image: "/stitch_source/p6Problem.svg"
+      },
+      // Page 3: Strategy & Hypothesis
+      strategy: {
+        title: "P6_STRATEGY_TITLE",
+        description: "P6_STRATEGY_DESC",
+        cause: "P6_STRATEGY_CAUSE",
+        causeDesc: "P6_STRATEGY_CAUSE_DESC",
+        hypothesis: "P6_STRATEGY_HYPO",
+        image: "/stitch_source/p6Strategy.svg"
+      },
+      // Page 4: Solution A
+      solutionA: {
+        title: "P6_SOL_A_TITLE",
+        summary: "P6_SOL_A_SUMMARY",
+        description: [
+          { title: "P6_SOL_A_DESC_1_TITLE", desc: "P6_SOL_A_DESC_1_DESC" },
+          { title: "P6_SOL_A_DESC_2_TITLE", desc: "P6_SOL_A_DESC_2_DESC" }
+        ],
+        image: "/stitch_source/p6SolutionA.svg"
+      },
+      // Page 5: Solution B
+      solutionB: {
+        title: "P6_SOL_B_TITLE",
+        summary: "P6_SOL_B_SUMMARY",
+        description: [
+          { title: "P6_SOL_B_DESC_1_TITLE", desc: "P6_SOL_B_DESC_1_DESC" },
+          { title: "P6_SOL_B_DESC_2_TITLE", desc: "P6_SOL_B_DESC_2_DESC" }
+        ],
+        image: "/stitch_source/p6SolutionB.svg",
+        asIs: { image: "/stitch_source/p6SolutionB_asis.svg", desc: "P6_SOL_B_ASIS_DESC" },
+        toBe:  { image: "/stitch_source/p6SolutionB_tobe.svg",  desc: "P6_SOL_B_TOBE_DESC" }
+      },
+      // Page 6: Impact & Lesson
+      impact: {
+        outcome: [
+          { title: "P6_IMPACT_OUTCOME_1_TITLE", desc: "P6_IMPACT_OUTCOME_1_DESC", image: "/stitch_source/p6Impact1.svg" },
+          { title: "P6_IMPACT_OUTCOME_2_TITLE", desc: "P6_IMPACT_OUTCOME_2_DESC", image: "/stitch_source/p6Impact2.svg" },
+          { title: "P6_IMPACT_OUTCOME_3_TITLE", desc: "P6_IMPACT_OUTCOME_3_DESC", image: "/stitch_source/p6Impact3.svg" }
+        ],
+        lesson: "P6_IMPACT_LESSON"
+      },
+      isSideProject: false
     },
   ];

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420">
+  <!-- Title -->
+  <text x="480" y="36" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="3">PRODUCT MIX — PROFIT CONTRIBUTION ANALYSIS</text>
+
+  <!-- Left: Bar chart - product profit contribution -->
+  <g transform="translate(60, 60)">
+    <text x="170" y="0" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#555555" text-anchor="middle">이익 기여도 분석</text>
+
+    <!-- Y axis -->
+    <line x1="60" y1="20" x2="60" y2="280" stroke="#E5E7EB" stroke-width="1.5"/>
+    <!-- X axis -->
+    <line x1="60" y1="280" x2="320" y2="280" stroke="#E5E7EB" stroke-width="1.5"/>
+
+    <!-- Y labels -->
+    <text x="50" y="24" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="end">100%</text>
+    <text x="50" y="90" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="end">75%</text>
+    <text x="50" y="156" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="end">50%</text>
+    <text x="50" y="222" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="end">25%</text>
+    <!-- Grid lines -->
+    <line x1="60" y1="24" x2="320" y2="24" stroke="#F0F0F0" stroke-width="1"/>
+    <line x1="60" y1="90" x2="320" y2="90" stroke="#F0F0F0" stroke-width="1"/>
+    <line x1="60" y1="156" x2="320" y2="156" stroke="#F0F0F0" stroke-width="1"/>
+    <line x1="60" y1="222" x2="320" y2="222" stroke="#F0F0F0" stroke-width="1"/>
+
+    <!-- Bar 1: Name tag (82.7%) -->
+    <rect x="80" y="53" width="50" height="227" rx="4" fill="#111111"/>
+    <text x="105" y="44" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#111111" text-anchor="middle">82.7%</text>
+    <text x="105" y="296" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">네임택</text>
+    <text x="105" y="310" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="middle">Name Tag</text>
+
+    <!-- Bar 2: Business card (11.8%) -->
+    <rect x="155" y="247" width="50" height="33" rx="4" fill="#37A3E2" opacity="0.7"/>
+    <text x="180" y="238" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#37A3E2" text-anchor="middle">11.8%</text>
+    <text x="180" y="296" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">명함</text>
+    <text x="180" y="310" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="middle">Business Card</text>
+
+    <!-- Bar 3: Others (5.5%) -->
+    <rect x="230" y="264" width="50" height="16" rx="4" fill="#E5E7EB"/>
+    <text x="255" y="255" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#888888" text-anchor="middle">5.5%</text>
+    <text x="255" y="296" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">기타</text>
+    <text x="255" y="310" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="middle">Others</text>
+
+    <!-- Cash Cow label -->
+    <rect x="74" y="58" width="62" height="22" rx="4" fill="#37A3E2"/>
+    <text x="105" y="73" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">Cash Cow</text>
+  </g>
+
+  <!-- Center divider -->
+  <line x1="430" y1="60" x2="430" y2="380" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Right: Margin comparison -->
+  <g transform="translate(460, 60)">
+    <text x="230" y="0" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#555555" text-anchor="middle">마진율 비교</text>
+
+    <!-- Name tag margin -->
+    <text x="0" y="40" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#111111">네임택 (Name Tag)</text>
+    <rect x="0" y="52" width="460" height="28" rx="4" fill="#F0F0F0"/>
+    <rect x="0" y="52" width="236" height="28" rx="4" fill="#111111"/>
+    <text x="236" y="72" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#111111" text-anchor="end" dx="-8">51.25%</text>
+    <text x="244" y="72" font-family="'Inter', sans-serif" font-size="11" fill="#888888">원가 7,800원</text>
+
+    <!-- Business card margin -->
+    <text x="0" y="116" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#111111">명함 디자인 (B2B)</text>
+    <rect x="0" y="128" width="460" height="28" rx="4" fill="#F0F0F0"/>
+    <rect x="0" y="128" width="217" height="28" rx="4" fill="#37A3E2" opacity="0.7"/>
+    <text x="217" y="148" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#37A3E2" text-anchor="end" dx="-8">47.3%</text>
+
+    <!-- 4-year avg margin -->
+    <text x="0" y="192" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#111111">4년 평균 영업이익률</text>
+    <rect x="0" y="204" width="460" height="28" rx="4" fill="#F0F0F0"/>
+    <rect x="0" y="204" width="232" height="28" rx="4" fill="#111111"/>
+    <text x="232" y="224" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="white" text-anchor="end" dx="-8">50.52%</text>
+    <text x="244" y="224" font-family="'Inter', sans-serif" font-size="11" fill="#888888">업계 평균 상회</text>
+
+    <!-- Insight box -->
+    <rect x="0" y="265" width="460" height="80" rx="8" fill="#F0F9FF" stroke="#37A3E2" stroke-width="1"/>
+    <text x="16" y="288" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#37A3E2">Scalability to B2B</text>
+    <text x="16" y="308" font-family="'Inter', sans-serif" font-size="11" fill="#555555">B2C 굿즈 판매 → B2B 브랜딩 서비스로 확장</text>
+    <text x="16" y="328" font-family="'Inter', sans-serif" font-size="11" fill="#555555">단순 굿즈 판매를 넘어 '디자인 솔루션 비즈니스'로의 진화</text>
+  </g>
+</svg>

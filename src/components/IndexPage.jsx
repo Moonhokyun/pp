@@ -57,6 +57,20 @@ const IndexPage = () => {
                     </li>
                 </ul>
             </div>
+
+            {/* Muno Art Section */}
+            <div className="index-group" style={{ marginTop: '40px' }}>
+                <div className="brand-header">
+                    <span className="brand-name">무노아트 브랜드 운영</span>
+                </div>
+                <ul className="index-list">
+                    <li>
+                        <span className="index-num">6</span>
+                        <span className="index-desc">{t('INDEX_MUNO_DESC_1')}</span>
+                        <span className="index-page-num">35</span>
+                    </li>
+                </ul>
+            </div>
         </div>
 
       </div>
