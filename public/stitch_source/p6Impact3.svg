@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 562 315" width="562" height="315">
+  <text x="281" y="28" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="2">4-YEAR AVG. OPERATING PROFIT MARGIN</text>
+
+  <!-- Gauge arc background -->
+  <circle cx="281" cy="195" r="120" fill="none" stroke="#F0F0F0" stroke-width="22"
+    stroke-dasharray="377 628" stroke-dashoffset="-125" stroke-linecap="round"/>
+
+  <!-- Industry average arc (approx 20-30%, using 25%) -->
+  <circle cx="281" cy="195" r="120" fill="none" stroke="#E5E7EB" stroke-width="22"
+    stroke-dasharray="94 628" stroke-dashoffset="-125" stroke-linecap="round"/>
+  <!-- 50.52% arc: 50.52/100 * 377 = 190.4 -->
+  <circle cx="281" cy="195" r="120" fill="none" stroke="#111111" stroke-width="22"
+    stroke-dasharray="191 628" stroke-dashoffset="-125" stroke-linecap="round"/>
+
+  <!-- Center text -->
+  <text x="281" y="185" font-family="'Inter', sans-serif" font-size="46" font-weight="800" fill="#111111" text-anchor="middle">50.52%</text>
+  <text x="281" y="212" font-family="'Inter', sans-serif" font-size="13" fill="#555555" text-anchor="middle">4년 평균 영업이익률</text>
+
+  <!-- Legend -->
+  <rect x="180" y="270" width="14" height="14" rx="3" fill="#111111"/>
+  <text x="200" y="281" font-family="'Inter', sans-serif" font-size="11" fill="#555555">무노아트 (50.52%)</text>
+  <rect x="310" y="270" width="14" height="14" rx="3" fill="#E5E7EB"/>
+  <text x="330" y="281" font-family="'Inter', sans-serif" font-size="11" fill="#888888">업계 평균 (~25%)</text>
+
+  <!-- Scale labels -->
+  <text x="148" y="202" font-family="'Inter', sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">0%</text>
+  <text x="281" y="76" font-family="'Inter', sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">50%</text>
+  <text x="414" y="202" font-family="'Inter', sans-serif" font-size="10" fill="#aaaaaa" text-anchor="middle">100%</text>
+</svg>

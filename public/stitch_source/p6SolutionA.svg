@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420">
+  <!-- Title -->
+  <text x="480" y="36" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="3">INTERACTIVE DESIGN PIPELINE</text>
+
+  <!-- Step backgrounds -->
+  <!-- Step 1: Trigger -->
+  <rect x="40" y="70" width="190" height="240" rx="12" fill="#F9F9F9" stroke="#E5E7EB" stroke-width="1.5"/>
+  <rect x="40" y="70" width="190" height="6" rx="3" fill="#37A3E2"/>
+  <text x="135" y="108" font-family="'Inter', sans-serif" font-size="28" text-anchor="middle">💬</text>
+  <text x="135" y="140" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#111111" text-anchor="middle">① Trigger</text>
+  <text x="135" y="162" font-family="'Inter', sans-serif" font-size="12" fill="#37A3E2" font-weight="600" text-anchor="middle">작가 선언</text>
+  <text x="135" y="186" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">"댓글 달아주시면</text>
+  <text x="135" y="202" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">그려오겠습니다"</text>
+  <text x="135" y="228" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">참여 유도 &amp;</text>
+  <text x="135" y="244" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">기대감 형성</text>
+  <text x="135" y="272" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle" font-style="italic">Post</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="236" y1="190" x2="268" y2="190" stroke="#37A3E2" stroke-width="2"/>
+  <polygon points="268,183 283,190 268,197" fill="#37A3E2"/>
+
+  <!-- Step 2: Action -->
+  <rect x="289" y="70" width="190" height="240" rx="12" fill="#F9F9F9" stroke="#E5E7EB" stroke-width="1.5"/>
+  <rect x="289" y="70" width="190" height="6" rx="3" fill="#37A3E2"/>
+  <text x="384" y="108" font-family="'Inter', sans-serif" font-size="28" text-anchor="middle">🎻</text>
+  <text x="384" y="140" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#111111" text-anchor="middle">② Action</text>
+  <text x="384" y="162" font-family="'Inter', sans-serif" font-size="12" fill="#37A3E2" font-weight="600" text-anchor="middle">사용자 요청</text>
+  <text x="384" y="186" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">"비올라 그려주세요"</text>
+  <text x="384" y="202" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">"오보에도요!"</text>
+  <text x="384" y="228" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">구체적 니즈 입력</text>
+  <text x="384" y="244" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">→ 수요 데이터 수집</text>
+  <text x="384" y="272" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle" font-style="italic">Comment</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="485" y1="190" x2="517" y2="190" stroke="#37A3E2" stroke-width="2"/>
+  <polygon points="517,183 532,190 517,197" fill="#37A3E2"/>
+
+  <!-- Step 3: Reward -->
+  <rect x="538" y="70" width="190" height="240" rx="12" fill="#F9F9F9" stroke="#E5E7EB" stroke-width="1.5"/>
+  <rect x="538" y="70" width="190" height="6" rx="3" fill="#111111"/>
+  <text x="633" y="108" font-family="'Inter', sans-serif" font-size="28" text-anchor="middle">🎨</text>
+  <text x="633" y="140" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#111111" text-anchor="middle">③ Reward</text>
+  <text x="633" y="162" font-family="'Inter', sans-serif" font-size="12" fill="#111111" font-weight="600" text-anchor="middle">작가 제작</text>
+  <text x="633" y="186" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">Mechanical Aesthetic</text>
+  <text x="633" y="202" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">일러스트 업로드</text>
+  <text x="633" y="228" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">기계적 디테일로</text>
+  <text x="633" y="244" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">차별화된 퀄리티</text>
+  <text x="633" y="272" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle" font-style="italic">Illustration</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="734" y1="190" x2="766" y2="190" stroke="#37A3E2" stroke-width="2"/>
+  <polygon points="766,183 781,190 766,197" fill="#37A3E2"/>
+
+  <!-- Step 4: Investment -->
+  <rect x="787" y="70" width="135" height="240" rx="12" fill="#111111"/>
+  <text x="854" y="108" font-family="'Inter', sans-serif" font-size="28" text-anchor="middle">💰</text>
+  <text x="854" y="140" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle">④ Investment</text>
+  <text x="854" y="162" font-family="'Inter', sans-serif" font-size="12" fill="#37A3E2" font-weight="600" text-anchor="middle">구매 전환</text>
+  <text x="854" y="186" font-family="'Inter', sans-serif" font-size="11" fill="#cccccc" text-anchor="middle">"야 이거 봐"</text>
+  <text x="854" y="202" font-family="'Inter', sans-serif" font-size="11" fill="#cccccc" text-anchor="middle">친구 태그 확산</text>
+  <text x="854" y="228" font-family="'Inter', sans-serif" font-size="11" fill="#aaaaaa" text-anchor="middle">굿즈 네임택</text>
+  <text x="854" y="244" font-family="'Inter', sans-serif" font-size="11" fill="#aaaaaa" text-anchor="middle">구매 전환</text>
+  <text x="854" y="272" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle" font-style="italic">Purchase</text>
+
+  <!-- Bottom feedback loop arrow -->
+  <path d="M 854 315 Q 854 360 480 375 Q 106 390 135 315" fill="none" stroke="#37A3E2" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/>
+  <polygon points="135,315 128,326 142,324" fill="#37A3E2" opacity="0.6"/>
+  <text x="480" y="392" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">선순환 피드백 루프 — 구매 완료 후 다시 새로운 요청 댓글로 이어짐</text>
+</svg>

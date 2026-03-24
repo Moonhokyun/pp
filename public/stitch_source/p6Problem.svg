@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="480" y="36" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="3">MARKET GAP ANALYSIS</text>
+
+  <!-- Left: Existing Market (Major) -->
+  <g transform="translate(40, 70)">
+    <text x="170" y="0" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#888888" text-anchor="middle" letter-spacing="1">EXISTING MARKET</text>
+    <!-- Piano bubble -->
+    <circle cx="100" cy="120" r="75" fill="#E5E7EB"/>
+    <text x="100" y="115" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="middle">🎹</text>
+    <text x="100" y="134" font-family="'Inter', sans-serif" font-size="12" fill="#555555" text-anchor="middle">Piano</text>
+    <text x="100" y="150" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="middle">Major</text>
+    <!-- Violin bubble -->
+    <circle cx="240" cy="100" r="62" fill="#E5E7EB"/>
+    <text x="240" y="95" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="middle">🎻</text>
+    <text x="240" y="114" font-family="'Inter', sans-serif" font-size="12" fill="#555555" text-anchor="middle">Violin</text>
+    <text x="240" y="130" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="middle">Major</text>
+    <!-- Guitar bubble -->
+    <circle cx="155" cy="230" r="55" fill="#E5E7EB"/>
+    <text x="155" y="225" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="middle">🎸</text>
+    <text x="155" y="244" font-family="'Inter', sans-serif" font-size="12" fill="#555555" text-anchor="middle">Guitar</text>
+    <text x="155" y="260" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="middle">Major</text>
+  </g>
+
+  <!-- Gap Arrow -->
+  <g transform="translate(380, 200)">
+    <line x1="0" y1="40" x2="80" y2="40" stroke="#111111" stroke-width="2" stroke-dasharray="5,4"/>
+    <polygon points="80,33 95,40 80,47" fill="#111111"/>
+    <text x="40" y="28" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">Market Gap</text>
+  </g>
+
+  <!-- Right: Niche Void -->
+  <g transform="translate(490, 70)">
+    <text x="210" y="0" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#888888" text-anchor="middle" letter-spacing="1">NICHE VOID (UNSERVED)</text>
+    <!-- Oboe void -->
+    <circle cx="100" cy="115" r="55" fill="none" stroke="#37A3E2" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="100" y="108" font-family="'Inter', sans-serif" font-size="20" text-anchor="middle">🎺</text>
+    <text x="100" y="130" font-family="'Inter', sans-serif" font-size="12" fill="#37A3E2" text-anchor="middle">Oboe</text>
+    <text x="100" y="146" font-family="'Inter', sans-serif" font-size="10" fill="#37A3E2" text-anchor="middle">0 Products</text>
+    <!-- Viola void -->
+    <circle cx="235" cy="100" r="48" fill="none" stroke="#37A3E2" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="235" y="93" font-family="'Inter', sans-serif" font-size="20" text-anchor="middle">🎻</text>
+    <text x="235" y="115" font-family="'Inter', sans-serif" font-size="12" fill="#37A3E2" text-anchor="middle">Viola</text>
+    <text x="235" y="131" font-family="'Inter', sans-serif" font-size="10" fill="#37A3E2" text-anchor="middle">0 Products</text>
+    <!-- Percussion void -->
+    <circle cx="155" cy="225" r="52" fill="none" stroke="#37A3E2" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="155" y="218" font-family="'Inter', sans-serif" font-size="20" text-anchor="middle">🥁</text>
+    <text x="155" y="240" font-family="'Inter', sans-serif" font-size="12" fill="#37A3E2" text-anchor="middle">Percussion</text>
+    <text x="155" y="256" font-family="'Inter', sans-serif" font-size="10" fill="#37A3E2" text-anchor="middle">0 Products</text>
+    <!-- "?" labels -->
+    <text x="100" y="168" font-family="'Inter', sans-serif" font-size="22" font-weight="800" fill="#37A3E2" text-anchor="middle" opacity="0.5">?</text>
+    <text x="235" y="152" font-family="'Inter', sans-serif" font-size="22" font-weight="800" fill="#37A3E2" text-anchor="middle" opacity="0.5">?</text>
+    <text x="155" y="278" font-family="'Inter', sans-serif" font-size="22" font-weight="800" fill="#37A3E2" text-anchor="middle" opacity="0.5">?</text>
+  </g>
+
+  <!-- Bottom: VOC signal -->
+  <g transform="translate(40, 380)">
+    <rect x="0" y="0" width="880" height="70" rx="10" fill="#F0F9FF"/>
+    <rect x="0" y="0" width="6" height="70" rx="3" fill="#37A3E2"/>
+    <text x="26" y="24" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#37A3E2">Buying Signal Detected</text>
+    <text x="26" y="44" font-family="'Inter', sans-serif" font-size="12" fill="#555555">"왜 현악은 없는 건가요?"  ·  "오보에는 왜 없죠?"  ·  "만약 내 악기가 그려진다면 구매하겠다"</text>
+    <text x="26" y="60" font-family="'Inter', sans-serif" font-size="11" fill="#888888">단순 불만이 아닌 잠재적 구매 의사(Buying Signal) — 수요는 존재하나 공급이 전무한 블루오션</text>
+  </g>
+</svg>

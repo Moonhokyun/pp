@@ -317,5 +317,55 @@
   "FOOTER_NAME": "Moon Ho-kyun",
   "FOOTER_ROLE": "Product Designer",
   "FOOTER_RESUME": "Resume",
-  "FOOTER_COPYRIGHT": "© 2026 Moon Ho-kyun. All rights reserved."
+  "FOOTER_COPYRIGHT": "© 2026 Moon Ho-kyun. All rights reserved.",
+
+  "INDEX_MUNO_DESC_1": "VOC 데이터 기반 팬슈머 전략으로 광고비 없이 영업이익률 50.5% 달성",
+
+  "P6_HEADLINE": "팬덤의 목소리(VOC)를 시각화하여\n영업이익률 50.5%의 고부가가치 비즈니스를 구축하다.",
+  "P6_SUMMARY": "기존 악기 굿즈 시장의 천편일률적인 디자인 문제를 해결하기 위해 시작된 '무노아트'는 소셜 미디어 기반의 아트 커머스 프로젝트입니다. 사용자의 댓글 데이터를 제품 기획의 핵심 근거로 활용하는 '팬슈머(Fan-sumer)' 전략을 통해, 광고비 지출 없이 오가닉 바이럴만으로 비즈니스 확장을 이뤄냈습니다.",
+  "P6_KEY_METRIC_1": "50.52%\n4년 평균 영업이익률",
+  "P6_KEY_METRIC_2": "72.5%\n바이럴 구간 연 매출 성장률",
+  "P6_KEY_METRIC_3": "1,100+\n오가닉 반응 (좋아요/댓글/공유)",
+  "P6_ROLE": "Founder, Product Designer, Data Analyst",
+  "P6_CONTRIBUTION": "100% (브랜드 기획, 제품 디자인, 데이터 분석, 운영 총괄)",
+  "P6_PERIOD": "2018.12 - 2023.12",
+  "P6_TEAM": "Solo (1인 창업)",
+  "P6_TAG_1": "Fan-sumer",
+  "P6_TAG_2": "Data Commerce",
+  "P6_TAG_3": "Brand Strategy",
+
+  "P6_PROBLEM_TITLE": "Problem Definition",
+  "P6_PROBLEM_BACKGROUND": "클래식 음악 전공자와 애호가들은 자신의 악기에 대한 애착이 매우 강하지만, 시장에 존재하는 굿즈는 그들의 구체적인 아이덴티티(예: 특정 관악기의 디테일)를 대변하지 못하고 있었습니다.",
+  "P6_PROBLEM_QUANT": "**Niche Market Void**: 피아노, 바이올린 등 메이저 악기 외의 '오보에', '비올라', '타악기' 등을 다룬 고퀄리티 디자인 상품이 **'0건'**에 가까웠습니다.\n**Demand Surplus**: 페이스북 게시물 분석 결과, 댓글의 상당수가 단순 감상이 아닌 **'결핍(Unmet Needs)'**의 표현이었습니다.",
+  "P6_PROBLEM_QUAL": "\"왜 현악은 없는 건가요?\", \"오보에는 왜 없죠?\", \"플룻이 땅꼬마가 됐어\" — 사용자들은 자신의 정체성이 배제된 것에 대한 아쉬움을 토로했습니다. 이는 단순한 불만이 아니라 **\"만약 내 악기가 그려진다면 구매하겠다\"**는 잠재적 구매 의사(Buying Signal)였습니다.",
+
+  "P6_STRATEGY_TITLE": "Strategy & Hypothesis",
+  "P6_STRATEGY_DESC": "완벽한 제품을 먼저 만드는 것이 아니라, MVP(최소 기능 제품: 일러스트 시안)를 소셜 미디어에 공개하고 반응(VOC)을 측정한 뒤 실제 제품(굿즈)으로 구현하는 'Build-Measure-Learn' 프로세스를 채택. 페이스북의 '친구 태그(@)' 문화를 활용, 사용자가 스스로 마케터가 되어 콘텐츠를 확산시키는 구조를 설계했습니다.",
+  "P6_STRATEGY_CAUSE": "VOC 기반 수요 선검증",
+  "P6_STRATEGY_CAUSE_DESC": "사용자의 악기 요청 댓글을 구매 시그널로 해석하고 MVP로 빠르게 검증",
+  "P6_STRATEGY_HYPO": "IF 사용자가 요청한 악기를 기계적 미학(Mechanical Aesthetic)으로 재해석하여 시각화해 준다면, THEN 해당 사용자는 자발적으로 친구를 태그하여 2차 확산을 일으키고, 광고비 없이(CAC = 0) 높은 전환율의 구매로 이어질 것이다.",
+
+  "P6_SOL_A_TITLE": "Solution A: Interactive Design Pipeline",
+  "P6_SOL_A_SUMMARY": "일방적인 창작이 아닌, '요청(Request) → 창작(Creation) → 검증(Verification) → 판매(Sales)'로 이어지는 선순환 파이프라인을 구축했습니다.",
+  "P6_SOL_A_DESC_1_TITLE": "Fan-sumer Loop Mechanism",
+  "P6_SOL_A_DESC_1_DESC": "① Trigger: \"댓글 달아주시면 그려오겠습니다\" 선언 → ② Action: \"비올라 그려주세요\" 구체적 요청 → ③ Reward: 기계적 디테일이 살아있는 일러스트 제작 → ④ Investment: 친구 태그 2차 확산 & 굿즈 구매 전환",
+  "P6_SOL_A_DESC_2_TITLE": "Mechanical Aesthetic 차별화",
+  "P6_SOL_A_DESC_2_DESC": "기존의 귀여운 캐릭터 스타일을 탈피하고, 악기의 금속성/나무 질감을 '기계적 메커니즘'과 결합하여 남성/전공자 타겟까지 아우르는 소장 가치 있는 아트워크로 차별화했습니다.",
+
+  "P6_SOL_B_TITLE": "Solution B: Profit-Driven Business Logic",
+  "P6_SOL_B_SUMMARY": "데이터 분석을 통해 핵심 수익 상품을 선정하고, B2B로의 확장성을 검증한 비즈니스 모델을 설계했습니다.",
+  "P6_SOL_B_DESC_1_TITLE": "Cash Cow 제품 집중 전략",
+  "P6_SOL_B_DESC_1_DESC": "데이터 분석 결과 이익 기여도 82.7%로 가장 높은 '네임택'을 핵심 상품으로 선정. 원가(7,800원) 대비 51.25%의 마진율을 확보하여 브랜드 프리미엄 전략을 구사했습니다.",
+  "P6_SOL_B_DESC_2_TITLE": "B2B 확장으로 수익 다변화",
+  "P6_SOL_B_DESC_2_DESC": "이익률 47.3%의 명함 디자인 및 브랜딩 서비스로 영역을 확장했습니다. 단순 굿즈 판매를 넘어 '디자인 솔루션 비즈니스'로의 확장 가능성을 검증한 모델입니다.",
+  "P6_SOL_B_ASIS_DESC": "다품종 소량 생산 → 높은 재고 리스크 & 분산된 마케팅 자원",
+  "P6_SOL_B_TOBE_DESC": "네임택 집중(이익 기여도 82.7%) → 51.25% 마진율 확보 & 브랜드 프리미엄",
+
+  "P6_IMPACT_OUTCOME_1_TITLE": "Revenue Growth +72.5%",
+  "P6_IMPACT_OUTCOME_1_DESC": "2018년 190만원 → 2019년 328만원. 바이럴 구간 전년 대비 72.5% 급성장.",
+  "P6_IMPACT_OUTCOME_2_TITLE": "Viral Reach (CAC = 0)",
+  "P6_IMPACT_OUTCOME_2_DESC": "별도 마케팅 비용 없이 좋아요 786개, 댓글 151개, 공유 75회 달성.",
+  "P6_IMPACT_OUTCOME_3_TITLE": "Avg. Operating Profit 50.52%",
+  "P6_IMPACT_OUTCOME_3_DESC": "코로나19 등 외부 환경 변화에도 4년간 평균 50.52% 영업이익률 방어.",
+  "P6_IMPACT_LESSON": "Designer as a Business Partner: 디자인은 단순히 예쁜 것을 만드는 작업이 아니라, 고객의 니즈를 데이터로 파악하고 이를 가장 효율적인 비즈니스 모델로 연결하는 '전략적 도구'임을 체득했습니다. 데이터(이익률, 반응 수)를 기반으로 직관을 검증하고, '팔리는 디자인'을 만드는 PM으로서의 시각을 갖게 되었습니다."
 }

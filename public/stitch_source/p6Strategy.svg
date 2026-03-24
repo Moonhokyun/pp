@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480">
+  <!-- Title -->
+  <text x="480" y="36" font-family="'Inter', sans-serif" font-size="14" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="3">FAN-SUMER LOOP — BUILD · MEASURE · LEARN</text>
+
+  <!-- Central circle -->
+  <circle cx="480" cy="255" r="68" fill="#111111"/>
+  <text x="480" y="248" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle">Fan-sumer</text>
+  <text x="480" y="268" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle">Loop</text>
+
+  <!-- Node 1: BUILD (top) -->
+  <circle cx="480" cy="105" r="48" fill="#37A3E2" opacity="0.15"/>
+  <circle cx="480" cy="105" r="48" fill="none" stroke="#37A3E2" stroke-width="2"/>
+  <text x="480" y="99" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#37A3E2" text-anchor="middle">BUILD</text>
+  <text x="480" y="116" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">MVP 일러스트 시안</text>
+
+  <!-- Node 2: MEASURE (right) -->
+  <circle cx="700" cy="310" r="48" fill="#37A3E2" opacity="0.15"/>
+  <circle cx="700" cy="310" r="48" fill="none" stroke="#37A3E2" stroke-width="2"/>
+  <text x="700" y="304" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#37A3E2" text-anchor="middle">MEASURE</text>
+  <text x="700" y="321" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">VOC 반응 측정</text>
+
+  <!-- Node 3: LEARN (left) -->
+  <circle cx="260" cy="310" r="48" fill="#37A3E2" opacity="0.15"/>
+  <circle cx="260" cy="310" r="48" fill="none" stroke="#37A3E2" stroke-width="2"/>
+  <text x="260" y="304" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#37A3E2" text-anchor="middle">LEARN</text>
+  <text x="260" y="321" font-family="'Inter', sans-serif" font-size="11" fill="#555555" text-anchor="middle">굿즈 제품 구현</text>
+
+  <!-- Arrows: BUILD → MEASURE -->
+  <path d="M 526 128 Q 640 170 662 267" fill="none" stroke="#37A3E2" stroke-width="2"/>
+  <polygon points="660,267 669,255 672,270" fill="#37A3E2"/>
+  <text x="620" y="200" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">소셜 공개</text>
+  <text x="620" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">& 태그 유도</text>
+
+  <!-- Arrows: MEASURE → LEARN -->
+  <path d="M 652 310 Q 480 390 308 310" fill="none" stroke="#37A3E2" stroke-width="2"/>
+  <polygon points="308,310 322,303 320,318" fill="#37A3E2"/>
+  <text x="480" y="382" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">댓글 요청 수집 → 수요 확인</text>
+
+  <!-- Arrows: LEARN → BUILD -->
+  <path d="M 298 267 Q 360 170 434 128" fill="none" stroke="#37A3E2" stroke-width="2"/>
+  <polygon points="434,128 424,115 438,118" fill="#37A3E2"/>
+  <text x="340" y="200" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">검증된 수요로</text>
+  <text x="340" y="215" font-family="'Inter', sans-serif" font-size="11" fill="#888888" text-anchor="middle">다음 제품 기획</text>
+
+  <!-- Tagging viral note -->
+  <g transform="translate(580, 60)">
+    <rect x="0" y="0" width="240" height="60" rx="8" fill="#F0F9FF" stroke="#37A3E2" stroke-width="1"/>
+    <text x="12" y="20" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#37A3E2">Tagging Viral Strategy</text>
+    <text x="12" y="38" font-family="'Inter', sans-serif" font-size="11" fill="#555555">친구 태그(@) = 사용자가</text>
+    <text x="12" y="53" font-family="'Inter', sans-serif" font-size="11" fill="#555555">자발적 마케터로 전환</text>
+  </g>
+
+  <!-- CAC = 0 badge -->
+  <g transform="translate(120, 60)">
+    <rect x="0" y="0" width="170" height="60" rx="8" fill="#111111"/>
+    <text x="85" y="24" font-family="'Inter', sans-serif" font-size="20" font-weight="800" fill="white" text-anchor="middle">CAC = 0</text>
+    <text x="85" y="46" font-family="'Inter', sans-serif" font-size="11" fill="#aaaaaa" text-anchor="middle">광고비 지출 없는 확산</text>
+  </g>
+
+  <!-- Bottom hypothesis -->
+  <g transform="translate(40, 420)">
+    <rect x="0" y="0" width="880" height="44" rx="8" fill="#F9F9F9" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="20" y="18" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#111111">Hypothesis</text>
+    <text x="20" y="34" font-family="'Inter', sans-serif" font-size="11" fill="#555555">IF 요청 악기를 Mechanical Aesthetic으로 시각화  →  THEN 자발적 태그 확산 &amp; 광고비 없이 높은 CVR 구매 전환</text>
+  </g>
+</svg>
