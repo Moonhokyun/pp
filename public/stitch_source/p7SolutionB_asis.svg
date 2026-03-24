@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 315" width="480" height="315">
+  <!-- Title -->
+  <text x="240" y="28" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#CC3333" text-anchor="middle" letter-spacing="2">AS-IS</text>
+
+  <!-- Screen frame -->
+  <rect x="60" y="40" width="360" height="240" rx="10" fill="#F9F9F9" stroke="#E0E0E0" stroke-width="1.5"/>
+
+  <!-- Top bar -->
+  <rect x="60" y="40" width="360" height="36" rx="10" fill="#F0F0F0"/>
+  <rect x="60" y="64" width="360" height="12" fill="#F0F0F0"/>
+  <text x="240" y="62" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="middle">GPT 리뷰 결과</text>
+
+  <!-- Endless text lines simulation -->
+  <g fill="#DDDDDD">
+    <rect x="80" y="90" width="320" height="9" rx="2"/>
+    <rect x="80" y="106" width="290" height="9" rx="2"/>
+    <rect x="80" y="122" width="310" height="9" rx="2"/>
+    <rect x="80" y="138" width="280" height="9" rx="2"/>
+    <rect x="80" y="154" width="320" height="9" rx="2"/>
+    <rect x="80" y="170" width="270" height="9" rx="2"/>
+    <rect x="80" y="186" width="305" height="9" rx="2"/>
+    <rect x="80" y="202" width="295" height="9" rx="2"/>
+    <rect x="80" y="218" width="315" height="9" rx="2"/>
+    <rect x="80" y="234" width="260" height="9" rx="2"/>
+    <rect x="80" y="250" width="290" height="9" rx="2"/>
+  </g>
+
+  <!-- Scroll overflow indicator -->
+  <rect x="388" y="60" width="8" height="200" rx="4" fill="#EEEEEE"/>
+  <rect x="388" y="60" width="8" height="40" rx="4" fill="#BBBBBB"/>
+
+  <!-- Warning annotations -->
+  <text x="240" y="296" font-family="'Inter', sans-serif" font-size="10" fill="#CC3333" text-anchor="middle">끝없는 텍스트 덩어리 — 스크롤 압박 · 정보 신뢰도 저하</text>
+</svg>

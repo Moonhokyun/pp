@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 315" width="480" height="315">
+  <!-- Title -->
+  <text x="240" y="28" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#3366CC" text-anchor="middle" letter-spacing="2">TO-BE</text>
+
+  <!-- Screen frame -->
+  <rect x="60" y="40" width="360" height="248" rx="10" fill="#FAFBFF" stroke="#CCDDFF" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <rect x="60" y="40" width="360" height="36" rx="10" fill="#111111"/>
+  <rect x="60" y="64" width="360" height="12" fill="#111111"/>
+  <text x="88" y="62" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="white">✦ Hubble AI  —  데이터 인사이트</text>
+
+  <!-- Accordion 1: Open -->
+  <rect x="74" y="86" width="332" height="28" rx="6" fill="#F0F5FF" stroke="#CCDDFF" stroke-width="1"/>
+  <text x="88" y="104" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#111111">▼  주요 검색 의도 분석</text>
+  <rect x="74" y="117" width="332" height="18" rx="0" fill="#F8FAFF"/>
+  <rect x="82" y="121" width="240" height="7" rx="2" fill="#CCDDEE"/>
+  <rect x="82" y="131" width="180" height="7" rx="2" fill="#CCDDEE"/>
+
+  <!-- Accordion 2: Closed -->
+  <rect x="74" y="140" width="332" height="26" rx="6" fill="#F5F5F5"/>
+  <text x="88" y="157" font-family="'Inter', sans-serif" font-size="9" fill="#666666">▶  트렌드 변화 분석</text>
+
+  <!-- Accordion 3: Closed -->
+  <rect x="74" y="170" width="332" height="26" rx="6" fill="#F5F5F5"/>
+  <text x="88" y="187" font-family="'Inter', sans-serif" font-size="9" fill="#666666">▶  전략적 액션 제안</text>
+
+  <!-- Brand data table -->
+  <rect x="74" y="202" width="332" height="52" rx="6" fill="white" stroke="#E5E9F5" stroke-width="1"/>
+  <rect x="74" y="202" width="332" height="18" rx="6" fill="#F0F5FF"/>
+  <rect x="74" y="210" width="332" height="10" fill="#F0F5FF"/>
+  <text x="90" y="214" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#3366CC">브랜드명</text>
+  <text x="190" y="214" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#3366CC">키워드 수</text>
+  <text x="280" y="214" font-family="'Inter', sans-serif" font-size="7" font-weight="700" fill="#3366CC">검색량</text>
+  <line x1="74" y1="222" x2="406" y2="222" stroke="#E5E9F5" stroke-width="1"/>
+  <text x="90" y="234" font-family="'Inter', sans-serif" font-size="7" font-weight="600" fill="#333">나이키</text>
+  <text x="190" y="234" font-family="'Inter', sans-serif" font-size="7" fill="#333">3,863</text>
+  <text x="280" y="234" font-family="'Inter', sans-serif" font-size="7" fill="#333">2.4M</text>
+  <line x1="74" y1="239" x2="406" y2="239" stroke="#F0F0F0" stroke-width="1"/>
+  <text x="90" y="250" font-family="'Inter', sans-serif" font-size="7" fill="#555">아디다스</text>
+  <text x="190" y="250" font-family="'Inter', sans-serif" font-size="7" fill="#555">1,240</text>
+  <text x="280" y="250" font-family="'Inter', sans-serif" font-size="7" fill="#555">890K</text>
+
+  <!-- Feedback row -->
+  <line x1="74" y1="260" x2="406" y2="260" stroke="#E5E9F5" stroke-width="1"/>
+  <text x="74" y="274" font-family="'Inter', sans-serif" font-size="7" fill="#AAAAAA">이 답변이 도움이 되었나요?</text>
+  <rect x="230" y="264" width="38" height="18" rx="9" fill="#F0F5FF" stroke="#3366CC" stroke-width="1"/>
+  <text x="249" y="277" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">👍</text>
+  <rect x="274" y="264" width="38" height="18" rx="9" fill="#F5F5F5"/>
+  <text x="293" y="277" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">👎</text>
+
+  <!-- Positive label -->
+  <text x="240" y="302" font-family="'Inter', sans-serif" font-size="10" fill="#3366CC" text-anchor="middle">아코디언 구조 + 데이터 테이블 + 피드백 — 압도적 가독성</text>
+</svg>

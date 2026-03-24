@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000014"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="480" y="36" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="3">ARCHITECTURE &amp; PROMPT ENGINEERING STRATEGY</text>
+
+  <!-- Top: Architecture flow -->
+  <g transform="translate(30, 55)">
+    <text x="450" y="0" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="1">ARCHITECTURE: 7~8단계 → 1단계 압축</text>
+
+    <!-- Step 1: Frontend -->
+    <rect x="0" y="16" width="150" height="70" rx="10" fill="#F0F5FF" stroke="#CCDDFF" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="75" y="44" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#3366CC" text-anchor="middle">① Frontend</text>
+    <text x="75" y="60" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">현재 화면의 키워드</text>
+    <text x="75" y="74" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">데이터 (최대 1,000개)</text>
+
+    <!-- Arrow 1 -->
+    <line x1="154" y1="51" x2="192" y2="51" stroke="#3366CC" stroke-width="2"/>
+    <polygon points="192,46 204,51 192,56" fill="#3366CC"/>
+    <text x="178" y="44" font-family="'Inter', sans-serif" font-size="8" fill="#888888" text-anchor="middle">CSV 변환</text>
+
+    <!-- Step 2: Backend -->
+    <rect x="208" y="16" width="150" height="70" rx="10" fill="#F0F5FF" stroke="#CCDDFF" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="283" y="44" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#3366CC" text-anchor="middle">② Backend</text>
+    <text x="283" y="60" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">CSV 변환 +</text>
+    <text x="283" y="74" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">프롬프트 결합</text>
+
+    <!-- Arrow 2 -->
+    <line x1="362" y1="51" x2="400" y2="51" stroke="#3366CC" stroke-width="2"/>
+    <polygon points="400,46 412,51 400,56" fill="#3366CC"/>
+    <text x="386" y="44" font-family="'Inter', sans-serif" font-size="8" fill="#888888" text-anchor="middle">API 호출</text>
+
+    <!-- Step 3: Gemini -->
+    <rect x="416" y="16" width="150" height="70" rx="10" fill="#FFF8F0" stroke="#FFE0AA" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="491" y="44" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#FF8C00" text-anchor="middle">③ Gemini API</text>
+    <text x="491" y="60" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">90,000+ 토큰</text>
+    <text x="491" y="74" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">단일 맥락 처리</text>
+
+    <!-- Arrow 3 -->
+    <line x1="570" y1="51" x2="608" y2="51" stroke="#3366CC" stroke-width="2"/>
+    <polygon points="608,46 620,51 608,56" fill="#3366CC"/>
+    <text x="594" y="44" font-family="'Inter', sans-serif" font-size="8" fill="#888888" text-anchor="middle">SSE 반환</text>
+
+    <!-- Step 4: SSE Streaming -->
+    <rect x="624" y="16" width="150" height="70" rx="10" fill="#F0FFF4" stroke="#AADDBB" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="699" y="44" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#22AA66" text-anchor="middle">④ SSE Streaming</text>
+    <text x="699" y="60" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">실시간 스트리밍</text>
+    <text x="699" y="74" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">타자기 효과 출력</text>
+
+    <!-- VS old pipeline annotation -->
+    <rect x="808" y="16" width="145" height="70" rx="10" fill="#FFF0F0" stroke="#FFCCCC" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="880" y="36" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#CC3333" text-anchor="middle">기존 방식 (AS-IS)</text>
+    <text x="880" y="52" font-family="'Inter', sans-serif" font-size="9" fill="#888888" text-anchor="middle">연구소 API 경유</text>
+    <text x="880" y="65" font-family="'Inter', sans-serif" font-size="22" font-weight="800" fill="#CC3333" text-anchor="middle">7~8단계</text>
+    <text x="862" y="16" font-family="'Inter', sans-serif" font-size="14" text-anchor="middle">❌</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="30" y1="170" x2="930" y2="170" stroke="#E5E7EB" stroke-width="1"/>
+
+  <!-- Bottom: Prompt evolution V0.1 ~ V0.4 -->
+  <g transform="translate(30, 182)">
+    <text x="450" y="0" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="1">PROMPT ENGINEERING: V0.1 → V0.4 고도화 과정</text>
+
+    <!-- V0.1 -->
+    <g transform="translate(0, 16)">
+      <rect x="0" y="0" width="196" height="240" rx="10" fill="#F9F9F9" stroke="#E0E0E0" stroke-width="1"/>
+      <rect x="0" y="0" width="196" height="36" rx="10" fill="#EEEEEE"/>
+      <rect x="0" y="26" width="196" height="10" fill="#EEEEEE"/>
+      <text x="98" y="23" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#888888" text-anchor="middle">V 0.1</text>
+      <text x="14" y="58" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#AAAAAA">초기 프롬프트</text>
+      <text x="14" y="76" font-family="'Inter', sans-serif" font-size="9" fill="#AAAAAA">• 비구조적 자유형 요청</text>
+      <text x="14" y="92" font-family="'Inter', sans-serif" font-size="9" fill="#AAAAAA">• 내부 변수명 노출</text>
+      <text x="14" y="108" font-family="'Inter', sans-serif" font-size="9" fill="#AAAAAA">  (volume_trend: 0.73)</text>
+      <text x="14" y="124" font-family="'Inter', sans-serif" font-size="9" fill="#AAAAAA">• 답변 길이 미제어</text>
+      <text x="14" y="140" font-family="'Inter', sans-serif" font-size="9" fill="#AAAAAA">• 환각(Hallucination) 빈발</text>
+      <rect x="14" y="196" width="168" height="30" rx="6" fill="#FFE8E8"/>
+      <text x="98" y="215" font-family="'Inter', sans-serif" font-size="9" fill="#CC3333" text-anchor="middle">품질 불안정 · 가독성 낮음</text>
+    </g>
+
+    <!-- Arrow -->
+    <text x="202" y="136" font-family="'Inter', sans-serif" font-size="20" fill="#CCCCCC">→</text>
+
+    <!-- V0.2 -->
+    <g transform="translate(218, 16)">
+      <rect x="0" y="0" width="196" height="240" rx="10" fill="#F9F9F9" stroke="#E0E0E0" stroke-width="1"/>
+      <rect x="0" y="0" width="196" height="36" rx="10" fill="#E5E9F5"/>
+      <rect x="0" y="26" width="196" height="10" fill="#E5E9F5"/>
+      <text x="98" y="23" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#3366CC" text-anchor="middle">V 0.2</text>
+      <text x="14" y="58" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#555555">구조화 시작</text>
+      <text x="14" y="76" font-family="'Inter', sans-serif" font-size="9" fill="#555555">• 상단 공통 블록 도입</text>
+      <text x="14" y="92" font-family="'Inter', sans-serif" font-size="9" fill="#555555">  (전체 구조 파악)</text>
+      <text x="14" y="108" font-family="'Inter', sans-serif" font-size="9" fill="#555555">• 변수명 한국어 치환</text>
+      <text x="14" y="124" font-family="'Inter', sans-serif" font-size="9" fill="#555555">• 기본 길이 제약 추가</text>
+      <rect x="14" y="196" width="168" height="30" rx="6" fill="#FFF8E0"/>
+      <text x="98" y="215" font-family="'Inter', sans-serif" font-size="9" fill="#CC8800" text-anchor="middle">부분 개선 · 잘림 이슈 잔존</text>
+    </g>
+
+    <!-- Arrow -->
+    <text x="420" y="136" font-family="'Inter', sans-serif" font-size="20" fill="#CCCCCC">→</text>
+
+    <!-- V0.3 -->
+    <g transform="translate(436, 16)">
+      <rect x="0" y="0" width="196" height="240" rx="10" fill="#F9F9F9" stroke="#E0E0E0" stroke-width="1"/>
+      <rect x="0" y="0" width="196" height="36" rx="10" fill="#D8E8FF"/>
+      <rect x="0" y="26" width="196" height="10" fill="#D8E8FF"/>
+      <text x="98" y="23" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#2255BB" text-anchor="middle">V 0.3</text>
+      <text x="14" y="58" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#333333">템플릿 확립</text>
+      <text x="14" y="76" font-family="'Inter', sans-serif" font-size="9" fill="#333333">• 3단 구조 확립</text>
+      <text x="14" y="92" font-family="'Inter', sans-serif" font-size="9" fill="#333333">  상단(구조) / 중간(Top3)</text>
+      <text x="14" y="108" font-family="'Inter', sans-serif" font-size="9" fill="#333333">  / 하단(전략 제안)</text>
+      <text x="14" y="124" font-family="'Inter', sans-serif" font-size="9" fill="#333333">• 분석/요약 호출 분리</text>
+      <text x="14" y="140" font-family="'Inter', sans-serif" font-size="9" fill="#333333">• Truncation 방지</text>
+      <rect x="14" y="196" width="168" height="30" rx="6" fill="#E8F0FF"/>
+      <text x="98" y="215" font-family="'Inter', sans-serif" font-size="9" fill="#3366CC" text-anchor="middle">잘림 해결 · 일관성 확보</text>
+    </g>
+
+    <!-- Arrow -->
+    <text x="638" y="136" font-family="'Inter', sans-serif" font-size="20" fill="#CCCCCC">→</text>
+
+    <!-- V0.4 -->
+    <g transform="translate(654, 16)">
+      <rect x="0" y="0" width="196" height="240" rx="10" fill="#F0F5FF" stroke="#AACCFF" stroke-width="2"/>
+      <rect x="0" y="0" width="196" height="36" rx="10" fill="#3366CC"/>
+      <rect x="0" y="26" width="196" height="10" fill="#3366CC"/>
+      <text x="98" y="23" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle">V 0.4  ✓ FINAL</text>
+      <text x="14" y="58" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#111111">완성형</text>
+      <text x="14" y="76" font-family="'Inter', sans-serif" font-size="9" fill="#333333">• 완전한 3단 템플릿</text>
+      <text x="14" y="92" font-family="'Inter', sans-serif" font-size="9" fill="#333333">• 내부 변수명 완전 차단</text>
+      <text x="14" y="108" font-family="'Inter', sans-serif" font-size="9" fill="#333333">• brand_summary SSE 이벤트</text>
+      <text x="14" y="124" font-family="'Inter', sans-serif" font-size="9" fill="#333333">  별도 전송 (테이블 생성)</text>
+      <text x="14" y="140" font-family="'Inter', sans-serif" font-size="9" fill="#333333">• 환각 최소화 검증 완료</text>
+      <rect x="14" y="196" width="168" height="30" rx="6" fill="#3366CC"/>
+      <text x="98" y="215" font-family="'Inter', sans-serif" font-size="9" fill="white" text-anchor="middle">40초 · 안정적 품질 달성</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#00000016"/>
+    </filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="480" y="36" font-family="'Inter', sans-serif" font-size="13" font-weight="700" fill="#888888" text-anchor="middle" letter-spacing="3">SOLUTION A — CONTEXT-AWARE SIDEBAR &amp; SUB-AGENT</text>
+
+  <!-- Left: Context-Aware Sidebar flow -->
+  <g transform="translate(30, 55)">
+    <text x="185" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#3366CC" text-anchor="middle" letter-spacing="1">Context-Aware Sidebar</text>
+
+    <!-- User action -->
+    <rect x="60" y="18" width="250" height="44" rx="10" fill="#F0F5FF" stroke="#CCDDFF" stroke-width="1.5"/>
+    <text x="185" y="36" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#3366CC" text-anchor="middle">사용자: '데이터 인사이트' 버튼 클릭</text>
+    <text x="185" y="52" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">인텐트 / 패스 / 클러스터 파인더 화면</text>
+
+    <!-- Arrow down -->
+    <line x1="185" y1="64" x2="185" y2="86" stroke="#3366CC" stroke-width="1.5"/>
+    <polygon points="185,90 180,83 190,83" fill="#3366CC"/>
+
+    <!-- Data collection -->
+    <rect x="60" y="92" width="250" height="44" rx="10" fill="#F5F7FF" stroke="#CCDDFF" stroke-width="1.5"/>
+    <text x="185" y="110" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#444" text-anchor="middle">현재 화면 키워드 데이터 수집</text>
+    <text x="185" y="126" font-family="'Inter', sans-serif" font-size="9" fill="#888888" text-anchor="middle">최대 1,000개 → CSV 변환 → Backend 전송</text>
+
+    <!-- Arrow down -->
+    <line x1="185" y1="138" x2="185" y2="160" stroke="#3366CC" stroke-width="1.5"/>
+    <polygon points="185,164 180,157 190,157" fill="#3366CC"/>
+
+    <!-- AI processing -->
+    <rect x="60" y="166" width="250" height="44" rx="10" fill="#FFF8F0" stroke="#FFE0AA" stroke-width="1.5"/>
+    <text x="185" y="184" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#FF8C00" text-anchor="middle">Gemini API — 90K+ 토큰 분석</text>
+    <text x="185" y="200" font-family="'Inter', sans-serif" font-size="9" fill="#888888" text-anchor="middle">구조화 프롬프트(V0.4) 적용</text>
+
+    <!-- Arrow down -->
+    <line x1="185" y1="212" x2="185" y2="234" stroke="#3366CC" stroke-width="1.5"/>
+    <polygon points="185,238 180,231 190,231" fill="#3366CC"/>
+
+    <!-- SSE Streaming result -->
+    <rect x="60" y="240" width="250" height="44" rx="10" fill="#F0FFF4" stroke="#AADDBB" stroke-width="1.5"/>
+    <text x="185" y="258" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#22AA66" text-anchor="middle">SSE 스트리밍 — 실시간 출력</text>
+    <text x="185" y="274" font-family="'Inter', sans-serif" font-size="9" fill="#888888" text-anchor="middle">타자기 효과 · 평균 40초 이내 완료</text>
+
+    <!-- Time badge -->
+    <rect x="85" y="296" width="200" height="34" rx="17" fill="#3366CC"/>
+    <text x="185" y="318" font-family="'Inter', sans-serif" font-size="14" font-weight="800" fill="white" text-anchor="middle">⏱ 평균 분석 시간: 40초</text>
+  </g>
+
+  <!-- Center divider -->
+  <line x1="400" y1="55" x2="400" y2="410" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Right: Sub-Agent comparison -->
+  <g transform="translate(420, 55)">
+    <text x="255" y="0" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#3366CC" text-anchor="middle" letter-spacing="1">Sub-Agent: 비교 분석</text>
+
+    <text x="255" y="22" font-family="'Inter', sans-serif" font-size="10" fill="#888888" text-anchor="middle">2개의 데이터 파일을 동시에 전송하여 변화를 대조 분석</text>
+
+    <!-- File A -->
+    <rect x="30" y="36" width="200" height="80" rx="10" fill="#F5F7FF" stroke="#CCDDFF" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="130" y="58" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#3366CC" text-anchor="middle">📄 File A</text>
+    <text x="130" y="76" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">과거 시점 데이터</text>
+    <text x="130" y="92" font-family="'Inter', sans-serif" font-size="9" fill="#888888" text-anchor="middle">또는 키워드 그룹 A</text>
+    <text x="130" y="108" font-family="'Inter', sans-serif" font-size="8" fill="#AAAAAA" text-anchor="middle">Keywords: 500개</text>
+
+    <!-- File B -->
+    <rect x="280" y="36" width="200" height="80" rx="10" fill="#F5F7FF" stroke="#CCDDFF" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="380" y="58" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#3366CC" text-anchor="middle">📄 File B</text>
+    <text x="380" y="76" font-family="'Inter', sans-serif" font-size="9" fill="#555555" text-anchor="middle">현재 시점 데이터</text>
+    <text x="380" y="92" font-family="'Inter', sans-serif" font-size="9" fill="#888888" text-anchor="middle">또는 키워드 그룹 B</text>
+    <text x="380" y="108" font-family="'Inter', sans-serif" font-size="8" fill="#AAAAAA" text-anchor="middle">Keywords: 500개</text>
+
+    <!-- Arrows to center -->
+    <line x1="232" y1="76" x2="268" y2="100" stroke="#3366CC" stroke-width="1.5"/>
+    <line x1="278" y1="76" x2="242" y2="100" stroke="#3366CC" stroke-width="1.5"/>
+
+    <!-- Sub-Agent box -->
+    <rect x="120" y="136" width="270" height="60" rx="10" fill="#111111" filter="url(#shadow)"/>
+    <text x="255" y="162" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">✦ Sub-Agent 분석</text>
+    <text x="255" y="182" font-family="'Inter', sans-serif" font-size="9" fill="#AAAAAA" text-anchor="middle">동시 전송 → 패턴 변화 대조 분석</text>
+
+    <!-- Arrow down -->
+    <line x1="255" y1="198" x2="255" y2="218" stroke="#3366CC" stroke-width="1.5"/>
+    <polygon points="255,222 250,215 260,215" fill="#3366CC"/>
+
+    <!-- Output cards -->
+    <rect x="30" y="226" width="200" height="66" rx="8" fill="#F0FFF4" stroke="#AADDBB" stroke-width="1"/>
+    <text x="130" y="248" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#22AA66" text-anchor="middle">니즈 변화 분석</text>
+    <text x="130" y="264" font-family="'Inter', sans-serif" font-size="8" fill="#555555" text-anchor="middle">기간별 검색 의도 변화,</text>
+    <text x="130" y="278" font-family="'Inter', sans-serif" font-size="8" fill="#555555" text-anchor="middle">부상/소멸 키워드 탐지</text>
+
+    <rect x="280" y="226" width="200" height="66" rx="8" fill="#F0F5FF" stroke="#CCDDFF" stroke-width="1"/>
+    <text x="380" y="248" font-family="'Inter', sans-serif" font-size="9" font-weight="700" fill="#3366CC" text-anchor="middle">트렌드 이동 감지</text>
+    <text x="380" y="264" font-family="'Inter', sans-serif" font-size="8" fill="#555555" text-anchor="middle">경쟁사 vs 자사 비교,</text>
+    <text x="380" y="278" font-family="'Inter', sans-serif" font-size="8" fill="#555555" text-anchor="middle">시즌성 패턴 분석</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <g transform="translate(30, 418)">
+    <rect x="0" y="0" width="900" height="46" rx="10" fill="#F0F5FF"/>
+    <rect x="0" y="0" width="6" height="46" rx="3" fill="#3366CC"/>
+    <text x="26" y="18" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#3366CC">Context-Aware: 현재 탐색 화면의 맥락이 AI에 그대로 연결</text>
+    <text x="26" y="36" font-family="'Inter', sans-serif" font-size="10" fill="#555555">사용자가 보는 데이터 = AI가 분석하는 데이터 — 수동 복사/붙여넣기 없이 즉시 전략 인사이트 획득</text>
+  </g>
+</svg>

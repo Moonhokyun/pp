@@ -40,6 +40,11 @@ const IndexPage = () => {
                         <span className="index-desc">{t('INDEX_LM_DESC_4')}</span>
                         <span className="index-page-num">23</span>
                     </li>
+                    <li>
+                        <span className="index-num">5</span>
+                        <span className="index-desc">{t('INDEX_LM_DESC_5')}</span>
+                        <span className="index-page-num">29</span>
+                    </li>
                 </ul>
             </div>
 
@@ -51,9 +56,8 @@ const IndexPage = () => {
                 </div>
                 <ul className="index-list">
                     <li>
-                        <span className="index-num">5</span>
                         <span className="index-desc">{t('INDEX_DG_DESC_1')}</span>
-                        <span className="index-page-num">29</span>
+                        <span className="index-page-num">35</span>
                     </li>
                 </ul>
             </div>
@@ -65,9 +69,8 @@ const IndexPage = () => {
                 </div>
                 <ul className="index-list">
                     <li>
-                        <span className="index-num">6</span>
                         <span className="index-desc">{t('INDEX_MUNO_DESC_1')}</span>
-                        <span className="index-page-num">35</span>
+                        <span className="index-page-num">40</span>
                     </li>
                 </ul>
             </div>
