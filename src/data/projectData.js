@@ -281,7 +281,7 @@ export const projectData = [
       problem: {
         title: "P7_PROBLEM_TITLE",
         background: "P7_PROBLEM_BACKGROUND",
-        quantitative: "P7_PROBLEM_QUANT",
+        quantitative: null,
         qualitative: "P7_PROBLEM_QUAL",
         image: "/stitch_source/p7Problem.svg"
       },
@@ -312,9 +312,7 @@ export const projectData = [
           { title: "P7_SOL_B_DESC_1_TITLE", desc: "P7_SOL_B_DESC_1_DESC" },
           { title: "P7_SOL_B_DESC_2_TITLE", desc: "P7_SOL_B_DESC_2_DESC" }
         ],
-        image: "/stitch_source/p7SolutionB.svg",
-        asIs: { image: "/stitch_source/p7SolutionB_asis.svg", desc: "P7_SOL_B_ASIS_DESC" },
-        toBe: { image: "/stitch_source/p7SolutionB_tobe.svg", desc: "P7_SOL_B_TOBE_DESC" }
+        image: "/stitch_source/p7SolutionB.svg"
       },
       // Page 6: Impact & Lesson
       impact: {
@@ -391,6 +389,7 @@ export const projectData = [
         title: "P6_PROBLEM_TITLE",
         background: "P6_PROBLEM_BACKGROUND",
         quantitative: "P6_PROBLEM_QUANT",
+        quantitativeLabel: "PROBLEM_BLOCK_VOC",
         qualitative: "P6_PROBLEM_QUAL",
         image: "/stitch_source/p6Problem.svg"
       },
@@ -401,17 +400,17 @@ export const projectData = [
         cause: "P6_STRATEGY_CAUSE",
         causeDesc: "P6_STRATEGY_CAUSE_DESC",
         hypothesis: "P6_STRATEGY_HYPO",
-        image: "/stitch_source/p6Strategy.svg"
+        image: "/stitch_source/p6SolutionA.svg"
       },
       // Page 4: Solution A
       solutionA: {
         title: "P6_SOL_A_TITLE",
         summary: "P6_SOL_A_SUMMARY",
         description: [
-          { title: "P6_SOL_A_DESC_1_TITLE", desc: "P6_SOL_A_DESC_1_DESC" },
-          { title: "P6_SOL_A_DESC_2_TITLE", desc: "P6_SOL_A_DESC_2_DESC" }
+          { title: "P6_SOL_A_DESC_2_TITLE", desc: "P6_SOL_A_DESC_2_DESC" },
+          { title: "P6_SOL_A_DESC_1_TITLE", desc: "P6_SOL_A_DESC_1_DESC" }
         ],
-        image: "/stitch_source/p6SolutionA.svg"
+        image: null
       },
       // Page 5: Solution B
       solutionB: {

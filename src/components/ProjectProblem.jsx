@@ -49,10 +49,12 @@ const ProjectProblem = ({ problem }) => {
               <h4 className="problem-block-title">{parseForBold(t("PROBLEM_BLOCK_BACKGROUND"))}</h4>
               <p className="problem-block-desc">{parseForBold(t(problem?.background))}</p>
             </div>
+            {problem?.quantitative && (
             <div className="problem-block">
-              <h4 className="problem-block-title">{parseForBold(t("PROBLEM_BLOCK_DATA"))}</h4>
+              <h4 className="problem-block-title">{parseForBold(t(problem?.quantitativeLabel || "PROBLEM_BLOCK_DATA"))}</h4>
               <p className="problem-block-desc">{parseForBold(t(problem?.quantitative))}</p>
             </div>
+            )}
             <div className="problem-block">
               <h4 className="problem-block-title">{parseForBold(t("PROBLEM_BLOCK_VOC"))}</h4>
               <p className="problem-block-desc">{parseForBold(t(problem?.qualitative))}</p>
